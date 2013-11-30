@@ -127,9 +127,13 @@ body {
 	margin: 0 auto;
 	background: #fff;
 }
-/*---------------------------------header styles------------------------------- */
+/* ==========================================================================
+   Header styles
+   ========================================================================== */
+  
 .main-header {
 	padding: 60px 40px;
+	border-bottom: 2px solid #E4E4E4;
 }
 
 .nav-list {
@@ -173,7 +177,9 @@ body {
 	background: url(../img/main_sprite.png) no-repeat 0 0;
 	text-indent: -9999px;
 }
-/*---------------------------------footer styles------------------------------- */
+/* ==========================================================================
+   Footer styles
+   ========================================================================== */
 
 .main-footer {
 	background: #0d0d0d;
@@ -228,9 +234,33 @@ body {
 		background: url(../img/main_sprite.png) no-repeat -457px 0;
 	}
 
+/* ==========================================================================
+   Section gallery styles
+   ========================================================================== */
 
-
-
+.gallery {
+	padding: 40px;
+}
+.sect-head {
+	text-align: center;
+}
+.sect-desc {
+	font: italic .875em/1.5714em 'PT Sans', sans-serif;
+}
+.social-widgets {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	
+	width: 327px;
+	margin: 23px 0;
+}
+	.social-item {
+		float: left;
+		width: 31%;
+		margin: 0 1%;
+		height: 22px;
+	}
 
 
 
