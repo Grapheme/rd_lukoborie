@@ -109,6 +109,7 @@ textarea {
 
 .content_container {
 	margin: 0 40px;
+}
 
 ul {
 	margin: 0;
@@ -130,9 +131,13 @@ body {
 .main-header {
 	padding: 60px 40px;
 }
+
 .nav-list {
 	float: left;
 }
+	.nav-item {
+		margin: 0 0 .4em;
+	}
 	.nav-item a {
 		font: 1.125em 'pf_din_text_cond_pro', sans-serif;
 		text-transform: uppercase;
@@ -140,14 +145,16 @@ body {
 		color: #000;
 	}
 	.nav-item.active a {
-		
+		text-decoration: line-through;
 	}
+	
 .outer-links {
 	float:right;
 }	
 	.outer-links li {
 		width: 80px;
 		height: 30px;
+		margin: 0 0 .4em;
 	}
 	.outer-links .panasonic {
 		background: url(../img/main_sprite.png) no-repeat -291px 0;
@@ -157,15 +164,74 @@ body {
 	}
 	.outer-links .birdie {
 		background: url(../img/main_sprite.png) no-repeat -291px -60px;
-	}	
+	}
+		
 .logo {
 	width: 290px;
 	height: 85px;
 	margin: 0 auto;
 	background: url(../img/main_sprite.png) no-repeat 0 0;
 	text-indent: -9999px;
-
 }
+/*---------------------------------footer styles------------------------------- */
+
+.main-footer {
+	background: #0d0d0d;
+	padding: 30px 40px;
+	font-size: .9375em;
+}
+
+.footer-nav {
+	float: left;
+}
+	.footer-nav-item {
+		float: left;
+		margin: 0 1.1875em 0 0;
+		line-height: 1.7em;
+	}
+	.footer-nav-item a {		
+		border-bottom: 1px solid #fff;
+		color: #fff;
+		text-decoration: none;
+	}
+	.footer-nav-item a:hover {
+		border-color: transparent;
+	}
+
+.bottom-logo {
+	width: 117px;
+	height: 33px;
+	margin: 0 auto;
+	background: url(../img/main_sprite.png) no-repeat 0 -89px;
+}
+
+.bottom-outer-links {
+	float: right;
+}
+	.bottom-outer-links li {
+		float: left;
+		width: 80px;
+		height: 30px;
+	}
+	.bottom-outer-links .panasonic {
+		background: url(../img/main_sprite.png) no-repeat -371px -30px;
+	}
+	.bottom-outer-links .chop-chop {
+		background: url(../img/main_sprite.png) no-repeat -371px 0;
+	}
+	.bottom-outer-links .birdie {
+		background: url(../img/main_sprite.png) no-repeat -371px -60px;
+	}
+	.bottom-outer-links .rd_keds {
+		width: 35px;
+		background: url(../img/main_sprite.png) no-repeat -457px 0;
+	}
+
+
+
+
+
+
 
 .full-hd {
 	font-size: 124px;
