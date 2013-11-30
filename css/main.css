@@ -121,13 +121,32 @@ body {
 	margin: 0 auto;
 	background: #fff;
 }
-/*---------------------------------header styles------------------------------- */
+/* ==========================================================================
+   Transition-elems
+   ========================================================================== */
+.footer-nav-item a {
+   	transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+}
+
+/* ==========================================================================
+   Header styles
+   ========================================================================== */
+  
 .main-header {
 	padding: 60px 40px;
+	border-bottom: 2px solid #E4E4E4;
 }
+
 .nav-list {
 	float: left;
 }
+	.nav-item {
+		margin: 0 0 .4em;
+	}
 	.nav-item a {
 		font: 1.125em 'pf_din_text_cond_pro', sans-serif;
 		text-transform: uppercase;
@@ -135,14 +154,16 @@ body {
 		color: #000;
 	}
 	.nav-item.active a {
-		
+		text-decoration: line-through;
 	}
+	
 .outer-links {
 	float:right;
 }	
 	.outer-links li {
 		width: 80px;
 		height: 30px;
+		margin: 0 0 .4em;
 	}
 	.outer-links .panasonic {
 		background: url(../img/main_sprite.png) no-repeat -291px 0;
@@ -152,15 +173,232 @@ body {
 	}
 	.outer-links .birdie {
 		background: url(../img/main_sprite.png) no-repeat -291px -60px;
-	}	
+	}
+		
 .logo {
 	width: 290px;
 	height: 85px;
 	margin: 0 auto;
 	background: url(../img/main_sprite.png) no-repeat 0 0;
 	text-indent: -9999px;
-
 }
+/* ==========================================================================
+   Footer styles
+   ========================================================================== */
+
+.main-footer {
+	background: #0d0d0d;
+	padding: 30px 40px;
+	font-size: .9375em;
+}
+
+.footer-nav {
+	float: left;
+}
+	.footer-nav-item {
+		float: left;
+		margin: 0 1.2666em 0 0;
+		line-height: 1.7em;
+	}
+	.footer-nav-item a {		
+		border-bottom: 1px solid #fff;
+		color: #fff;
+		text-decoration: none;
+	}
+	.footer-nav-item a:hover {
+		border-color: transparent;
+	}
+
+.bottom-logo {
+	width: 117px;
+	height: 33px;
+	margin: 0 auto;
+	background: url(../img/main_sprite.png) no-repeat 0 -89px;
+}
+
+.bottom-outer-links {
+	float: right;
+}
+	.bottom-outer-links li {
+		float: left;
+		width: 80px;
+		height: 30px;
+		margin: 0 .5em 0 0;
+	}
+	.bottom-outer-links .panasonic {
+		background: url(../img/main_sprite.png) no-repeat -371px -30px;
+	}
+	.bottom-outer-links .chop-chop {
+		background: url(../img/main_sprite.png) no-repeat -371px 0;
+	}
+	.bottom-outer-links .birdie {
+		background: url(../img/main_sprite.png) no-repeat -371px -60px;
+	}
+	.bottom-outer-links .rd_keds {
+		width: 35px;
+		background: url(../img/main_sprite.png) no-repeat -457px 0;
+	}
+
+/* ==========================================================================
+   Section gallery styles
+   ========================================================================== */
+
+.gallery {
+	padding: 40px;
+}
+
+.sect-head {
+	text-align: center;
+}
+
+.sect-desc {
+	font: italic .875em/1.5714em 'PT Sans', sans-serif;
+}
+
+.social-widgets {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	
+	width: 327px;
+	margin: 23px 0;
+}
+	.social-item {
+		float: left;
+		width: 31%;
+		margin: 0 1%;
+		height: 22px;
+	}
+
+/*------------------------------------Filters--------------------------------- */
+.filters-item {
+	float: left;	
+	font: .875em/1.5714em 'PT Sans', sans-serif;
+}
+
+.f-date {	
+	width: 26%;	
+}
+
+.f-salon {	
+	width: 74%;	
+}
+	.filter-container {
+		position: relative;
+		padding: 20px 0 20px 40px;
+		border: 1px solid #e3e3e3;
+		cursor: pointer;
+	}
+	.filter-container:after {
+		content: '•';	
+		position: absolute;
+		top: 50%;
+		right: 20px;	
+		height: 1px;
+		font-size: 2em;
+		line-height: 1px;
+		cursor: default;
+	}
+	.chosen-salon,
+	.chosen-date {
+		display: block;
+		font: 1.75em 'pf_din_text_cond_pro', sans-serif;
+		text-transform: uppercase;
+	}
+	
+/*------------------------------------Gallery--------------------------------- */	
+.gallery-body {
+	margin: 37px 0 0;
+}
+.gallery-item {
+	position: relative;
+	width: 25%;
+}
+.gallery-item:hover {
+	z-index: 3;
+}
+.gallery-item:hover > img {
+	-webkit-transform: scale(1.05);
+       -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+         -o-transform: scale(1.05);
+            transform: scale(1.05);
+    transition: all .8s ease;
+	-webkit-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.likes {
+	position: absolute;
+    bottom: 18px;
+    left: 40%;    
+    font: 1.25em 'pf_din_text_cond_pro', sans-serif;
+    color: #fff;    
+}
+.likes-count {
+	display: inline-block;
+}
+.likes-thumb {
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+    background: url("../img/main_sprite.png") no-repeat scroll -5px -124px;
+    cursor: pointer;
+}
+.gallery-item img {
+	width: 100%;
+	height: auto;
+}
+.photograph,
+.camera {
+	padding: 1em 1.9em;
+	background: #f0f0f0;
+	text-align: center;
+}
+.photograph .desc,
+.camera .desc {
+	padding: 0 1.6em;
+	font: 1em/1.375em 'pf_din_text_cond_pro', sans-serif;
+	text-transform: uppercase;
+}
+.ph-avatar,
+.camera-avatar {
+	width: 118px;
+	margin: 0 auto;
+}
+.camera-name {
+    margin: .7em 0;
+}
+.ph-avatar img {
+	width: 100%;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px; 
+	-khtml-border-radius: 100px; 
+	border-radius: 100px;
+}
+.ph-caption {
+	font: 1.125em/2.111em 'pf_din_text_cond_pro', sans-serif;
+	text-transform: uppercase;
+}
+.quote {
+    font-size: 4.5em;
+    height: 0.7em;
+}
+.bottom-quote {
+	line-height: 1em;
+}
+.sign {
+	padding: 0 2em;
+}
+	
+
+
+
+
 
 .full-hd {
 	font-size: 124px;
@@ -168,6 +406,8 @@ body {
 	letter-spacing: -5px;
 	margin-left: -5px;
 }
+
+
 
 .slider-wrap {
 	
@@ -230,14 +470,6 @@ body {
 		color: #727272;
 		border-bottom: none;
 	}
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
