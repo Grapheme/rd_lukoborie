@@ -101,14 +101,9 @@ textarea {
 
 .full-hd,.slider-title { font-family: 'pf_din_text_cond_pro'; }
 
-
-.main_container {
-	width: 1040px;
-	margin: 0 auto;
-}
-
 .content_container {
 	margin: 0 40px;
+}
 
 ul {
 	margin: 0;
@@ -198,7 +193,43 @@ body {
 	float: left;
 }
 
+.slider {
+	text-align: center;
+}
 
+.fotorama {
+	display: inline-block;
+}
+
+.slider-content {
+	text-align: center;
+	height: 420px;
+}
+
+.slider-content-block > div {
+	display: inline-block;
+}
+
+.slider-content-block img {
+	max-height: 420px;
+}
+
+.slider-content .no-display {
+	display: none;
+}
+
+.slider-nav a {
+	text-transform: uppercase;
+	color: #000;
+	border-bottom: 1px dotted;
+	text-decoration: none;
+	outline: 0 none;
+}
+
+	.slider-nav a.active {
+		color: #727272;
+		border-bottom: none;
+	}
 
 
 

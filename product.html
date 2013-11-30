@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="css/fotorama.css" rel="stylesheet">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -23,38 +24,47 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="main_container">
+        <div class="wrapper">
         	<div class="content_container">
     			<div class="full-hd">
     				Full hd
     			</div>
         	</div>
         </div>
-        <div class="main_container">
+        <div class="wrapper">
 			<div class="slider-container">
 				<div class="content_container">
 					<div class="slider-title">
 					 	Видеосъемка в высоком разрешении 1920&#xD7;1080 пикселей
 					</div>
 					<div class="slider">
-						<div class="slider-content">
-							<div class="slider-content-block">
-								<div class="slider-product">
-									<img src="img/slider/slider-foto.png">
-								</div>
-								<div class="slider-video"></div>
-								<div class="slider-foto"></div>
-							</div>
+						<div class="fotos" 	data-background="transparent"
+												data-loop="true"
+												data-maxHeight="420"
+												data-maxWidth="960"
+												data-cropToFit="true"
+												data-nav="none"
+												data-arrows="false"
+												>
+							<img class="product" src="img/slider/1.jpg">
+							<img class="product" src="img/slider/2.png">
+							<img class="product" src="img/slider/3.jpg">
+							<img class="video" src="img/slider/4.jpg">
+							<img class="image" src="img/slider/5.png">
+							<!--<div class="video"></div>
+							<div class="image"></div>-->
 						</div>
 						<div class="slider-nav">
 							<nav>
 								<ul>
-									<li><a href="#">Продукт</a></li>
-									<li><a href="#">Видео</a></li>
-									<li><a href="#">Фотографии</a></li>
+									<li><a href="#" data-to="product">Продукт</a></li>
+									<li><a href="#" data-to="video">Видео</a></li>
+									<li><a href="#" data-to="image">Фотографии</a></li>
 								</ul>
 							</nav>
 						</div>
+						<a href="#" class="slider-to-left">left</a>
+						<a href="#" class="slider-to-right">right</a>
 					</div>
 				</div>
 			</div>
@@ -85,6 +95,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+	    <script src="js/fotorama.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
