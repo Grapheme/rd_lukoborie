@@ -98,10 +98,43 @@ textarea {
    ========================================================================== */
 
 
+.main_container {
+	width: 1040px;
+	margin: 0 auto;
+}
 
+.content_container {
+	margin: 0 40px;
+}
 
+.full-hd {
+	font-family: 'pf_din_text_cond_probold';
+	font-size: 124px;
+	text-transform: uppercase;
+}
 
+.slider-wrap {
+	
+}
 
+.slider-container {
+	background-color: #ededed;
+	overflow: hidden;
+}
+
+.slider-title {
+	font-family: 'pf_din_text_cond_probold';
+	text-transform: uppercase;
+	font-size: 21px;
+	width: 440px;
+	margin-top: 65px;
+}
+
+.slider-under-block {
+	position: relative;
+	width: 25%;
+	float: left;
+}
 
 
 
