@@ -98,6 +98,7 @@ textarea {
    ========================================================================== */
 
 
+
 .main_container {
 	width: 1040px;
 	margin: 0 auto;
@@ -105,6 +106,62 @@ textarea {
 
 .content_container {
 	margin: 0 40px;
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html {
+	font: 100% 'PT Sans', sans-serif;
+}
+body {
+	background: #d7d7d7;
+}
+.wrapper {
+	width: 1040px;	
+	margin: 0 auto;
+	background: #fff;
+}
+/*---------------------------------header styles------------------------------- */
+.main-header {
+	padding: 60px 40px;
+}
+.nav-list {
+	float: left;
+}
+	.nav-item a {
+		font: 1.125em 'pf_din_text_cond_pro', sans-serif;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #000;
+	}
+	.nav-item.active a {
+		
+	}
+.outer-links {
+	float:right;
+}	
+	.outer-links li {
+		width: 80px;
+		height: 30px;
+	}
+	.outer-links .panasonic {
+		background: url(../img/main_sprite.png) no-repeat -291px 0;
+	}
+	.outer-links .chop-chop {
+		background: url(../img/main_sprite.png) no-repeat -291px -30px;
+	}
+	.outer-links .birdie {
+		background: url(../img/main_sprite.png) no-repeat -291px -60px;
+	}	
+.logo {
+	width: 290px;
+	height: 85px;
+	margin: 0 auto;
+	background: url(../img/main_sprite.png) no-repeat 0 0;
+	text-indent: -9999px;
+
 }
 
 .full-hd {
