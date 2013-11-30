@@ -320,6 +320,41 @@ body {
 	position: relative;
 	width: 25%;
 }
+.gallery-item:hover {
+	z-index: 3;
+}
+.gallery-item:hover > img {
+	-webkit-transform: scale(1.05);
+       -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+         -o-transform: scale(1.05);
+            transform: scale(1.05);
+    transition: all .8s ease;
+	-webkit-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.likes {
+	position: absolute;
+    bottom: 18px;
+    left: 40%;    
+    font: 1.25em 'pf_din_text_cond_pro', sans-serif;
+    color: #fff;    
+}
+.likes-count {
+	display: inline-block;
+}
+.likes-thumb {
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+    background: url("../img/main_sprite.png") no-repeat scroll -5px -124px;
+    cursor: pointer;
+}
 .gallery-item img {
 	width: 100%;
 	height: auto;
