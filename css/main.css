@@ -466,9 +466,14 @@ body {
 }
 
 .slider-under-block {
+	left: 0;
 	position: relative;
 	width: 25%;
 	float: left;
+}
+
+.slider-text {
+	overflow: hidden;
 }
 
 .slider {
