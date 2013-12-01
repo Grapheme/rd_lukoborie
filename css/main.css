@@ -277,6 +277,7 @@ body {
 	margin: 23px 0;
 }
 .social-item {
+	overflow: hidden;
 	float: left;
 	width: 31%;
 	margin: 0 1%;
