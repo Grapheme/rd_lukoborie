@@ -109,7 +109,7 @@ $(function() {
 	});
 
 	// Обработчик на нажатие кнопки при указании email
-	$(".gallery-list").on("click", ".state.email-state .ok-button",  function() {
+	$(".gallery-list").on("click", ".state.email-state .ok-button",  function(event) {
 		event.stopPropagation();
 		var parent = $(this).parents(".gallery-item");
 

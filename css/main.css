@@ -179,10 +179,10 @@ body {
 	height: 100%;
 }
 .outer-links .panasonic {
-	background: url(../img/main_sprite.png) no-repeat -291px 0;
+	background: url(../img/main_sprite.png) no-repeat -291px -30px;
 }
 .outer-links .chop-chop {
-	background: url(../img/main_sprite.png) no-repeat -291px -30px;
+	background: url(../img/main_sprite.png) no-repeat -291px 0;
 }
 .outer-links .birdie {
 	background: url(../img/main_sprite.png) no-repeat -291px -60px;
@@ -329,7 +329,12 @@ body {
     border: none;
     color: #fff;
 }
+.buy-input {
+	width: 78%;
+	outline: none;
+}
 .buy-submit {
+	width: 20%;
     font: 0.875em/1.8571em 'DINProBold',sans-serif;    
     text-transform: uppercase;
 }
@@ -438,7 +443,7 @@ body {
 	position: absolute;
 	top: 99%;
 	left: 0;
-	z-index: 4;
+	z-index: 6;
 	width: 99.3%;
 	border: 1px solid #e3e3e3;
     background: #FFF; 
@@ -483,7 +488,7 @@ body {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	z-index: 4;
+	z-index: 6;
 	width: 99.8%;
 	border-width: 0px 1px 0 1px;
 	border-color: #e3e3e3;
@@ -643,11 +648,54 @@ body {
 .state.thank-email-state, 
 .state.thank-vote-state,  
 .state.email-state {
+	position: relative;
 	color : white;
 	top: 0; left : 0;
 	display: none;
 	background-color: rgba(0,0,0,0.5);
 	z-index : 4;
+}
+.thank-email-state .condition-container,
+.thank-vote-state .condition-container {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+}
+.thank-email-state .condition-container {
+    margin: -36px 0 0;
+}
+.thank-vote-state .condition-container {
+	margin: -27px 0 0;
+}
+.email-state .condition-container {
+	padding: 0 1.7em;
+	text-align: center;
+}
+.email-state .condition-container .cond-head {
+    font-size: 0.95em;
+    padding: 2.5em 0;
+}
+.email-state .condition-container .discount-form {
+	border-color: #fff;
+}
+.email-state .condition-container .buy-input {
+	float: left; width: 74%;
+}
+.email-state .condition-container .buy-submit {
+	float: left; width: 25%;
+}
+.cond-head {
+	margin: 0 0 0.6em;
+	font: 1.125em/1.2em 'DINProBold',sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+}
+.cond-check-email {
+    font: 0.875em/1.2857em 'garamondbookcitalic', serif;
+}
+.thank-email-state {
+	text-align: center;
 }
 
 .vote-state .likes-container {
