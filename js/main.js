@@ -5,17 +5,58 @@ $(document).ready( function(){
 		$(this).parent().parent().find('.overlay').css({ display: 'block', opacity: 1 });	
 	});
 
-				$(".fancybox").fancybox({
-				padding: 25,
-				helpers: {
-		    		overlay: {
-		      			locked: false
-		    		},
-		    		title: {
-		    			type: 'outside'
-		    		}
-		  		}
-		 	});
+	$(".fancybox").fancybox({
+		padding: 25,
+		helpers: {
+	   		overlay: {
+	   			locked: false
+	   		},
+	   		title: {
+	   			type: 'outside'
+	   		}
+		}
+	});
+	
+	$('.f-date').click( function(){
+		$(this).find('.date-table').slideToggle(400);
+	});
+	$('.f-salon').click( function(){
+		$(this).find('.chop-list').slideToggle(400);
+	});
+	$('.chop-place').click( function(){
+		var parentBlock = $('.f-salon');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).find('.chop-name').text();
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.date-trigger').click( function(){
+		var parentBlock = $('.f-date');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).text() + ' декабря';
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.f-salon .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-salon');
+		var defaultSelectedValue = 'Все салоны';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
+	$('.f-date .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-date');
+		var defaultSelectedValue = 'Любая';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
 });
 
 
