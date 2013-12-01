@@ -124,7 +124,8 @@ body {
 /* ==========================================================================
    Transition-elems
    ========================================================================== */
-.footer-nav-item a {
+.footer-nav-item a,
+.gallery-item .likes {
    	transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -317,12 +318,12 @@ body {
 .gallery-item:hover {
 	z-index: 3;
 }
-.gallery-item:hover > img {
-	-webkit-transform: scale(1.05);
-       -moz-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-         -o-transform: scale(1.05);
-            transform: scale(1.05);
+.gallery-item:hover .fancybox > img {
+	-webkit-transform: scale(1.02);
+       -moz-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+         -o-transform: scale(1.02);
+            transform: scale(1.02);
     transition: all .8s ease;
 	-webkit-transition: all .8s ease;
 	-moz-transition: all .8s ease;
@@ -332,6 +333,13 @@ body {
 	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
+.gallery-item:hover .likes {
+	-webkit-transform: scale(1.05);
+       -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+         -o-transform: scale(1.05);
+            transform: scale(1.05);    
+}
 .likes {
 	position: absolute;
     bottom: 18px;
@@ -339,6 +347,21 @@ body {
     font: 1.25em 'pf_din_text_cond_pro', sans-serif;
     color: #fff;    
 }
+.like-from {
+	
+}
+.like-from-logo {
+	
+}
+.like-from-body {
+	
+}
+	.like-from-vk {
+		
+	}
+	.like-from-fb {
+		
+	}
 .likes-count {
 	display: inline-block;
 }
@@ -394,7 +417,22 @@ body {
 .sign {
 	padding: 0 2em;
 }
-	
+.dc-form-capt {
+    margin: .5em 0;
+}
+.discount-form {
+    border-bottom: 1px solid #444;
+}
+.line-input {
+    background: transparent;
+    border: none;
+    float: left;
+    width: 75%;
+}
+.line-submit {
+    border: none;
+    font: 1em 'pf_din_text_cond_pro', sans-serif;
+}
 
 
 
@@ -428,9 +466,14 @@ body {
 }
 
 .slider-under-block {
+	left: 0;
 	position: relative;
 	width: 25%;
 	float: left;
+}
+
+.slider-text {
+	overflow: hidden;
 }
 
 .slider {
