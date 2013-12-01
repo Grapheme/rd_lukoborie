@@ -46,7 +46,8 @@
 	        		Конкурс "Лукоборье"
 	        	</h1>
 	        </header>	        
-	    <!-- section gallery -->
+	  	 	
+	  	 	<!-- section gallery -->
 	        <section class="gallery">
 	        	<header class="sect-head">
 	        		<div class="sect-desc">
@@ -65,98 +66,94 @@
 	        	<div class="filters clearfix">
 	        		<div class="filters-item f-date">
 	        			<div class="filter-container">
-		        			Выберите дату стрижки:
-		        			<span class="chosen-date">Любая</span>
+		        			<div>Выберите дату стрижки:</div>
+		        			<div class="chosen-date"><div class="chosen-value">Любая</div><div class="cross">✕</div></div>
+		        			<div class="clear"></div>
 	        			</div>
 	        			<div class="date-table">
-	        				<table>
-	        					<thead>
-	        						<tr>
-	        							<th class="table-header" colspan="7">Декабрь</th>
-	        						</tr>
-	        					</thead>
-	        					<tbody>
-	        						<tr>
-	        							<th>П</td>
-	        							<th>В</td>
-	        							<th>С</td>
-	        							<th>Ч</td>
-	        							<th>П</td>
-	        							<th>С</td>
-	        							<th>В</td>
-	        						</tr>
-	        						<tr class="week-1-list">
-	        							<td>2</td>
-	        							<td>3</td>
-	        							<td>4</td>
-	        							<td>5</td>
-	        							<td>6</td>
-	        							<td>7</td>
-	        							<td>8</td>
-	        						</tr>
-	        						<tr class="week-2-list">
-	        							<td>9</td>
-	        							<td>10</td>
-	        							<td>11</td>
-	        							<td>12</td>
-	        							<td>13</td>
-	        							<td>14</td>
-	        							<td>15</td>
-	        						</tr>
-	        					</tbody>
-	        				</table>
+	        				<div class="date-table-header">Декабрь</div>
+	        				<ul class="date-list">
+	        					<li class="date-item day-name">П</li>
+	        					<li class="date-item day-name">В</li>
+	        					<li class="date-item day-name">С</li>
+	        					<li class="date-item day-name">Ч</li>
+	        					<li class="date-item day-name">П</li>
+	        					<li class="date-item day-name">С</li>
+	        					<li class="date-item day-name">В</li>
+	        				</ul>
+	        				<ul class="date-list day-number">
+	        					<li class="date-item date-trigger">2</li>
+	        					<li class="date-item date-trigger">3</li>
+	        					<li class="date-item date-trigger">4</li>
+	        					<li class="date-item date-trigger">5</li>
+	        					<li class="date-item date-trigger">6</li>
+	        					<li class="date-item date-trigger">7</li>
+	        					<li class="date-item date-trigger">8</li>
+	        					<li class="date-item date-trigger">9</li>
+	        					<li class="date-item date-trigger">10</li>
+	        					<li class="date-item date-trigger">11</li>
+	        					<li class="date-item date-trigger">12</li>
+	        					<li class="date-item date-trigger">13</li>
+	        					<li class="date-item date-trigger">14</li>
+	        					<li class="date-item date-trigger">15</li>
+	        				</ul>	        				
 	        			</div>
 	        		</div>
 	        		<div class="filters-item f-salon">
 	        			<div class="filter-container">
-		        			Выберите парикмахерскую
-		        			<span class="chosen-salon">Все салоны</span>
+		        			<div>Выберите парикмахерскую</div>
+		        			<div class="chosen-salon"><div class="chosen-value">Все салоны</div><div class="cross">✕</div></div>
 	        			</div>
+	        			<ul class="chop-list">
+	        				<li class="chop-place"><span class="chop-name">Birdie на большой бронной</span> <span class="chop-arrow">&lt;</span></li>
+	        				<li class="chop-place"><span class="chop-name">CHOP-CHOP на Патриарших</span> <span class="chop-arrow">&lt;</span></li>
+	        				<li class="chop-place"><span class="chop-name">CHOP-CHOP на Маяковской</span> <span class="chop-arrow">&lt;</span></li>
+	        				<li class="chop-place"><span class="chop-name">CHOP-CHOP на парке Культуры</span> <span class="chop-arrow">&lt;</span></li>
+	        			</ul>
 	        		</div>
 	        	</div>
 	        	<div class="gallery-body">
 
+	        		<script id="fancybox-template" type="text/x-handlebars-template">
+	        			<img src="{{ image }}"></img>
+        				
+					</script>
+
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
 
-        				<div class="image-container" style="background-image : url({{ image }})">
-        					<div class="likes">
-        						<div class="likes-count">{{ likes }}</div>
-        						<div class="likes-thumb"></div>
-        					</div>
-        				</div>
+        				<div class="image-container" style="background-image : url({{ avatar }})"></div>
+        				<div class=""></div>
+    					<div class="likes">
+    						<div class="likes-count">{{ likes }}</div>
+    						<div class="likes-thumb"></div>
+    					</div>
 					</script>
 
 					<script id="gallery-photograph-template" type="text/x-handlebars-template">
-						<li class="gallery-item">
-	        				<!--<img src="img/gallery_example/Gallery_06.jpg" alt="">-->
-	        				<div class="photograph">
-	        					<div class="ph-caption">Фотограф проекта</div>
-	        					<div class="ph-avatar">
-	        						<img src="img/avatars/avd.jpg">
-	        					</div>
-	        					<div class="quote top-quote">“</div>
-	        					<div class="desc">
-	        						Lumix GX7 -
-	        						потрясающий
-	        						фотоаппарат.
-	        						А этот конкурс
-	        						стал для меня
-	        						венцом
-	        						карьеры.
-	        					</div>
-	        					<div class="quote bottom-quote">”</div>
-	        					<div class="sign">
-	        						Авдотий
-	        						Переверзиев
-	        					</div>	        					
-	        				</div>
-	        			</li>
+        				<div class="photograph">
+        					<div class="ph-caption">Фотограф проекта</div>
+        					<div class="ph-avatar">
+        						<img src="{{ avatar }}">
+        					</div>
+        					<div class="quote top-quote">“</div>
+        					<div class="desc">
+        						{{ desc }}
+        					</div>
+        					<div class="quote bottom-quote">”</div>
+        					<div class="sign">
+        						{{ name}}
+        					</div>	        					
+        				</div>
 					</script>
 
 	        		<!-- Infinite Scroll Section -->
-	        		<ul class="gallery-list effect-2">	
+	        		<ul class="gallery-list infinite-scroll effect-2">	
 	        			<li class="gallery-item"></li>
 	        		</ul>
+
+	        		<div class="loader-container">
+	        			<img src="img/loader.gif"></img>
+	        		</div>
 	        	</div>
 	        </section>	
 
@@ -183,12 +180,11 @@
 		<script src="js/vendor/imagesloaded.min.js"></script>
         <script src="js/vendor/handlebars.js"></script>
         <script src="js/vendor/masonry.min.js"></script>
+        <script src="js/vendor/jquery.fancybox.pack.js"></script>
 
         <script src="js/infiniteScroll.js"></script>
 
         <script src="js/plugins.js"></script>
-
-        <script src="js/vendor/jquery.fancybox.pack.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,106 +1,224 @@
-		
-
-$(document).ready( function(){
-	$('.gallery-item .likes-thumb').click( function(){
-		$(this).parent().parent().find('.overlay').css({ display: 'block', opacity: 1 });	
-	});
-
-				$(".fancybox").fancybox({
-				padding: 25,
-				helpers: {
-		    		overlay: {
-		      			locked: false
-		    		},
-		    		title: {
-		    			type: 'outside'
-		    		}
-		  		}
-		 	});
-});
-
-
-$(window).load(function() {
-	window.scrollTo(0,0);
-});
 
 $(function() {
-	var itemTemplate = Handlebars.compile( $("#gallery-item-template").html() );
-	var photographTemplate = Handlebars.compile( $("#gallery-photograph-template").html() );
+
+	// ----------------------------------------------------------------------------
+	// Шаблоны
+	// ----------------------------------------------------------------------------
+	var fancyboxTemplate = Handlebars.compile( 
+		$("#fancybox-template").html() );
+
+	var itemTemplate = Handlebars.compile( 
+		$("#gallery-item-template").html() );
+
+	var photographTemplate = Handlebars.compile( 
+		$("#gallery-photograph-template").html() );
+	
+	// $(".fancybox").fancybox({
+	// 	padding: 25,
+	// 	helpers: {
+	//    		overlay: {
+	//    			locked: false
+	//    		},
+	//    		title: {
+	//    			type: 'outside'
+	//    		}
+	// 	}
+	// });
+	
+
+	// ----------------------------------------------------------------------------
+	// Интерфейсная часть : фильтры
+	// ----------------------------------------------------------------------------
+
+	$('.f-date').click( function(){
+		$(this).find('.date-table').slideToggle(400);
+	});
+	$('.f-salon').click( function(){
+		$(this).find('.chop-list').slideToggle(400);
+	});
+	$('.chop-place').click( function(){
+		var parentBlock = $('.f-salon');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).find('.chop-name').text();
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.date-trigger').click( function(){
+		var parentBlock = $('.f-date');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).text() + ' декабря';
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.f-salon .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-salon');
+		var defaultSelectedValue = 'Все салоны';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
+	$('.f-date .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-date');
+		var defaultSelectedValue = 'Любая';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
+
+	// ----------------------------------------------------------------------------
+	// Интерфейсная часть : элементы галереи
+	// ----------------------------------------------------------------------------
+
+	// Обработчик клика на лук
+	$(".gallery-list").on("click", ".gallery-item",  function() {
+		var model = $(this).data("model");
+
+		alert("Clicked photo", model.image);
+	});
 
 
-	function fetchFromServer(callback) {
+	// Обработчик клика на кнопку "лайк"
+	$(".gallery-list").on("click", ".likes-thumb",  function(event) {
+	event.stopPropagation();
+		var model = $(this).data("model");
+
+		alert("Clicked thumb", model.image);
+	});
 
 
-		var items = [];
-		for(var i = 0; i < 20; ++i) {
-			var num = Math.floor((Math.random()*19)) + 1;
-			var numStr = num.toString();
-			if(num < 10) {
-				numStr = "0"+num;
-			}
 
 
-			items.push({
-				avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
-				likes  :  Math.floor(Math.random() * 30) 
+// ----------------------------------------------------------------------------
+// Функция имитирует подргузку данных с лицами с сервера
+// ----------------------------------------------------------------------------
+function fetchGalleryItems() {
 
-			});
-		} 
+	function randomRange(a, b) {
+		return Math.floor((Math.random() * (b-a))) + a;
+	}
 
-		setTimeout(function() {
-			callback(items);
-		}, 1000);
-	};
+	var itemsCount = 40;
+	var items = [];
 
+	var defer = new $.Deferred();
 
-	function loadItems(callback) {
-		fetchFromServer(function(items) {
-			var elems = [];
-
-			for(var i = 0; i < items.length; ++i) {
-
-				var item = $("<li>").addClass("gallery-item");
-
-				item.html( itemTemplate({
-					image : items[i].avatar,
-					likes : items[i].likes
-				}));
-
-				elems.push(item[0])
-			}
-
-			var elements = $( elems );
-
-			elements.imagesLoaded(function() {
-				galleryList.append( elements );
-
-				masonry.appended( elems );
-				callback();
-
-
-			});
+	for(var i = 0; i < itemsCount; ++i) {
+		// Генерируем произвольную картинку
+		var num = randomRange(1, 19);
+		var numStr = (num < 10) ? "0" + num.toString() : num.toString();
+	
+		items.push({
+			type   : "look",
+			avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
+			likes  :  Math.floor(Math.random() * 30) 
 		});
-	};
 
+		// Переодически разбавляем ленту фотографом
+		if(i % 7 === 0) {	
+			items.push({
+				type : "photograph",
+				name :  "Авдотий Переверзиев",
+				desc : "Lumix GX7 -\n потрясающий \n фотоаппарат.\n А этот конкурс \n стал для меня \n венцом \nкарьеры.",
+				avatar : "img/avatars/avd.jpg",
+			});
+		}
+	} 
+
+	setTimeout(function() {
+		defer.resolve(items);
+	}, randomRange(500, 2500));
+
+	return defer.promise();
+};
+
+
+// ----------------------------------------------------------------------------
+// Бесконечный скролл
+// ----------------------------------------------------------------------------
+	// При загрузке странице всегда скрол вверху
+	$(window).load(function() {
+		window.scrollTo(0,0);
+	});
 
 	var galleryList = $(".gallery-list");
-	var masonry = new Masonry( galleryList[0], {
+	
+	// Укладка элементов галереи в 4 колонки
+	var masonry = new Masonry( 
+	galleryList[0], {
 		itemSelector: "li",
 		columnWidth: galleryList.width() / 4,
 		transitionDuration : 0
 	});
 
-	var infinite = new InfiniteScroll(galleryList[0], {
-		itemSelector : "li",
-		done : loadNewPortion
+	// Делает видимыми элементы по мере скрола
+	var infinite = new InfiniteScroll(
+	galleryList[0], {
+		minDuration : 0.1,
+		maxDuration : 0.6,
+		viewportFactor : 0.3,
+		itemSelector : "li"
 	});	
 
+	// Если дошли до конца, подгружаем новые элементы, которые изначально скрыты
+	var busy = false;
+	$(window).scroll(function() {
+	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
 
-	function loadNewPortion() {
-		loadItems(function() {
-			infinite.toggle();
+	   	// Флаг загрузки, TODO: сделать умнее!
+	   	if(!busy) {
+	   	  busy = true;
+	      loadItems()
+			.done(function() {
+				busy = false;
+				infinite.toggle();
+			});
+	   	}
+	   }
+	});
+
+
+// ----------------------------------------------------------------------------
+// Подгрузка новых элементов, рендеринг и добавление в DOM
+// ----------------------------------------------------------------------------
+	function loadItems() {
+		var defer = new $.Deferred();
+
+		fetchGalleryItems()
+		.done(function(items) {
+			var elems = [];
+
+			for(var i = 0; i < items.length; ++i) {
+				var renderedElement = $("<li>").addClass("gallery-item");
+				var model = items[i];
+
+				if(model.type === "look") {
+					renderedElement.html( itemTemplate( model ));
+				}
+
+				if(model.type === "photograph") {
+					renderedElement.html( photographTemplate( model ));
+				}
+
+				renderedElement.data("model", model);
+				elems.push(renderedElement[0])
+			}
+
+			var elements = $( elems );
+
+			elements.imagesLoaded(function() {
+				// Добавляем элемент в masonry
+				galleryList.append( elements );	
+				masonry.appended( elements );
+				defer.resolve();
+			});
 		});
-	};
 
-	
+		return defer.promise();
+	};
 });
