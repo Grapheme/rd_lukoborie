@@ -256,10 +256,10 @@ body {
 }
 
 /* ==========================================================================
-   Section gallery styles
+   Sections
    ========================================================================== */
 
-.gallery {
+.gallery{
 	padding: 40px;
 }
 .sect-head {
@@ -282,7 +282,106 @@ body {
 	margin: 0 1%;
 	height: 22px;
 }
-
+/*---------------------------------Product page------------------------------- */
+.product,
+.product-description {
+	padding: 40px;
+}
+.product-item {
+	position: relative;
+	height: 537px;
+	background: url(../img/product_item.jpg) 100% 100% / cover no-repeat;
+}
+.buy-links {
+    left: 40px;
+    position: absolute;
+    top: 40px;
+}
+.buy-links a {
+	display: block;
+    color: #FFFFFF;    
+    font: 0.875em/1.8571em 'DINProBold',sans-serif;
+    text-transform: uppercase;
+}
+.buy-links a:hover {
+	text-decoration: none;
+}
+.buy-form {
+	position: absolute;
+	left: 40px;
+    bottom: 40px;
+    width: 178px;
+    color: #FFFFFF;
+}
+.buy-form .discount-form {
+	margin: 1em 0;
+    border-bottom: 2px solid #FFF;   
+    font: 0.875em/1.8571em 'DINProBold',sans-serif;
+    text-transform: uppercase; 
+}
+.buy-form-capt {
+    width: 124px;
+    margin: 0 0 1em;
+}
+.buy-input,
+.buy-submit {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+.buy-submit {
+    font: 0.875em/1.8571em 'DINProBold',sans-serif;    
+    text-transform: uppercase;
+}
+.product-model,
+.product-desc-column,
+.product-short-desc {
+    float: left;
+    width: 22%;
+    margin: 0 1.5%;
+}
+.product-model,
+.pxl-size-span {
+    font: 106px/0.8em'DINProBold', sans-serif;
+}
+.product-model {	
+    text-decoration: underline;
+}
+.product-desc {
+    float: left;
+    width: 47%;
+    margin: 0 1.5%;
+}
+.columns-container {
+	margin: 0 0 4em;
+}
+.product-short-desc {
+	font: 1.75em/1.3571em 'DINProBold',sans-serif;    
+    text-transform: uppercase;
+}
+.product-desc,
+.product-desc-column {
+	font: .9375em/1.7333 "PT Sans", sans-serif;
+}
+.product-desc-column.scheme,
+.product-desc-column.pxl-size {	
+	font: 1.125em/1.555em 'DINProBold', sans-serif;
+	text-transform: uppercase;
+}
+.product-desc-column.pxl-size {
+	text-align: center;
+}
+.pxl-size-span {
+	display: block;
+	width: 80%;
+	margin: 0 auto 15px;
+	padding: 10px 0;
+    border-top: 16px solid #000000;   
+}
+.product-desc-column.scheme img {
+	display: block;
+	margin: 0 0 1em;
+}
 /*------------------------------------Filters--------------------------------- */
 .f-date {	
 	width: 26%;	
@@ -405,7 +504,6 @@ body {
 .chop-place:hover .chop-arrow {
 	opacity: 1;
 }
-
 .chop-arrow {
 	display: inline-block;
 	height: 30px;
@@ -459,6 +557,7 @@ body {
 	
 /*------------------------------------Gallery--------------------------------- */
 
+/* Ajax loader */
 .loader-container {
 	margin-top: 3em;
 	text-align: center;
@@ -482,7 +581,7 @@ body {
 }
 
 .gallery-item:hover {
-	z-index: 3;
+	z-index: 5;
 }
 .gallery-item:hover .image-container {
 	-webkit-transform: scale(1.05);
@@ -501,7 +600,33 @@ body {
 	   -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
-.gallery-item .likes-thumb:hover {
+
+.state {
+	position: relative;
+	top : 0; left : 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*  -----------------------------------------------------------------------
+	Состояние : обычное 
+*/
+.state.normal-state { 
+	cursor: pointer;
+}
+
+
+
+.normal-state .likes {
+	position: absolute;
+    bottom: 18px;
+    left: 40%;    
+    font: 1.25em 'DINProBold', sans-serif;
+    color: #fff;    
+}
+
+.normal-state .likes-thumb:hover {
 	-webkit-transform: scale(1.2);
        -moz-transform: scale(1.2);
         -ms-transform: scale(1.2);
@@ -515,13 +640,50 @@ body {
     		transition: all .3s ease;
 }
 
-.likes {
-	position: absolute;
-    bottom: 18px;
-    left: 40%;    
-    font: 1.25em 'DINProBold', sans-serif;
-    color: #fff;    
+
+/* Состояние: все, кроме обычного! */
+.state.vote-state, 
+.state.thank-email-state, 
+.state.thank-vote-state,  
+.state.email-state {
+	color : white;
+	top: 0; left : 0;
+	display: none;
+	background-color: rgba(0,0,0,0.5);
+	z-index : 4;
 }
+
+.vote-state .likes-container {
+	position: absolute;
+	top: 100px; left : 0;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	color : white;
+	text-align: center;
+}
+
+.vote-state .social-buttons-container {
+	position: absolute;
+	width: 100%;
+	bottom: 18px;
+	padding: 0;
+}
+.vote-state  .social-button {
+	color : white;
+	cursor: pointer;
+    
+    font: 1em 'DINProBold', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #6982C7;
+	padding: 0.5em;
+	margin-top: 5px;
+	margin-left : 18px;
+	margin-right : 18px;
+}
+
+
 .like-from {
 	
 }

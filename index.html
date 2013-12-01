@@ -120,13 +120,40 @@
 					</script>
 
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
+        				<div class="image-container" style="background-image : url({{ avatar }})">
+        					
+        					<div class="state normal-state">
+	        					<div class="likes">
+	    							<div class="likes-count">{{ likes }}</div>
+	    							<div class="likes-thumb"></div>
+	    						</div>
+	        				</div>
 
-        				<div class="image-container" style="background-image : url({{ avatar }})"></div>
-        				<div class=""></div>
-    					<div class="likes">
-    						<div class="likes-count">{{ likes }}</div>
-    						<div class="likes-thumb"></div>
-    					</div>
+	        				<div class="state vote-state">
+	        					<div class="likes-container">
+	        						{{ likes }}
+	        					</div>
+
+	        					<div class="social-buttons-container">
+	        						<div class="social-button facebook">Через Facebook</div>
+	        						<div class="social-button vkontakte">Через Вконтакте</div>
+	        					</div>
+	        				</div>
+
+							<div class="state thank-vote-state">
+	        					 Спасибо за ваш голос!
+	        				</div>	
+
+	        				<div class="state email-state">
+	        					 Укажите ваш email
+	        					 <a class="ok-button">ОК</a>
+	        				</div>	
+
+	        				<div class="state thank-email-state">
+	        					Спасибо за участие!
+	        				</div>	
+	    					
+	    				</div>
 					</script>
 
 					<script id="gallery-photograph-template" type="text/x-handlebars-template">

@@ -13,18 +13,6 @@ $(function() {
 	var photographTemplate = Handlebars.compile( 
 		$("#gallery-photograph-template").html() );
 	
-	// $(".fancybox").fancybox({
-	// 	padding: 25,
-	// 	helpers: {
-	//    		overlay: {
-	//    			locked: false
-	//    		},
-	//    		title: {
-	//    			type: 'outside'
-	//    		}
-	// 	}
-	// });
-	
 
 	// ----------------------------------------------------------------------------
 	// Интерфейсная часть : фильтры
@@ -75,20 +63,58 @@ $(function() {
 	// Интерфейсная часть : элементы галереи
 	// ----------------------------------------------------------------------------
 
-	// Обработчик клика на лук
-	$(".gallery-list").on("click", ".gallery-item",  function() {
-		var model = $(this).data("model");
+	// // Обработчик клика на лук
+	// $(".gallery-list").on("click", ".state.normal-state",  function() {
+	// 	var parent = $(this).parents(".gallery-item");
 
-		alert("Clicked photo", model.image);
-	});
+	// 	// TODO: Показывать модальное окно!
+	// });
+
+	// $(".gallery-list").on("click", ".state.vote-state",  function() {
+	// 	var parent = $(this).parents(".gallery-item");
+
+	// 	parent.find(".state.thank-vote-state").show();
+	// 	parent.find(".state:not(.thank-vote-state)").hide();
+	// });
+
+	// $(".gallery-list").on("click", ".state.thank-vote-state",  function() {
+	// 	var parent = $(this).parents(".gallery-item");
+
+	// 	parent.find(".state.email-state").show();
+	// 	parent.find(".state:not(.email-state)").hide();
+	// });
 
 
 	// Обработчик клика на кнопку "лайк"
-	$(".gallery-list").on("click", ".likes-thumb",  function(event) {
-	event.stopPropagation();
-		var model = $(this).data("model");
+	$(".gallery-list").on("click", ".state.normal-state .likes-thumb",  function(event) {
+		event.stopPropagation();
+		var parent = $(this).parents(".gallery-item");
 
-		alert("Clicked thumb", model.image);
+		parent.find(".state.vote-state").show();
+		parent.find(".state:not(.vote-state)").hide();
+	});
+
+	// Обработчик клика на одну из социальных кнопок
+	$(".gallery-list").on("click", ".state.vote-state .social-button",  function(event) {
+		event.stopPropagation();
+		var parent = $(this).parents(".gallery-item");
+
+		parent.find(".state.thank-vote-state").show();
+		parent.find(".state:not(.thank-vote-state)").hide();
+
+		setTimeout(function() {	
+			parent.find(".state.email-state").show();
+			parent.find(".state:not(.email-state)").hide();
+		}, 2000);
+	});
+
+	// Обработчик на нажатие кнопки при указании email
+	$(".gallery-list").on("click", ".state.email-state .ok-button",  function() {
+		event.stopPropagation();
+		var parent = $(this).parents(".gallery-item");
+
+		parent.find(".state.thank-email-state").show();
+		parent.find(".state:not(.thank-email-state)").hide();
 	});
 
 
@@ -132,7 +158,7 @@ function fetchGalleryItems() {
 
 	setTimeout(function() {
 		defer.resolve(items);
-	}, randomRange(500, 2500));
+	}, randomRange(500, 600));
 
 	return defer.promise();
 };
