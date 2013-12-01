@@ -507,7 +507,7 @@ body {
 .full-hd {
 	font-size: 124px;
 	text-transform: uppercase;
-	letter-spacing: -5px;
+	letter-spacing: -12px;
 	margin-left: -5px;
 }
 
@@ -539,6 +539,7 @@ body {
 }
 
 .slider-text {
+	position: relative;
 	overflow: hidden;
 }
 
