@@ -123,7 +123,6 @@
         				<div class="image-container" style="background-image : url({{ avatar }})">
         					
         					<div class="state normal-state">
-        						<div class="state-cross">✕</div>
 	        					<div class="likes">
 	    							<div class="likes-count">{{ likes }}</div>
 	    							<div class="likes-thumb"></div>
@@ -131,6 +130,7 @@
 	        				</div>
 
 	        				<div class="state vote-state">
+        						<div class="state-cross">✕</div>
 	        					<div class="likes-container">
 	        						{{ likes }}
 	        					</div>
@@ -142,6 +142,8 @@
 	        				</div>
 
 							<div class="state thank-vote-state">
+        						<div class="state-cross">✕</div>
+
 	        					 <div class="condition-container">
 		        					 <div class="cond-head">
 		        					 	Спасибо<br>за ваш голос!
@@ -150,6 +152,8 @@
 	        				</div>	
 
 	        				<div class="state email-state">
+        						<div class="state-cross">✕</div>
+
 	        					<div class="condition-container">
 	        						<div class="cond-head">
 		        					 	Теперь твой фаворит<br>
@@ -161,7 +165,8 @@
 	        					 	<div class="cond-check-email">
 	        					 		Введите свой email, чтобы участвовать в розыгрыше призов
 	        					 	</div>
-	        					 	<form class="discount-form clearfix">
+
+	        					 	<form class="discount-form clearfix" action="javascript:void(0)">
 		        					 	<input type="text" class="buy-input">
 		        						<input type="submit" value="OK" class="buy-submit ok-button">
 	        						</form>
@@ -169,6 +174,8 @@
 	        				</div>	
 
 	        				<div class="state thank-email-state">
+        						<div class="state-cross">✕</div>
+
 	        					<div class="condition-container">
 		        					<div class="cond-head">Спасибо<br>за участие!</div>
 		        					<div class="cond-check-email">проверьте вашу почту.</div>
