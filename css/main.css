@@ -727,11 +727,9 @@ body {
 }
 .vote-state  .social-button {
 	color : #fff;
-	cursor: pointer;
-    
-    font: 1em/2.6em 'DINProBold', sans-serif;
+	cursor: pointer;    
+    font: .9em/2.9em 'DINProBold', sans-serif;
 	text-transform: uppercase;
-	text-align: center;
 	padding: 0;
 	margin: 5px 18px 0;
 }
@@ -745,8 +743,9 @@ body {
     float: left;
     width: 8px;
     height: 42px;
+    margin: 0 15px 0 0;
     padding: 0 20px 0 18px;
-    font-family: 700 1.4em/1.8em 'PT Sans', sans-serif;
+    font: 700 1.7em/1.8em 'PT Sans', sans-serif;
     text-transform: none;    
     -moz-box-shadow: -2px 0px 5px -5px rgba(40, 40, 40, .4) inset;
 	-webkit-box-shadow: -2px 0px 5px -5px rgba(40, 40, 40, .4) inset;
@@ -757,7 +756,7 @@ body {
 }
 .vk-logo {
     background: #4E6E94;
-    font-size: 1.3em;
+    font-size: 1.5em;
     line-height: 1.9em;
 }
 .likes-count {
