@@ -5,24 +5,32 @@
 var $countClasses 	= 0;
 var $classes 		= [];
 var $counts 		= [];
-var $text_blocks 	= 0; 	//last block id
-var $product_min 	= 0;	//product first id
-var $video_min;				//video first id
-var $image_min;				//image first id
-var $images_all;			//amount of all slides
+var $text_blocks 	= 0; 	// Last block id
+var $product_min 	= 0;	// Product first id
+var $video_min;				// Video first id
+var $image_min;				// Image first id
+var $images_all;			// Amount of all slides
 var $step			= $('.wrapper').width()/4;
+var $slider_text	= '.slider-text';
+var $text_block 	= '.slider-text .slider-under-block';
+
+var $tblock_speed 	= 1000; // Speed of text blocks animation
+var $text_top_speed = 1000; // Speed of text getting top
+
+var $text_to_top	= 100; 	// px
 
 /*
  * each
  */
 
-//Counting numbers of slides
+// Counting numbers of slides
 $('.fotos img').each(function(){
 	$counts[$countClasses] = $countClasses;
 	$classes[$countClasses] = $(this).attr('class');
 	$countClasses++;
 });
 
+// Set id for text blocks
 $('.slider-under-block').each(function(){
 	$(this).attr('data-text',$text_blocks);
 	$text_blocks++;
@@ -68,16 +76,12 @@ $('.fotos').on('fotorama:show',function(){
 });
 
 $('.slider-to-right').click(function() {
-	addSlideBlock('right');
-	textSlide('right');
-	fotorama.show('>');
+	toRight();
 	return false;
 });
 
 $('.slider-to-left').click(function() {
-	addSlideBlock('left');
-	textSlide('left');
-	fotorama.show('<');
+	toLeft();
 	return false;
 });
 
@@ -85,23 +89,86 @@ $('.slider-to-left').click(function() {
  * Functions
  */
 
-//Adding new block before slide
-function addSlideBlock(direct) {
-	this.block_width = $('.slider-text .slider-under-block').first().width();
-	this.before_first_block = $('.slider-text .slider-under-block').first().attr('data-text-id');
-	this.before_last_block = $('.slider-text .slider-under-block').last().attr('data-text-id');
-	
+function toRight() {
+	if (!sliderOn() && !textBlockOn()) {
+		textDown();
+		setTimeout(function(){
+			addSlideBlock('right');
+			textSlide('right');
+			textToTop('right');
+		},$text_top_speed);
+	}
+	fotorama.show('>');
+}
+
+function toLeft() {
+	if (!sliderOn() && !textBlockOn()) {
+		addSlideBlock('left');
+		textSlide('left');
+		setTimeout(function(){
+			textToTop('left');
+		}, $tblock_speed);
+	}
+	fotorama.show('<');
+}
+
+// Right text block to top
+function textToTop(direct) {
 	if(direct == 'right') {
-		$('.slider-text .slider-under-block').last().after(getBlockOfId(parseInt(before_last_block)+1));
-		$('.slider-text .slider-under-block').last().css({ 'width': $step });
-		$('.slider-text .slider-under-block').first().remove();
-		$('.slider-text').css('left',0);
+		this.text_id = parseInt($($text_block).last().attr('data-text-id'));
+		if(text_id == $text_blocks)
+		{
+			text_id = 0;
+		}
+		$($text_block + "[data-text-id=" + text_id + "]").css('top', -$text_to_top).addClass('text-top');
 	}
 	if(direct == 'left') {
-		$('.slider-text .slider-under-block').first().before(getBlockOfId(parseInt(before_first_block)-1));
-		$('.slider-text .slider-under-block').first().css({ 'width': $step });
-		$('.slider-text .slider-under-block').last().remove();
-		$('.slider-text').css('left', -2*$step);
+		this.text_id = parseInt($($text_block).last().attr('data-text-id'))-1;
+		if(text_id == -1)
+		{
+			text_id = $text_blocks-1;
+		}
+		$($text_block + "[data-text-id=" + text_id + "]").animate({top: -$text_to_top}, $text_top_speed).addClass('text-top');
+	}
+	console.log(text_id);
+}
+
+function textDown() {
+	$('.text-top').first().animate({ top: 0 }, $text_top_speed);
+	$('.text-top').first().removeClass('text-top');
+}
+
+//Adding new block before slide
+function addSlideBlock(direct) {
+	this.block_width 		= $($text_block).first().width();
+	this.before_last_block 	= $($text_block).last().attr('data-text-id');
+	this.before_first_block = $($text_block).first().attr('data-text-id');
+	
+	if(parseInt(before_last_block)+1<$text_blocks)
+	{
+		this.lastId = parseInt(before_last_block)+1;
+	} else {
+		this.lastId = 0;
+	}
+	
+	if(parseInt(before_last_block)==5)
+	{
+		this.firstId = $text_blocks-1;
+	} else {
+		this.firstId = parseInt(before_first_block)-1;
+	}
+	
+	if(direct == 'right') {
+		$($text_block).last().after(getBlockOfId(lastId));
+		$($text_block).last().css({ 'width': $step });
+		$($text_block).first().remove();
+		$($slider_text).css('left',0);
+	}
+	if(direct == 'left') {
+		$($text_block).first().before(getBlockOfId(firstId));
+		$($text_block).first().css({ 'width': $step });
+		$($text_block).last().remove();
+		$($slider_text).css('left', -2*$step);
 	}
 }
 
@@ -115,10 +182,11 @@ function setNewBlocks() {
 	}
 	blocks += getBlockOfId(4);
 	this.block_str = '<div class="slider-text">' + blocks + '</div>'; 
-	$('.slider-text .slider-under-block').last().addClass('right-block');
 	$('.slider-text-blocks').after(block_str);
-	$('.slider-text').css({ 'left': -$('.slider-text .slider-under-block').width() , 'width': $('.slider-text .slider-under-block').width()*6 });
-	$('.slider-text .slider-under-block').css({ 'width': $('.slider-text').width()/6 });
+	$($slider_text).css({ 'left': -$($text_block).width() , 'width': $('.slider-text .slider-under-block').width()*6 });
+	$($text_block).css({ 'width': $($slider_text).width()/6 });
+	$($text_block).last().css('top', -$text_to_top).addClass('text-top');
+	$($text_block + "[data-text-id=3]").css('top', -$text_to_top).addClass('text-top');
 }
 
 //geting block of id
@@ -153,10 +221,8 @@ function textSlide(direction) {
 			this.text_width = $step*(-1);
 			break;
 	}
-	if (!$('.slider-text').is(':animated')) {
-			//$(this).animate({ left: parseInt($(this).css('left')) + text_width }, 1000);
-			$('.slider-text').animate({ left: parseInt($('.slider-text').css('left')) + text_width });
-		//setTimeout(function(){addSlideBlock();},1000);
+	if (!sliderOn()) {
+			$($slider_text).animate({ left: parseInt($('.slider-text').css('left')) + text_width }, $tblock_speed);
 	}
 }
 
@@ -175,4 +241,21 @@ function setActiveLink(id) {
 	this.idclass = $classes[id];
 	$('.slider-nav a').removeClass('active');
 	$('.slider-nav a[data-to=' + idclass + ']').addClass('active');
+}
+
+//if slider of text blocks is animated
+function sliderOn() {
+	if ($($slider_text).is(':animated')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function textBlockOn() {
+	if ($('.slider-under-block').is(':animated')) {
+		return true;
+	} else {
+		return false;
+	}
 }
