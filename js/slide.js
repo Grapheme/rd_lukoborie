@@ -13,9 +13,11 @@ var $images_all;			// Amount of all slides
 var $step			= $('.wrapper').width()/4;
 var $slider_text	= '.slider-text';
 var $text_block 	= '.slider-text .slider-under-block';
+var $left_text		= 0;
 
 var $tblock_speed 	= 1000; // Speed of text blocks animation
 var $text_top_speed = 1000; // Speed of text getting top
+var $left_anim_speed= 1000; // Speed of left text animation
 
 var $text_to_top	= 100; 	// px
 
@@ -36,6 +38,16 @@ $('.slider-under-block').each(function(){
 	$text_blocks++;
 });
 
+$('.slide-left-text').each(function(){
+	if($left_text != 0) {
+		$(this).css('display', 'none');
+	} else {
+		$(this).addClass('active-text');
+	}
+	$(this).attr('data-lid',$left_text);
+	$left_text++;
+});
+
 /*
  * Document ready
  */
@@ -52,6 +64,7 @@ $(function(){
 	});
 	getImagesCount();
 	setNewBlocks();
+	getLeftWidth();
 });
 
 /*
@@ -91,6 +104,7 @@ $('.slider-to-left').click(function() {
 
 function toRight() {
 	if (!sliderOn() && !textBlockOn()) {
+		changeText('right');
 		textDown();
 		setTimeout(function(){
 			addSlideBlock('right');
@@ -103,6 +117,7 @@ function toRight() {
 
 function toLeft() {
 	if (!sliderOn() && !textBlockOn()) {
+		changeText('left');
 		addSlideBlock('left');
 		textSlide('left');
 		setTimeout(function(){
@@ -110,6 +125,21 @@ function toLeft() {
 		}, $tblock_speed);
 	}
 	fotorama.show('<');
+}
+
+function changeText(direct) {
+	$('.active-text').slideUp();
+	if(direct == 'right') {
+		this.textid = $($text_block+":eq(2)").attr('data-text-id');
+	}
+	if(direct == 'left') {
+		this.textid = $($text_block+":eq(0)").attr('data-text-id');
+	}
+	$('.slide-left-text[data-lid=' + textid + ']').slideDown().addClass('active-text');
+}
+
+function getLeftWidth() {
+	$('.slide-left-line').animate({ width: $('.active-text').width() }, $left_anim_speed);
 }
 
 // Right text block to top

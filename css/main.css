@@ -637,8 +637,6 @@ body {
 	margin-left: -5px;
 }
 
-
-
 .slider-wrap {
 	
 }
@@ -705,6 +703,24 @@ body {
 		color: #727272;
 		border-bottom: none;
 	}
+	
+.slide-left-text {
+	font-family: 'DINProBold', sans-serif;
+	font-size: 100px;
+	position: relative;
+	display: inline-block;
+}
+
+.slide-left-line {
+	display: inline-block;
+	height: 20px;
+	width: 100px;
+	background: #000;
+}
+
+.slide-texts {
+	height: 100px;
+}
 
 /* ==========================================================================
    Helper classes
