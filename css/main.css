@@ -127,7 +127,7 @@ body {
 .footer-nav-item a,
 .gallery-item .likes,
 .filter-container,
-.date-trigger
+.date-trigger,
 .chop-place,
 .chop-arrow {
    	transition: all .5s ease;
@@ -273,7 +273,8 @@ body {
 	*display: inline;
 	zoom: 1;
 	
-	width: 327px;
+	width: 334px;
+	height: 25px;
 	margin: 23px 0;
 }
 .social-item {
@@ -281,7 +282,7 @@ body {
 	float: left;
 	width: 31%;
 	margin: 0 1%;
-	height: 22px;
+	height: 100%;
 }
 /*---------------------------------Product page------------------------------- */
 .product,
@@ -629,21 +630,22 @@ body {
     font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
 }
-.normal-state .likes-thumb {
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-		-ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-    		transition: all .3s ease;
-}
+
 .normal-state .likes-thumb:hover {
-	-webkit-transform: scale(1.2);
-       -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-         -o-transform: scale(1.2);
-            transform: scale(1.2);      
+	-webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);      
 }
 
+.state-cross {
+	position: absolute;
+	top : 10px;
+	right: 10px;
+	cursor: pointer;
+	font-weight: 700;
+}
 
 /* Состояние: все, кроме обычного! */
 .state.vote-state, 
@@ -674,18 +676,18 @@ body {
 	text-align: center;
 }
 .email-state .condition-container .cond-head {
-    font-size: 0.95em;
+    font-size: 0.85em;
     line-height: 1.5em;
-    padding: 3.5em 0 1.5em;
+    padding: 3.5em 0 3em;
 }
 .email-state .condition-container .discount-form {
-	border-color: #fff;
+	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
 	float: left; width: 74%;
 }
 .email-state .condition-container .buy-submit {
-	float: left; width: 25%;
+	float: left; width: 24%;
 }
 .cond-head {
 	margin: 0 0 0.6em;
@@ -705,7 +707,9 @@ body {
 	top: 100px; left : 0;
 	width: 100%;
 	height: 100%;
-	vertical-align: middle;
+
+    font: 2em 'DINProBold', sans-serif;
+	text-transform: uppercase;
 	color : white;
 	text-align: center;
 }
@@ -717,27 +721,48 @@ body {
 	padding: 0;
 }
 .vote-state  .social-button {
-	color : white;
-	cursor: pointer;
-    
-    font: 1em 'DINProBold', sans-serif;
+	color : #fff;
+	cursor: pointer;    
+    font: .9em/2.9em 'DINProBold', sans-serif;
 	text-transform: uppercase;
-	text-align: center;
-	background-color: #6982C7;
-	padding: 0.5em;
-	margin-top: 5px;
-	margin-left : 18px;
-	margin-right : 18px;
+	padding: 0;
+	margin: 5px 18px 0;
 }
-
-.likes-count {
+.social-button.facebook {
+    background: #52679E;
+}
+.social-button.vkontakte {
+    background: #617FA1;
+}
+.fb-logo, .vk-logo {
+    float: left;
+    width: 8px;
+    height: 42px;
+    margin: 0 15px 0 0;
+    padding: 0 20px 0 18px;
+    font: 700 1.7em/1.8em 'PT Sans', sans-serif;
+    text-transform: none;    
+    -moz-box-shadow: -2px 0px 5px -5px rgba(40, 40, 40, .4) inset;
+	-webkit-box-shadow: -2px 0px 5px -5px rgba(40, 40, 40, .4) inset;
+	box-shadow: -2px 0px 5px -5px rgba(40, 40, 40, .4) inset;
+}
+.fb-logo {
+	background: #41568D;
+}
+.vk-logo {
+    background: #4E6E94;
+    font-size: 1.5em;
+    line-height: 1.9em;
+}
+.likes-count,
+.likes-delim {
 	display: inline-block;
 }
 .likes-thumb {
 	display: inline-block;
-	width: 30px;
-	height: 20px;
-    background: url("../img/main_sprite.png") no-repeat scroll -5px -124px;
+	width: 25px;
+    height: 20px;
+    background: url("../img/main_sprite.png") no-repeat scroll -11px -125px rgba(0, 0, 0, 0);
     cursor: pointer;
 }
 .gallery-item img {

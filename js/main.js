@@ -84,28 +84,42 @@ $(function() {
 	// 	parent.find(".state:not(.email-state)").hide();
 	// });
 
+	var fadeDuration = 200;
 
 	// Обработчик клика на кнопку "лайк"
-	$(".gallery-list").on("click", ".state.normal-state .likes-thumb",  function(event) {
+	$(".gallery-list").on("click", 
+		".state.normal-state .likes-thumb",  function(event) {
 		event.stopPropagation();
 		var parent = $(this).parents(".gallery-item");
 
-		parent.find(".state.vote-state").show();
+
+		parent.find(".state.vote-state").fadeIn(fadeDuration);
 		parent.find(".state:not(.vote-state)").hide();
 	});
 
 	// Обработчик клика на одну из социальных кнопок
-	$(".gallery-list").on("click", ".state.vote-state .social-button",  function(event) {
+	$(".gallery-list").on("click", 
+		".state.vote-state .social-button",  function(event) {
 		event.stopPropagation();
 		var parent = $(this).parents(".gallery-item");
+		var model = parent.data("model");
 
-		parent.find(".state.thank-vote-state").show();
-		parent.find(".state:not(.thank-vote-state)").hide();
+		// Увеличиваем количество лайков
+		// TODO: анимация перехода
+		parent.find(".likes-count").text(model.likes + 1);
+		parent.find(".likes-container").text(model.likes + 1);
 
-		setTimeout(function() {	
-			parent.find(".state.email-state").show();
-			parent.find(".state:not(.email-state)").hide();
-		}, 2000);
+
+		setTimeout(function() {
+			parent.find(".state.thank-vote-state").fadeIn(fadeDuration);
+			parent.find(".state:not(.thank-vote-state)").hide();	
+
+
+			setTimeout(function() {	
+				parent.find(".state.email-state").fadeIn(fadeDuration);
+				parent.find(".state:not(.email-state)").hide();
+			}, 2000);
+		}, 1000);
 	});
 
 	// Обработчик на нажатие кнопки при указании email
@@ -113,8 +127,18 @@ $(function() {
 		event.stopPropagation();
 		var parent = $(this).parents(".gallery-item");
 
-		parent.find(".state.thank-email-state").show();
+		parent.find(".state.thank-email-state").fadeIn(fadeDuration);
 		parent.find(".state:not(.thank-email-state)").hide();
+	});
+
+	// Обработчик на нажатие крестика
+	$(".gallery-list").on("click", ".state-cross",  function(event) {
+		event.stopPropagation();
+		var parent = $(this).parents(".gallery-item");
+
+		// Возвращаемся в начальное состояние
+		parent.find(".state.normal-state").fadeIn(fadeDuration);
+		parent.find(".state:not(.normal-state)").hide();
 	});
 
 
@@ -185,10 +209,10 @@ function fetchGalleryItems() {
 	// Делает видимыми элементы по мере скрола
 	var infinite = new InfiniteScroll(
 	galleryList[0], {
-		minDuration : 0.1,
-		maxDuration : 0.6,
-		viewportFactor : 0.3,
-		itemSelector : "li"
+		minDuration 	: 0.1,
+		maxDuration 	: 0.6,
+		viewportFactor 	: 0.3,
+		itemSelector 	: "li"
 	});	
 
 	// Если дошли до конца, подгружаем новые элементы, которые изначально скрыты
