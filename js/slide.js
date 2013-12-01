@@ -135,7 +135,7 @@ function changeText(direct) {
 	if(direct == 'left') {
 		this.textid = $($text_block+":eq(0)").attr('data-text-id');
 	}
-	$('.slide-left-text[data-lid=' + textid + ']').slideDown().addClass('active-text');
+	$('.slide-left-text[data-lid=' + textid + ']').animate({ top: $('.slide-texts').height() },500).addClass('active-text');
 }
 
 function getLeftWidth() {
