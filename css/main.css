@@ -127,7 +127,7 @@ body {
 .footer-nav-item a,
 .gallery-item .likes,
 .filter-container,
-.date-trigger
+.date-trigger,
 .chop-place,
 .chop-arrow {
    	transition: all .5s ease;
@@ -273,7 +273,8 @@ body {
 	*display: inline;
 	zoom: 1;
 	
-	width: 327px;
+	width: 334px;
+	height: 25px;
 	margin: 23px 0;
 }
 .social-item {
@@ -281,7 +282,7 @@ body {
 	float: left;
 	width: 31%;
 	margin: 0 1%;
-	height: 22px;
+	height: 100%;
 }
 /*---------------------------------Product page------------------------------- */
 .product,
@@ -681,18 +682,18 @@ body {
 	text-align: center;
 }
 .email-state .condition-container .cond-head {
-    font-size: 0.95em;
+    font-size: 0.85em;
     line-height: 1.5em;
-    padding: 3.5em 0 1.5em;
+    padding: 3.5em 0 3em;
 }
 .email-state .condition-container .discount-form {
-	border-color: #fff;
+	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
 	float: left; width: 74%;
 }
 .email-state .condition-container .buy-submit {
-	float: left; width: 25%;
+	float: left; width: 24%;
 }
 .cond-head {
 	margin: 0 0 0.6em;
