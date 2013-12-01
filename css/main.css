@@ -348,6 +348,12 @@ body {
 	position: relative;
 	width: 25%;
 }
+
+.gallery-item .image-container {
+	height: 300px;
+	background-size: cover;
+}
+
 .gallery-item:hover {
 	z-index: 3;
 }
