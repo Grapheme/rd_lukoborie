@@ -10,3 +10,11 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+    font-family: 'DINProBold';
+    src: url('../fonts/dinpro-bold/dinpro-bold.eot');
+    src: url('../fonts/dinpro-bold/dinpro-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dinpro-bold/dinpro-bold.woff') format('woff'),
+         url('../fonts/dinpro-bold/dinpro-bold.ttf') format('truetype'),
+         url('../fonts/dinpro-bold/dinpro-bold.svg#DINProBold') format('svg');
+}
