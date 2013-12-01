@@ -615,9 +615,6 @@ body {
 .state.normal-state { 
 	cursor: pointer;
 }
-
-
-
 .normal-state .likes {
 	position: absolute;
     bottom: 18px;
@@ -683,22 +680,6 @@ body {
 	margin-right : 18px;
 }
 
-
-.like-from {
-	
-}
-.like-from-logo {
-	
-}
-.like-from-body {
-	
-}
-	.like-from-vk {
-		
-	}
-	.like-from-fb {
-		
-	}
 .likes-count {
 	display: inline-block;
 }
@@ -787,9 +768,6 @@ body {
     border: none;
     font: 1em 'DINProBold', sans-serif;
 }
-
-
-
 
 
 .full-hd {
