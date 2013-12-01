@@ -46,7 +46,8 @@
 	        		Конкурс "Лукоборье"
 	        	</h1>
 	        </header>	        
-	    <!-- section gallery -->
+	  	 	
+	  	 	<!-- section gallery -->
 	        <section class="gallery">
 	        	<header class="sect-head">
 	        		<div class="sect-desc">
@@ -116,14 +117,19 @@
 	        	</div>
 	        	<div class="gallery-body">
 
+	        		<script id="fancybox-template" type="text/x-handlebars-template">
+	        			<img src="{{ image }}"></img>
+        				
+					</script>
+
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
 
-        				<div class="image-container" style="background-image : url({{ image }})">
-        					<div class="likes">
-        						<div class="likes-count">{{ likes }}</div>
-        						<div class="likes-thumb"></div>
-        					</div>
-        				</div>
+        				<div class="image-container" style="background-image : url({{ image }})"></div>
+        				<div class=""></div>
+    					<div class="likes">
+    						<div class="likes-count">{{ likes }}</div>
+    						<div class="likes-thumb"></div>
+    					</div>
 					</script>
 
 					<script id="gallery-photograph-template" type="text/x-handlebars-template">
@@ -154,7 +160,7 @@
 					</script>
 
 	        		<!-- Infinite Scroll Section -->
-	        		<ul class="gallery-list effect-2">	
+	        		<ul class="gallery-list infinite-scroll effect-2">	
 	        			<li class="gallery-item"></li>
 	        		</ul>
 	        	</div>
@@ -183,12 +189,11 @@
 		<script src="js/vendor/imagesloaded.min.js"></script>
         <script src="js/vendor/handlebars.js"></script>
         <script src="js/vendor/masonry.min.js"></script>
+        <script src="js/vendor/jquery.fancybox.pack.js"></script>
 
         <script src="js/infiniteScroll.js"></script>
 
         <script src="js/plugins.js"></script>
-
-        <script src="js/vendor/jquery.fancybox.pack.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
