@@ -66,6 +66,44 @@
 		        			Выберите дату стрижки:
 		        			<span class="chosen-date">Любая</span>
 	        			</div>
+	        			<div class="date-table">
+	        				<table>
+	        					<thead>
+	        						<tr>
+	        							<th class="table-header" colspan="7">Декабрь</th>
+	        						</tr>
+	        					</thead>
+	        					<tbody>
+	        						<tr>
+	        							<th>П</td>
+	        							<th>В</td>
+	        							<th>С</td>
+	        							<th>Ч</td>
+	        							<th>П</td>
+	        							<th>С</td>
+	        							<th>В</td>
+	        						</tr>
+	        						<tr>
+	        							<td>2</td>
+	        							<td>3</td>
+	        							<td>4</td>
+	        							<td>5</td>
+	        							<td>6</td>
+	        							<td>7</td>
+	        							<td>8</td>
+	        						</tr>
+	        						<tr>
+	        							<td>9</td>
+	        							<td>10</td>
+	        							<td>11</td>
+	        							<td>12</td>
+	        							<td>13</td>
+	        							<td>14</td>
+	        							<td>15</td>
+	        						</tr>
+	        					</tbody>
+	        				</table>
+	        			</div>
 	        		</div>
 	        		<div class="filters-item f-salon">
 	        			<div class="filter-container">
@@ -357,6 +395,10 @@
 				itemSelector : '.gallery-item',
 				masonry: {
 				    columnWidth: $('.gallery-list') / 4
+				},
+				containerStyle: { 
+					overflow: 'visible', 
+					position: 'relative'
 				}
 			});
 			
