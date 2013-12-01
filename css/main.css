@@ -127,8 +127,7 @@ body {
 .footer-nav-item a,
 .gallery-item .likes,
 .filter-container,
-.date-table,
-.date-trigger,
+.date-trigger
 .chop-place,
 .chop-arrow {
    	transition: all .5s ease;
@@ -572,7 +571,7 @@ body {
 .full-hd {
 	font-size: 124px;
 	text-transform: uppercase;
-	letter-spacing: -12px;
+	letter-spacing: -5px;
 	margin-left: -5px;
 }
 
@@ -604,7 +603,6 @@ body {
 }
 
 .slider-text {
-	position: relative;
 	overflow: hidden;
 }
 
