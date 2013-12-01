@@ -10,7 +10,7 @@ var $product_min 	= 0;	// Product first id
 var $video_min;				// Video first id
 var $image_min;				// Image first id
 var $images_all;			// Amount of all slides
-var $step			= $('.wrapper').width()/4;
+var $step			= ($('.wrapper').width()-40)/4;
 var $slider_text	= '.slider-text';
 var $text_block 	= '.slider-text .slider-under-block';
 var $left_text		= 0;
@@ -19,7 +19,7 @@ var $tblock_speed 	= 1000; // Speed of text blocks animation
 var $text_top_speed = 1000; // Speed of text getting top
 var $left_anim_speed= 1000; // Speed of left text animation
 
-var $text_to_top	= 100; 	// px
+var $text_to_top	= 140; 	// px
 
 /*
  * each
@@ -146,7 +146,8 @@ function changeText(direct) {
 		});
 	} else {
 		$('.active-text').css('display','none').removeClass('active-text');
-		$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top:0},500,function(){
+		$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -30},300,function(){
+			$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: 1000, easing: 'easeOutBounce'}, 50);
 			getLeftWidth();
 		}).addClass('active-text');
 	}
@@ -225,10 +226,10 @@ function setNewBlocks() {
 		blocks += getBlockOfId(i);
 	}
 	blocks += getBlockOfId(4);
-	this.block_str = '<div class="slider-text">' + blocks + '</div>'; 
+	this.block_str = '<div class="slider-text"><div class="slider-in">' + blocks + '</div></div>'; 
 	$('.slider-text-blocks').after(block_str);
-	$($slider_text).css({ 'left': -$($text_block).width() , 'width': $('.slider-text .slider-under-block').width()*6 });
-	$($text_block).css({ 'width': $($slider_text).width()/6 });
+	$($slider_text).css({ 'left': -$($text_block).width() , 'width': $step*6+40 });
+	$($text_block).css({ 'width': $step });
 	$($text_block).last().css('top', -$text_to_top).addClass('text-top');
 	$($text_block + "[data-text-id=3]").css('top', -$text_to_top).addClass('text-top');
 }

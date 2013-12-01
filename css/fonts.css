@@ -29,3 +29,12 @@
          url('../fonts/dinpro-bold/dinpro-bold.ttf') format('truetype'),
          url('../fonts/dinpro-bold/dinpro-bold.svg#DINProBold') format('svg');
 }
+
+@font-face {
+    font-family: 'DINProMedium';
+    src: url('../fonts/dinpro-medium/dinpro-medium.eot');
+    src: url('../fonts/dinpro-medium/dinpro-medium.eot') format('embedded-opentype'),
+         url('../fonts/dinpro-medium/dinpro-medium.woff') format('woff'),
+         url('../fonts/dinpro-medium/dinpro-medium.ttf') format('truetype'),
+         url('../fonts/dinpro-medium/dinpro-medium.svg#DINProMedium') format('svg');
+}

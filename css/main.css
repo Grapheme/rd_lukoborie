@@ -823,8 +823,8 @@ body {
 .full-hd {
 	font-size: 124px;
 	text-transform: uppercase;
-	letter-spacing: -5px;
-	margin-left: -5px;
+	letter-spacing: -11px;
+	margin-left: -8px;
 }
 
 .slider-wrap {
@@ -834,15 +834,15 @@ body {
 .slider-container {
 	background-color: #ededed;
 	overflow: hidden;
-	margin-top: -73px;
+	margin-top: -56px;
 }
 
 .slider-title {
 	text-transform: uppercase;
 	font-size: 21px;
-	font-weight: 800;
 	width: 440px;
 	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 .slider-under-block {
@@ -852,12 +852,55 @@ body {
 	float: left;
 }
 
+.slider-under-block-inside {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.slider-in {
+	position: relative;
+	margin: 0 20px;
+}
+
 .slider-text {
 	position: relative;
+	min-height: 525px;
 }
 
 .slider {
 	text-align: center;
+}
+
+.slider-arrow {
+	margin: 0 auto;
+    text-align: center;
+    width: 165px;
+    margin-top: -11px;
+}
+
+.slideshow {
+	position: relative;
+    top: -120px;
+}
+
+.current-slide,.all-slides {
+	font-family: 'DINProMedium';
+	font-size: 13.33px;
+}
+
+.slider-to-left,.slider-to-right {
+	height: 24px;
+	width: 47px;	
+}
+
+.slider-to-left {
+	background: url('../img/slider/arrow-left.png') no-repeat;
+	float: left;
+}
+
+.slider-to-right {
+	background: url('../img/slider/arrow-right.png') no-repeat;
+	float: right;
 }
 
 .fotorama {
@@ -881,7 +924,20 @@ body {
 	display: none;
 }
 
+.slider-nav {
+	display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+
+.slider-nav li {
+	float: left;
+}
+
 .slider-nav a {
+	font-family: 'DINProMedium';
+	font-size: 14px;
+	margin: 0 10px;
 	text-transform: uppercase;
 	color: #000;
 	border-bottom: 1px dotted;
@@ -896,21 +952,38 @@ body {
 	
 .slide-left-text {
 	font-family: 'DINProBold', sans-serif;
-	font-size: 100px;
+	font-size: 116px;
+	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
+	letter-spacing: -8px;
 }
 
 .slide-left-line {
 	display: inline-block;
 	height: 20px;
-	width: 100px;
+	width: 0px;
 	background: #000;
+	margin-left: 40px;
 }
 
 .slide-texts {
-	height: 120px;
+	height: 140px;
 	overflow: hidden;
+	margin-left: 40px;
+	margin-top: -100px;
+}
+
+.slider-text-title {
+	font-family: 'DINProBold', sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin: 10px 0;
+}
+
+.slider-under-block-inside {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 15px;
 }
 
 /* ==========================================================================
