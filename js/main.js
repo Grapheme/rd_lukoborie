@@ -10,7 +10,7 @@ $(function() {
 
 
 		var items = [];
-		for(var i = 0; i < 30; ++i) {
+		for(var i = 0; i < 20; ++i) {
 			var num = Math.floor((Math.random()*19)) + 1;
 			var numStr = num.toString();
 			if(num < 10) {
@@ -27,12 +27,12 @@ $(function() {
 
 		setTimeout(function() {
 			callback(items);
-		}, 400);
+		}, 1000);
 	};
 
 
 	function loadItems(callback) {
-
+		console.log("New portion");
 		fetchFromServer(function(items) {
 			var elems = [];
 
@@ -52,9 +52,11 @@ $(function() {
 
 			elements.imagesLoaded(function() {
 				galleryList.append( elements );
-				masonry.appended( elems );
 
+				masonry.appended( elems );
 				callback();
+
+
 			});
 		});
 	};
@@ -72,10 +74,12 @@ $(function() {
 		done : loadNewPortion
 	});	
 
+
 	function loadNewPortion() {
 		loadItems(function() {
 			infinite.toggle();
 		});
 	};
+
 	
 });

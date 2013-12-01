@@ -78,10 +78,12 @@
 	        	<div class="gallery-body">
 
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
-        				<img src="{{ image }}" alt="">
-        				<div class="likes">
-        					<div class="likes-count">{{ likes }}</div>
-        					<div class="likes-thumb"></div>
+
+        				<div class="image-container" style="background-image : url({{ image }})">
+        					<div class="likes">
+        						<div class="likes-count">{{ likes }}</div>
+        						<div class="likes-thumb"></div>
+        					</div>
         				</div>
 					</script>
 
@@ -113,7 +115,7 @@
 					</script>
 
 	        		<!-- Infinite Scroll Section -->
-	        		<ul class="gallery-list effect-2">
+	        		<ul class="gallery-list effect-2">	
 	        			<li class="gallery-item"></li>
 	        		</ul>
 	        	</div>
