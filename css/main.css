@@ -588,18 +588,19 @@ body {
 .gallery-item:hover {
 	z-index: 5;
 }
-.gallery-item:hover .image-container {
-	-webkit-transform: scale(1.05);
-	   -moz-transform: scale(1.05);
-	    -ms-transform: scale(1.05);
-	     -o-transform: scale(1.05);
-	        transform: scale(1.05);
-
+.gallery-item .image-container {
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 		-ms-transition: all .3s ease;
 	     -o-transition: all .3s ease;
     		transition: all .3s ease;
+}
+.gallery-item:hover .image-container {
+	-webkit-transform: scale(1.05);
+	   -moz-transform: scale(1.05);
+	    -ms-transform: scale(1.05);
+	     -o-transform: scale(1.05);
+	        transform: scale(1.05);	
 
 	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	   -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
@@ -627,19 +628,19 @@ body {
     font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
 }
-
+.normal-state .likes-thumb {
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+    		transition: all .3s ease;
+}
 .normal-state .likes-thumb:hover {
 	-webkit-transform: scale(1.2);
        -moz-transform: scale(1.2);
         -ms-transform: scale(1.2);
          -o-transform: scale(1.2);
-            transform: scale(1.2);    
-
-    -webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-		-ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-    		transition: all .3s ease;
+            transform: scale(1.2);      
 }
 
 
@@ -668,13 +669,13 @@ body {
 .thank-vote-state .condition-container {
 	margin: -27px 0 0;
 }
-.email-state .condition-container {
-	padding: 0 1.7em;
+.email-state .condition-container {	
 	text-align: center;
 }
 .email-state .condition-container .cond-head {
     font-size: 0.95em;
-    padding: 2.5em 0;
+    line-height: 1.5em;
+    padding: 3.5em 0 1.5em;
 }
 .email-state .condition-container .discount-form {
 	border-color: #fff;
