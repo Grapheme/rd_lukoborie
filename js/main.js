@@ -33,7 +33,6 @@ $(".gallery-list").on("click", ".likes-thumb",  function(event) {
 });
 
 
-
 // ----------------------------------------------------------------------------
 // Функция имитирует подргузку данных с лицами с сервера
 // ----------------------------------------------------------------------------
@@ -54,9 +53,20 @@ function fetchGalleryItems() {
 		var numStr = (num < 10) ? "0" + num.toString() : num.toString();
 	
 		items.push({
+			type   : "look",
 			avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
 			likes  :  Math.floor(Math.random() * 30) 
 		});
+
+		// Переодически разбавляем ленту фотографом
+		if(i % 7 === 0) {	
+			items.push({
+				type : "photograph",
+				name :  "Авдотий Переверзиев",
+				desc : "Lumix GX7 -\n потрясающий \n фотоаппарат.\n А этот конкурс \n стал для меня \n венцом \nкарьеры.",
+				avatar : "img/avatars/avd.jpg",
+			});
+		}
 	} 
 
 	setTimeout(function() {
@@ -123,23 +133,25 @@ function fetchGalleryItems() {
 			var elems = [];
 
 			for(var i = 0; i < items.length; ++i) {
-				var model = {
-					image : items[i].avatar,
-					likes : items[i].likes
-				};
+				var renderedElement = $("<li>").addClass("gallery-item");
+				var model = items[i];
 
-				var item = $("<li>").addClass("gallery-item");
+				if(model.type === "look") {
+					renderedElement.html( itemTemplate( model ));
+				}
 
-				item.html( itemTemplate( model ));
+				if(model.type === "photograph") {
+					renderedElement.html( photographTemplate( model ));
+				}
 
-				$(item).data("model", model);
-
-				elems.push(item[0])
+				renderedElement.data("model", model);
+				elems.push(renderedElement[0])
 			}
 
 			var elements = $( elems );
 
 			elements.imagesLoaded(function() {
+				// Добавляем элемент в masonry
 				galleryList.append( elements );	
 				masonry.appended( elements );
 				defer.resolve();

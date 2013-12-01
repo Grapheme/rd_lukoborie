@@ -340,7 +340,15 @@ body {
 		text-transform: uppercase;
 	}
 	
-/*------------------------------------Gallery--------------------------------- */	
+/*------------------------------------Gallery--------------------------------- */
+
+.loader-container {
+	margin-top: 3em;
+	text-align: center;
+}	
+.loader-container img {
+	display: inline-block;
+}
 .gallery-body {
 	margin: 37px 0 0;
 }
