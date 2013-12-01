@@ -146,9 +146,12 @@ body {
 	float: left;
 }
 	.nav-item {
-		margin: 0 0 .4em;
+		margin: 0 0 .2em;
 	}
 	.nav-item a {
+		display: block;
+		width: 100%;
+		height: 100%;
 		font: 1.125em 'DINProBold', sans-serif;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -165,6 +168,11 @@ body {
 		width: 80px;
 		height: 30px;
 		margin: 0 0 .4em;
+	}
+	.outer-links li a {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 	.outer-links .panasonic {
 		background: url(../img/main_sprite.png) no-repeat -291px 0;
@@ -226,6 +234,11 @@ body {
 		height: 30px;
 		margin: 0 .5em 0 0;
 	}
+	.bottom-outer-links li a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 	.bottom-outer-links .panasonic {
 		background: url(../img/main_sprite.png) no-repeat -371px -30px;
 	}
@@ -253,7 +266,7 @@ body {
 }
 
 .sect-desc {
-	font: italic .875em/1.5714em 'PT Sans', sans-serif;
+	font: .875em/1.5714em 'garamondbookcitalic', serif;
 }
 
 .social-widgets {
@@ -376,25 +389,28 @@ body {
 	width: 100%;
 	height: auto;
 }
-.photograph,
-.camera {
+.photograph {
 	padding: 1em 1.9em;
+	background: #f0f0f0;
+	text-align: center;
+}
+.camera {
+	padding: 1em 0;
 	background: #f0f0f0;
 	text-align: center;
 }
 .photograph .desc,
 .camera .desc {
-	padding: 0 1.6em;
 	font: 1em/1.375em 'DINProBold', sans-serif;
 	text-transform: uppercase;
+}
+.photograph .desc {	
+	padding: 0 1.6em;
 }
 .ph-avatar,
 .camera-avatar {
 	width: 118px;
-	margin: 0 auto;
-}
-.camera-name {
-    margin: .7em 0;
+	margin: .3em auto;
 }
 .ph-avatar img {
 	width: 100%;
@@ -408,11 +424,24 @@ body {
 	text-transform: uppercase;
 }
 .quote {
-    font-size: 4.5em;
+    font: 4.5em/1.4em 'austin_cyrfat', sans-serif;
     height: 0.7em;
 }
 .bottom-quote {
 	line-height: 1em;
+}
+.camera-name,
+.sign,
+.dc-form-capt {
+	font: .875em/1.2857em 'garamondbookcitalic', serif;
+}
+.camera-name {
+    margin: .7em 0;
+}
+.camera-name,
+.camera .desc {	
+	margin: 1em 0;
+    padding: 0 1.9em;
 }
 .sign {
 	padding: 0 2em;
@@ -421,7 +450,8 @@ body {
     margin: .5em 0;
 }
 .discount-form {
-    border-bottom: 1px solid #444;
+	margin: 1em 1.9em;
+    border-bottom: 1px solid #444;    
 }
 .line-input {
     background: transparent;
