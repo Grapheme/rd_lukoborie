@@ -1,6 +1,9 @@
+
 $(function() {
 
-	// Шаблонизация
+	// ----------------------------------------------------------------------------
+	// Шаблоны
+	// ----------------------------------------------------------------------------
 	var fancyboxTemplate = Handlebars.compile( 
 		$("#fancybox-template").html() );
 
@@ -9,28 +12,86 @@ $(function() {
 
 	var photographTemplate = Handlebars.compile( 
 		$("#gallery-photograph-template").html() );
+	
+	// $(".fancybox").fancybox({
+	// 	padding: 25,
+	// 	helpers: {
+	//    		overlay: {
+	//    			locked: false
+	//    		},
+	//    		title: {
+	//    			type: 'outside'
+	//    		}
+	// 	}
+	// });
+	
+
+	// ----------------------------------------------------------------------------
+	// Интерфейсная часть : фильтры
+	// ----------------------------------------------------------------------------
+
+	$('.f-date').click( function(){
+		$(this).find('.date-table').slideToggle(400);
+	});
+	$('.f-salon').click( function(){
+		$(this).find('.chop-list').slideToggle(400);
+	});
+	$('.chop-place').click( function(){
+		var parentBlock = $('.f-salon');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).find('.chop-name').text();
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.date-trigger').click( function(){
+		var parentBlock = $('.f-date');
+		var resetCross = parentBlock.find('.cross');
+		var selectedValue = parentBlock.find('.chosen-value');
+		
+		var placeName = $(this).text() + ' декабря';
+		selectedValue.text(placeName);
+		resetCross.show();
+	});
+	$('.f-salon .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-salon');
+		var defaultSelectedValue = 'Все салоны';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
+	$('.f-date .cross').click( function(e) {
+		e.stopPropagation();
+		var parentBlock = $('.f-date');
+		var defaultSelectedValue = 'Любая';
+		var selectedValue = parentBlock.find('.chosen-value');
+		selectedValue.text(defaultSelectedValue);
+		$(this).hide();
+	});
+
+	// ----------------------------------------------------------------------------
+	// Интерфейсная часть : элементы галереи
+	// ----------------------------------------------------------------------------
+
+	// Обработчик клика на лук
+	$(".gallery-list").on("click", ".gallery-item",  function() {
+		var model = $(this).data("model");
+
+		alert("Clicked photo", model.image);
+	});
 
 
-// ----------------------------------------------------------------------------
-// Интерфейсная часть
-// ----------------------------------------------------------------------------
-
-// Обработчик клика на лук
-$(".gallery-list").on("click", ".gallery-item",  function() {
-	var model = $(this).data("model");
-
-	alert("Clicked photo", model.image);
-});
-
-
-// Обработчик клика на кнопку "лайк"
-$(".gallery-list").on("click", ".likes-thumb",  function(event) {
+	// Обработчик клика на кнопку "лайк"
+	$(".gallery-list").on("click", ".likes-thumb",  function(event) {
 	event.stopPropagation();
-	var model = $(this).data("model");
+		var model = $(this).data("model");
 
-	alert("Clicked thumb");
+		alert("Clicked thumb", model.image);
+	});
 
-});
+
 
 
 // ----------------------------------------------------------------------------
