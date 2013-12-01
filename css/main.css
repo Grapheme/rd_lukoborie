@@ -99,7 +99,7 @@ textarea {
 
 /* FONTS */
 
-.full-hd,.slider-title { font-family: 'pf_din_text_cond_pro'; }
+.full-hd,.slider-title { font-family: 'DINProBold', sans-serif; }
 
 .content_container {
 	margin: 0 40px;
@@ -149,7 +149,7 @@ body {
 		margin: 0 0 .4em;
 	}
 	.nav-item a {
-		font: 1.125em 'pf_din_text_cond_pro', sans-serif;
+		font: 1.125em 'DINProBold', sans-serif;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: #000;
@@ -303,7 +303,7 @@ body {
 	.chosen-salon,
 	.chosen-date {
 		display: block;
-		font: 1.75em 'pf_din_text_cond_pro', sans-serif;
+		font: 1.75em 'DINProBold', sans-serif;
 		text-transform: uppercase;
 	}
 	
@@ -344,7 +344,7 @@ body {
 	position: absolute;
     bottom: 18px;
     left: 40%;    
-    font: 1.25em 'pf_din_text_cond_pro', sans-serif;
+    font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
 }
 .like-from {
@@ -385,7 +385,7 @@ body {
 .photograph .desc,
 .camera .desc {
 	padding: 0 1.6em;
-	font: 1em/1.375em 'pf_din_text_cond_pro', sans-serif;
+	font: 1em/1.375em 'DINProBold', sans-serif;
 	text-transform: uppercase;
 }
 .ph-avatar,
@@ -404,7 +404,7 @@ body {
 	border-radius: 100px;
 }
 .ph-caption {
-	font: 1.125em/2.111em 'pf_din_text_cond_pro', sans-serif;
+	font: 1.125em/2.111em 'DINProBold', sans-serif;
 	text-transform: uppercase;
 }
 .quote {
@@ -431,7 +431,7 @@ body {
 }
 .line-submit {
     border: none;
-    font: 1em 'pf_din_text_cond_pro', sans-serif;
+    font: 1em 'DINProBold', sans-serif;
 }
 
 
