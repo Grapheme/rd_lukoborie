@@ -608,9 +608,8 @@ body {
 	margin: 0;
 	padding: 13px 0;
 }
-
 .fancybox-photograph {
-    margin: 0 0 0 180px;
+    float: right;
     min-width: 260px;
 }
 .fb-photograph-ava {
@@ -680,8 +679,30 @@ li.gallery-item:hover .image-container {
 
 	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	   -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
-	        box-
-	        shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.fancybox .state {
+	bottom: 0;
+	height: auto;
+}
+.fancybox-inner .state.vote-state,
+.fancybox-inner .state.thank-email-state, 
+.fancybox-inner .state.thank-vote-state,  
+.fancybox-inner .state.email-state {
+	position: absolute;	
+}
+.fancybox .social-button.vkontakte {
+    float: left;
+    margin: 0 1%;
+    width: 46%;
+}
+.fancybox .social-button.facebook {
+    float: left;
+    margin: 0 2%;
+    width: 46%;
+}
+.fancybox .vote-state .likes-container {
+    top: 50%;
 }
 
 .state {

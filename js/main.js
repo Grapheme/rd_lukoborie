@@ -370,6 +370,7 @@ function fetchGalleryItems() {
 				galleryList.append( elements );	
 
 				$(".fancybox").fancybox({
+					minWidth : 450,
 					closeBtn : false, 
 					arrows : false,
 					afterLoad : function() {
