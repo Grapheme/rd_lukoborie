@@ -1,5 +1,16 @@
 
 $(function() {
+	// ----------------------------------------------------------------------------
+	// Настройки
+	// ----------------------------------------------------------------------------
+	var options = {
+		changeStateDuration : 400,
+
+		// Расстояние в пикскелях от конца страницы, когда срабыватыет 
+		// подгрузка новых элементов 
+		scrollToggleHeight : 200
+	};
+
 
 	// ----------------------------------------------------------------------------
 	// Шаблоны
@@ -21,9 +32,11 @@ $(function() {
 	$('.f-date').click( function(){
 		$(this).find('.date-table').slideToggle(400);
 	});
+
 	$('.f-salon').click( function(){
 		$(this).find('.chop-list').slideToggle(400);
 	});
+
 	$('.chop-place').click( function(){
 		var parentBlock = $('.f-salon');
 		var resetCross = parentBlock.find('.cross');
@@ -33,6 +46,7 @@ $(function() {
 		selectedValue.text(placeName);
 		resetCross.show();
 	});
+
 	$('.date-trigger').click( function(){
 		var parentBlock = $('.f-date');
 		var resetCross = parentBlock.find('.cross');
@@ -42,6 +56,7 @@ $(function() {
 		selectedValue.text(placeName);
 		resetCross.show();
 	});
+
 	$('.f-salon .cross').click( function(e) {
 		e.stopPropagation();
 		var parentBlock = $('.f-salon');
@@ -50,6 +65,7 @@ $(function() {
 		selectedValue.text(defaultSelectedValue);
 		$(this).hide();
 	});
+
 	$('.f-date .cross').click( function(e) {
 		e.stopPropagation();
 		var parentBlock = $('.f-date');
@@ -62,87 +78,148 @@ $(function() {
 	// ----------------------------------------------------------------------------
 	// Интерфейсная часть : элементы галереи
 	// ----------------------------------------------------------------------------
+	
+	// Меняет состояние элемента лука
+	function changeState(parent, state) {
 
-	// // Обработчик клика на лук
-	// $(".gallery-list").on("click", ".state.normal-state",  function() {
-	// 	var parent = $(this).parents(".gallery-item");
-
-	// 	// TODO: Показывать модальное окно!
-	// });
-
-	// $(".gallery-list").on("click", ".state.vote-state",  function() {
-	// 	var parent = $(this).parents(".gallery-item");
-
-	// 	parent.find(".state.thank-vote-state").show();
-	// 	parent.find(".state:not(.thank-vote-state)").hide();
-	// });
-
-	// $(".gallery-list").on("click", ".state.thank-vote-state",  function() {
-	// 	var parent = $(this).parents(".gallery-item");
-
-	// 	parent.find(".state.email-state").show();
-	// 	parent.find(".state:not(.email-state)").hide();
-	// });
-
-	var fadeDuration = 200;
-
-	// Обработчик клика на кнопку "лайк"
-	$(".gallery-list").on("click", 
-		".state.normal-state .likes-thumb",  function(event) {
-		event.stopPropagation();
-		var parent = $(this).parents(".gallery-item");
+		// Показываем заданное состояние, скрываем остальные
+		parent.find(".state." + state).fadeIn( options.changeStateDuration );
+		parent.find(".state:not(." + state + ")").hide();
+	}
 
 
-		parent.find(".state.vote-state").fadeIn(fadeDuration);
-		parent.find(".state:not(.vote-state)").hide();
-	});
+	// ----------------------------------------------------------------------------
+	// Отображение лука в галереи
+	// ----------------------------------------------------------------------------
+	function makeLookGalleryView( model ) {
+		var parent = $("<li>").addClass("gallery-item");
+		parent.html( itemTemplate( model ));
 
-	// Обработчик клика на одну из социальных кнопок
-	$(".gallery-list").on("click", 
-		".state.vote-state .social-button",  function(event) {
-		event.stopPropagation();
-		var parent = $(this).parents(".gallery-item");
-		var model = parent.data("model");
+		parent.data("model", model);
 
-		// Увеличиваем количество лайков
-		// TODO: анимация перехода
-		parent.find(".likes-count").text(model.likes + 1);
-		parent.find(".likes-container").text(model.likes + 1);
+		// Обработчик клика на лук
+		parent.on("click", ".normal-state", function() {
+			event.stopPropagation();
 
+			var fancyboxContent = makeLookModalView(model);
 
-		setTimeout(function() {
-			parent.find(".state.thank-vote-state").fadeIn(fadeDuration);
-			parent.find(".state:not(.thank-vote-state)").hide();	
+			var a = $("<a>").fancybox({
+				content : fancyboxContent
+			});
 
-
-			setTimeout(function() {	
-				parent.find(".state.email-state").fadeIn(fadeDuration);
-				parent.find(".state:not(.email-state)").hide();
-			}, 2000);
-		}, 1000);
-	});
-
-	// Обработчик на нажатие кнопки при указании email
-	$(".gallery-list").on("click", ".state.email-state .ok-button",  function(event) {
-		event.stopPropagation();
-		var parent = $(this).parents(".gallery-item");
-
-		parent.find(".state.thank-email-state").fadeIn(fadeDuration);
-		parent.find(".state:not(.thank-email-state)").hide();
-	});
-
-	// Обработчик на нажатие крестика
-	$(".gallery-list").on("click", ".state-cross",  function(event) {
-		event.stopPropagation();
-		var parent = $(this).parents(".gallery-item");
-
-		// Возвращаемся в начальное состояние
-		parent.find(".state.normal-state").fadeIn(fadeDuration);
-		parent.find(".state:not(.normal-state)").hide();
-	});
+			a.click();
+		});
 
 
+		// Обработчик клика на кнопку "лайк"
+		parent.on("click", ".normal-state .likes-thumb",  
+		function(event) {
+			event.stopPropagation();
 
+			changeState(parent, "vote-state");
+		});
+
+		// Обработчик клика на одну из социальных кнопок
+		parent.on("click", ".vote-state .social-button",  
+		function(event) {
+			event.stopPropagation();
+
+			// Увеличиваем количество лайков
+			// TODO: анимация перехода
+			parent.find(".likes-count").text(model.likes + 1);
+			parent.find(".likes-container").text(model.likes + 1);
+
+
+			setTimeout(function() {
+				changeState(parent, "thank-vote-state");	
+
+				setTimeout(function() {	
+					changeState(parent, "email-state");
+				}, 2000);
+			}, 1000);
+		});
+
+		// Обработчик на нажатие кнопки при указании email
+		parent.on("click", ".email-state .ok-button",  
+		function(event) {
+			event.stopPropagation();
+
+			changeState(parent, "thank-email-state");
+		});
+
+		// Обработчик на нажатие крестика
+		parent.on("click", ".state-cross",  function(event) {
+			event.stopPropagation();
+
+			changeState(parent, "normal-state");
+		});
+		return parent;
+	}
+
+
+	// ----------------------------------------------------------------------------
+	// Отображение лука в модальном окне
+	// ----------------------------------------------------------------------------
+	function makeLookModalView( model ) {
+
+		var parent = $("<div>")
+			.addClass("gallery-item")
+			.html( fancyboxTemplate(model) );
+
+		parent.data("model", model);
+
+		parent.on("click", ".normal-state .likes-thumb", 
+			function(event) {
+
+			event.stopPropagation();
+			changeState(parent, "vote-state");
+		});
+
+		// Обработчик клика на одну из социальных кнопок
+		parent.on("click", ".vote-state .social-button", 
+			function(event) {
+			
+			event.stopPropagation();
+			var model = parent.data("model");
+
+			// Увеличиваем количество лайков
+			// TODO: анимация перехода
+			parent.find(".likes-count").text(model.likes + 1);
+			parent.find(".likes-container").text(model.likes + 1);
+
+
+			setTimeout(function() {
+				changeState(parent, "thank-vote-state");
+
+				setTimeout(function() {	
+					changeState(parent, "email-state");
+				}, 2000);
+			}, 1000);
+		});
+
+		// Обработчик на нажатие крестика
+		parent.on("click", ".state-cross",  
+			function(event) {
+
+			event.stopPropagation();
+
+			// TODO: закрывать fancybox
+		});
+
+
+		return parent;
+	}
+
+
+	// ----------------------------------------------------------------------------
+	// Отображение фотографа в галереи
+	// ----------------------------------------------------------------------------
+	function makePhotographGalleryView(model) {
+		var parent = $("<li>").addClass("gallery-item");
+		parent.html( photographTemplate( model ));
+
+		return parent;
+	}
 
 // ----------------------------------------------------------------------------
 // Функция имитирует подргузку данных с лицами с сервера
@@ -218,7 +295,8 @@ function fetchGalleryItems() {
 	// Если дошли до конца, подгружаем новые элементы, которые изначально скрыты
 	var busy = false;
 	$(window).scroll(function() {
-	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	   if($(window).scrollTop() + $(window).height() > 
+	   		$(document).height() - options.scrollToggleHeight ) {
 
 	   	// Флаг загрузки, TODO: сделать умнее!
 	   	if(!busy) {
@@ -244,19 +322,21 @@ function fetchGalleryItems() {
 			var elems = [];
 
 			for(var i = 0; i < items.length; ++i) {
-				var renderedElement = $("<li>").addClass("gallery-item");
+				var renderedElement = null; 
 				var model = items[i];
 
+				// Элемент галереи Лук
 				if(model.type === "look") {
-					renderedElement.html( itemTemplate( model ));
+
+					elems.push( makeLookGalleryView(model)[0] );
 				}
 
+				// Элемент галереи Фотограф
 				if(model.type === "photograph") {
-					renderedElement.html( photographTemplate( model ));
+					elems.push( makePhotographGalleryView(model)[0] );
 				}
 
-				renderedElement.data("model", model);
-				elems.push(renderedElement[0])
+				// TODO: фотоаппарат?!
 			}
 
 			var elements = $( elems );

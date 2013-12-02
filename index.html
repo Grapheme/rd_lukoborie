@@ -115,15 +115,77 @@
 	        	<div class="gallery-body">
 
 	        		<script id="fancybox-template" type="text/x-handlebars-template">
-	        			<img src="{{ image }}"></img>
-        				
+	        			<img src="{{ avatar }}"></img>
+        					<div class="state normal-state">
+	        					<div class="likes">
+
+	    							<div class="likes-count">{{ likes }}</div>
+	    							<div class="likes-delim">·</div>
+	    							<div class="likes-thumb"></div>
+	    						</div>
+	        				</div>
+
+	        				<div class="state vote-state">
+        						<div class="state-cross">✕</div>
+	        					<div class="likes-container">
+	        						{{ likes }}
+	        					</div>
+
+	        					<div class="social-buttons-container">
+	        						<div class="social-button facebook"><div class="fb-logo">f</div>Через Facebook</div>
+	        						<div class="social-button vkontakte"><div class="vk-logo">B</div>Через Вконтакте</div>
+	        					</div>
+	        				</div>
+
+							<div class="state thank-vote-state">
+        						<div class="state-cross">✕</div>
+
+	        					 <div class="condition-container">
+		        					 <div class="cond-head">
+		        					 	Спасибо<br>за ваш голос!
+		        					 </div>
+	        					 </div>
+	        				</div>	
+
+	        				<div class="state email-state">
+        						<div class="state-cross">✕</div>
+
+	        					<div class="condition-container">
+	        						<div class="cond-head">
+		        					 	Теперь твой фаворит<br>
+										может надеяться<br>
+										на победу, а ты можешь<br>
+										выиграть один<br>
+										из продуктов Panasonic<br>		        					 	
+		        					 </div>
+	        					 	<div class="cond-check-email">
+	        					 		Введите свой email, чтобы участвовать в розыгрыше призов
+	        					 	</div>
+
+	        					 	<form class="discount-form clearfix" action="javascript:void(0)">
+		        					 	<input type="text" class="buy-input">
+		        						<input type="submit" value="OK" class="buy-submit ok-button">
+	        						</form>
+	        					 </div>
+	        				</div>	
+
+	        				<div class="state thank-email-state">
+        						<div class="state-cross">✕</div>
+
+	        					<div class="condition-container">
+		        					<div class="cond-head">Спасибо<br>за участие!</div>
+		        					<div class="cond-check-email">проверьте вашу почту.</div>
+	        					</div>
+	        				</div>	
+	    					
+	    				</div>
 					</script>
 
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
         				<div class="image-container" style="background-image : url({{ avatar }})">
-        					
         					<div class="state normal-state">
 	        					<div class="likes">
+
 	    							<div class="likes-count">{{ likes }}</div>
 	    							<div class="likes-delim">·</div>
 	    							<div class="likes-thumb"></div>
@@ -198,7 +260,7 @@
         					</div>
         					<div class="quote bottom-quote">”</div>
         					<div class="sign">
-        						{{ name}}
+        						{{ name }}
         					</div>	        					
         				</div>
 					</script>
