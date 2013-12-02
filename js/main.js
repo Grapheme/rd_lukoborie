@@ -301,7 +301,7 @@ function fetchGalleryItems() {
 
 	// Если дошли до конца, подгружаем новые элементы, которые изначально скрыты
 	var busy = false;
-	$(window).scroll(function() {
+	function scrollHandler() {
 	   if($(window).scrollTop() + $(window).height() > 
 	   		$(document).height() - options.scrollToggleHeight ) {
 
@@ -315,7 +315,10 @@ function fetchGalleryItems() {
 			});
 	   	}
 	   }
-	});
+	};
+
+	$(window).scroll(scrollHandler);
+	scrollHandler();
 
 
 // ----------------------------------------------------------------------------
