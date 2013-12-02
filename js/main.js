@@ -179,12 +179,12 @@ $(function() {
 			changeState(parent, "thank-email-state");
 		});
 
-		parent.on("click", ".next-button", function(event) {
+		parent.on("click", ".slider-to-right", function(event) {
 			event.stopPropagation();
 			$.fancybox.next();
 		});
 
-		parent.on("click", ".prev-button", function(event) {
+		parent.on("click", ".slider-to-left", function(event) {
 			event.stopPropagation();
 			$.fancybox.prev();
 		});

@@ -114,32 +114,34 @@
 	        	</div>
 	        	
 	        	
-	        		<div class="fancybox-custom-title">
-	        			<div class="slider-arrow">
-							<a href="#" class="slider-to-left"></a>
-							<a href="#" class="slider-to-right"></a>
-							<span class="current-slide">2</span> / <span class="all-slides">200</span>
-						</div>
-						<div class="fancybox-photograph">
-							<div class="fb-photograph-ava">
-								<img src="img/avatars/iokh.jpg" alt="">
-							</div>
-							<div class="fb-photograhp-desc">
-								Фотограф:
-								<span class="fb-photograph-name">
-									Авдотий Переверзиев
-								</span>
-							</div>		
-						</div>	
-	        		</div>
+	       
 	        	
 	        	<div class="gallery-body">
 
 	        		<script id="fancybox-template" type="text/x-handlebars-template">
+
+	        		 <div class="fancybox-custom-title">
+	        			<div class="slider-arrow">
+							<a href="javascript:void(0)" class="slider-to-left"></a>
+							<a href="javascript:void(0)" class="slider-to-right"></a>
+							<span class="current-slide">2</span> / <span class="all-slides">200</span>
+						</div>
+						<div class="fancybox-photograph">
+							<div class="fb-photograph-ava">
+								<img src="{{ photograph.avatar }}" alt="">
+							</div>
+							<div class="fb-photograhp-desc">
+								Фотограф:
+								<span class="fb-photograph-name">
+									{{ photograph.name }}
+								</span>
+							</div>		
+						</div>	
+	        		</div>
+
+
 	        			<img src="{{ avatar }}"></img>
         					<div class="state normal-state">
-	        					<a class="next-button">-</a>
-	        					<a class="prev-button">+</a>
 
 	        					<div class="likes">
 
@@ -207,9 +209,7 @@
 
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
 
-	        			<a style="display:none" rel="gallery-group" class="fancybox" title="Custom title">
-						 
-						</a>
+	        			<a style="display:none" rel="gallery-group" class="fancybox"></a>
 						
         				<div class="image-container" style="background-image : url({{ avatar }})">
         					<div class="state normal-state">
