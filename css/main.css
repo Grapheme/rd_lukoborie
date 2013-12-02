@@ -589,6 +589,47 @@ body {
 		text-transform: uppercase;
 	}
 /*------------------------------Fancybox inner title-------------------------- */
+.fancybox-custom-title {
+    height: 50px;
+    padding: 10px 0 0;
+}
+.fancybox-custom-title .slider-arrow {
+	position: relative;
+	top: auto;
+	left: auto;
+	float: left;
+	margin: 0;
+	padding: 13px 0;
+}
+
+.fancybox-photograph {
+    margin: 0 0 0 180px;
+    min-width: 260px;
+}
+.fb-photograph-ava {
+	width: 50px;
+	float: left;
+}
+.fb-photograph-ava img {
+	width: 100%;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px; 
+	-khtml-border-radius: 100px; 
+	border-radius: 100px;
+}
+.fb-photograhp-desc {
+	margin: 0 0 0 70px;
+	padding: 5px 0;
+	font: .875em/1.5714em 'garamondbookcitalic', serif;
+}
+.fb-photograph-name {
+	display: block;
+	font: 1em 'DINProBold', sans-serif;
+	text-transform: uppercase;
+}
+.fancybox-inner .fancybox .likes {
+    bottom: 76px;
+}
 /*------------------------------------Gallery--------------------------------- */
 
 /* Ajax loader */
@@ -636,7 +677,10 @@ li.gallery-item:hover .image-container {
 	   -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
-
+.fancybox .state {
+	bottom: 60px;
+	height: auto;
+}
 .state {
 	position: relative;
 	top : 0; left : 0;
