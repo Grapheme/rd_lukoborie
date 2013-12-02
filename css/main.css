@@ -356,8 +356,10 @@ body {
 .pxl-size-span {
     font: 106px/0.8em'DINProBold', sans-serif;
 }
-.product-model {	
-    text-decoration: underline;
+.product-model-cont {
+	width: 187px;
+	padding: 0 0 16px;
+    border-bottom: 16px solid #000;
 }
 .product-desc {
     float: left;
