@@ -114,26 +114,30 @@
 	        	</div>     	
 	        	<div class="gallery-body">
 
-	        		<script id="fancybox-template" type="text/x-handlebars-template">        		 
-	        			<img src="{{ avatar }}"></img>
+	        		<script id="fancybox-title-template" type="text/x-handlebars-template">    
 	        			<div class="fancybox-custom-title">
 		        			<div class="slider-arrow">
 								<a href="javascript:void(0)" class="slider-to-left"></a>
 								<a href="javascript:void(0)" class="slider-to-right"></a>
-								<span class="current-slide">2</span> / <span class="all-slides">200</span>
+								<span class="current-slide">{{ current }}</span> / <span class="all-slides">{{ total }}</span>
 							</div>
 							<div class="fancybox-photograph">
 								<div class="fb-photograph-ava">
-									<img src="{{ photograph.avatar }}" alt="">
+									<img src="{{ model.photograph.avatar }}" alt="">
 								</div>
 								<div class="fb-photograhp-desc">
 									Фотограф:
 									<span class="fb-photograph-name">
-										{{ photograph.name }}
+										{{ model.photograph.name }}
 									</span>
 								</div>		
 							</div>	
 		        		</div>
+		        	</script>
+
+	        		<script id="fancybox-template" type="text/x-handlebars-template">        		 
+	        			<img src="{{ avatar }}"></img>
+	        
         					<div class="state normal-state">
 
 	        					<div class="likes">
@@ -200,6 +204,8 @@
 	    				</div>
 					</script>
 
+
+					<!-- Gallery Item -->
 	        		<script id="gallery-item-template" type="text/x-handlebars-template">
 
 	        			<a style="display:none" rel="gallery-group" class="fancybox"></a>
@@ -270,6 +276,7 @@
 	    				</div>
 					</script>
 
+					<!-- Photograph template -->
 					<script id="gallery-photograph-template" type="text/x-handlebars-template">
         				<div class="photograph">
         					<div class="ph-caption">Фотограф проекта</div>

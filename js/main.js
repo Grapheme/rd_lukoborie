@@ -18,6 +18,9 @@ $(function() {
 	var fancyboxTemplate = Handlebars.compile( 
 		$("#fancybox-template").html() );
 
+	var fancyboxTitleTemplate = Handlebars.compile( 
+		$("#fancybox-title-template").html() );
+
 	var itemTemplate = Handlebars.compile( 
 		$("#gallery-item-template").html() );
 
@@ -178,16 +181,6 @@ $(function() {
 
 			changeState(parent, "thank-email-state");
 		});
-
-		parent.on("click", ".slider-to-right", function(event) {
-			event.stopPropagation();
-			$.fancybox.next();
-		});
-
-		parent.on("click", ".slider-to-left", function(event) {
-			event.stopPropagation();
-			$.fancybox.prev();
-		});
 		
 		// Обработчик клика на одну из социальных кнопок
 		parent.on("click", ".vote-state .social-button", 
@@ -281,7 +274,6 @@ function fetchGalleryItems() {
 	return defer.promise();
 };
 
-
 // ----------------------------------------------------------------------------
 // Бесконечный скролл
 // ----------------------------------------------------------------------------
@@ -330,6 +322,18 @@ function fetchGalleryItems() {
 	$(window).scroll(scrollHandler);
 	scrollHandler();
 
+	// Некрасивый быстрофикс :(
+	$("body").on("click", ".slider-to-left", 
+    	function(event) {
+    		event.stopPropagation();
+    		$.fancybox.prev();
+    });
+
+    $("body").on("click", ".slider-to-right", 
+    	function(event) {
+    		event.stopPropagation();
+    		$.fancybox.next();
+    });
 
 // ----------------------------------------------------------------------------
 // Подгрузка новых элементов, рендеринг и добавление в DOM
@@ -368,6 +372,17 @@ function fetchGalleryItems() {
 				$(".fancybox").fancybox({
 					closeBtn : false, 
 					arrows : false,
+					afterLoad : function() {
+						
+						var model = 
+							this.content.find(".gallery-item").data("model");
+
+    					this.title = fancyboxTitleTemplate({
+							current : this.index + 1,
+							total : this.group.length,
+							model : model
+    					});
+					},
 					helpers  : {
 				   title : { type : 'inside' },
 				   buttons : {}
