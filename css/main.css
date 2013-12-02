@@ -929,6 +929,13 @@ li.gallery-item:hover .image-container {
 	outline: 0 none;
 }
 
+
+.slider-to-left:active 	{ outline: none; }
+.slider-to-right:active { outline: none; }
+.slider-to-left:focus 	{ outline: none; }
+.slider-to-right:focus 	{ outline: none; }
+
+
 .slider-to-left {
 	background: url('../img/slider/arrow-left.png') no-repeat;
 	float: left;
