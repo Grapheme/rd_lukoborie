@@ -667,6 +667,15 @@ li.gallery-item:hover .image-container {
 	background-color: rgba(0,0,0,0.5);
 	z-index : 4;
 }
+.fancybox-inner {
+	overflow: hidden !important;
+}
+.fancybox-inner .state.vote-state,
+.fancybox-inner .state.thank-email-state, 
+.fancybox-inner .state.thank-vote-state,  
+.fancybox-inner .state.email-state {
+	position: absolute;	
+}
 .thank-email-state .condition-container,
 .thank-vote-state .condition-container {
 	position: absolute;

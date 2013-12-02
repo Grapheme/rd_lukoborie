@@ -174,7 +174,14 @@ $(function() {
 			event.stopPropagation();
 			changeState(parent, "vote-state");
 		});
+		
+		parent.on("click", ".email-state .ok-button",  
+		function(event) {
+			event.stopPropagation();
 
+			changeState(parent, "thank-email-state");
+		});
+		
 		// Обработчик клика на одну из социальных кнопок
 		parent.on("click", ".vote-state .social-button", 
 			function(event) {
