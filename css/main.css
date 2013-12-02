@@ -925,7 +925,8 @@ li.gallery-item:hover .image-container {
 
 .slider-to-left,.slider-to-right {
 	height: 24px;
-	width: 47px;	
+	width: 47px;
+	outline: 0 none;
 }
 
 .slider-to-left {
