@@ -26,7 +26,7 @@ var $text_to_top	= 133; 	// px
  */
 
 // Counting numbers of slides
-$('.fotos img').each(function(){
+$('.fotos a').each(function(){
 	$counts[$countClasses] = $countClasses;
 	$classes[$countClasses] = $(this).attr('class');
 	$countClasses++;
@@ -247,10 +247,10 @@ function goToCategory(link) {
 			fotorama.show($product_min);
 			break;
 		case 'video':
-			fotorama.show($video_min);
+			fotorama.show($video_min+1);
 			break;
 		case 'image':
-			fotorama.show($image_min);
+			fotorama.show($image_min+1);
 			break;
 	}
 }
