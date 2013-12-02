@@ -903,10 +903,12 @@ li.gallery-item:hover .image-container {
 }
 
 .slider-arrow {
-	margin: 0 auto;
-    text-align: center;
-    width: 165px;
-    margin-top: -11px;
+	position: absolute;
+	left: 50%;
+	text-align: center;
+	margin-left: -82.5px;
+	width: 165px;
+	margin-top: -11px;
 }
 
 .slideshow {
@@ -1000,9 +1002,9 @@ li.gallery-item:hover .image-container {
 
 .slide-texts {
 	height: 140px;
-	overflow: hidden;
-	margin-left: 40px;
-	margin-top: -100px;
+    margin-left: 40px;
+    margin-top: -86px;
+    overflow: hidden;
 }
 
 .slider-text-title {
