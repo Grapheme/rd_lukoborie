@@ -601,9 +601,8 @@ body {
 	margin: 0;
 	padding: 13px 0;
 }
-
 .fancybox-photograph {
-    margin: 0 0 0 180px;
+    float: right;
     min-width: 260px;
 }
 .fb-photograph-ava {
@@ -676,8 +675,14 @@ li.gallery-item:hover .image-container {
 	        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .fancybox .state {
-	bottom: 60px;
+	bottom: 0;
 	height: auto;
+}
+.fancybox-inner .state.vote-state,
+.fancybox-inner .state.thank-email-state, 
+.fancybox-inner .state.thank-vote-state,  
+.fancybox-inner .state.email-state {
+	position: absolute;	
 }
 .fancybox .social-button.vkontakte {
     float: left;
