@@ -15,9 +15,9 @@ var $slider_text	= '.slider-text';
 var $text_block 	= '.slider-text .slider-under-block';
 var $left_text		= 0;
 
-var $tblock_speed 	= 1000; // Speed of text blocks animation
-var $text_top_speed = 1000; // Speed of text getting top
-var $left_anim_speed= 1000; // Speed of left text animation
+var $tblock_speed 	= 400; // Speed of text blocks animation
+var $text_top_speed = 250; // Speed of text getting top
+var $left_anim_speed= 250; // Speed of left text animation
 
 var $text_to_top	= 133; 	// px
 
@@ -105,12 +105,12 @@ $('.slider-to-left').click(function() {
 
 function toRight() {
 	if (!sliderOn() && !textBlockOn()) {
-		changeText('right');
 		textDown();
 		setTimeout(function(){
 			addSlideBlock('right');
 			textSlide('right');
 			textToTop('right');
+			changeText('right');
 		},$text_top_speed);
 	}
 	fotorama.show('>');
@@ -118,9 +118,9 @@ function toRight() {
 
 function toLeft() {
 	if (!sliderOn() && !textBlockOn()) {
-		changeText('left');
 		addSlideBlock('left');
 		textSlide('left');
+		changeText('left');
 		setTimeout(function(){
 			textToTop('left');
 		}, $tblock_speed);
@@ -130,24 +130,24 @@ function toLeft() {
 
 function changeText(direct) {
 	if(direct == 'right') {
-		this.textid = $($text_block+":eq(2)").attr('data-text-id');
+		this.textid = $($text_block+":eq(1)").attr('data-text-id');
 	}
 	if(direct == 'left') {
-		this.textid = $($text_block+":eq(0)").attr('data-text-id');
+		this.textid = $($text_block+":eq(1)").attr('data-text-id');
 	}
 	if($('.active-text')[0])
 	{
 		$('.active-text').animate({top:$('.slide-texts').height()},500,function(){
 			$('.active-text').css('display','none').removeClass('active-text');
-			$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -30},300,function(){
-				$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: 1000, easing: 'easeOutBounce'}, 50);
+			$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -10},$left_anim_speed,function(){
+				$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
 				getLeftWidth();
 			}).addClass('active-text');
 		});
 	} else {
 		$('.active-text').css('display','none').removeClass('active-text');
-		$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -30},300,function(){
-			$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: 1000, easing: 'easeOutBounce'}, 50);
+		$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -10},300,function(){
+			$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
 			getLeftWidth();
 		}).addClass('active-text');
 	}
