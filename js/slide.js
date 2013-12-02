@@ -25,10 +25,25 @@ var $text_to_top	= 133; 	// px
  * each
  */
 
+var $video_b = true;
+var $image_b = true;
+var $video_first;
+var $image_first;
+
 // Counting numbers of slides
 $('.fotos a').each(function(){
 	$counts[$countClasses] = $countClasses;
 	$classes[$countClasses] = $(this).attr('class');
+	if($(this).attr('class') == 'video' && $video_b == true)
+	{
+		$video_first = $countClasses;
+		$video_b = false;
+	}
+	if($(this).attr('class') == 'image' && $image_b == true)
+	{
+		$image_first = $countClasses;
+		$image_b = false;
+	}
 	$countClasses++;
 });
 
@@ -247,10 +262,10 @@ function goToCategory(link) {
 			fotorama.show($product_min);
 			break;
 		case 'video':
-			fotorama.show($video_min+1);
+			fotorama.show($video_first);
 			break;
 		case 'image':
-			fotorama.show($image_min+1);
+			fotorama.show($image_first);
 			break;
 	}
 }
