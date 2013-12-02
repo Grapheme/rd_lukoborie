@@ -95,19 +95,16 @@ $(function() {
 		var parent = $("<li>").addClass("gallery-item");
 		parent.html( itemTemplate( model ));
 
+		parent.find(".fancybox").html(
+			makeLookModalView(model)[0]
+		);
+
 		parent.data("model", model);
 
 		// Обработчик клика на лук
 		parent.on("click", ".normal-state", function(event) {
 			event.stopPropagation();
-
-			var fancyboxContent = makeLookModalView(model);
-
-			var a = $("<a>").fancybox({
-				content : fancyboxContent
-			});
-
-			a.click();
+			parent.find(".fancybox").click();
 		});
 
 
@@ -181,6 +178,16 @@ $(function() {
 
 			changeState(parent, "thank-email-state");
 		});
+
+		parent.on("click", ".next-button", function(event) {
+			event.stopPropagation();
+			$.fancybox.next();
+		});
+
+		parent.on("click", ".prev-button", function(event) {
+			event.stopPropagation();
+			$.fancybox.prev();
+		});
 		
 		// Обработчик клика на одну из социальных кнопок
 		parent.on("click", ".vote-state .social-button", 
@@ -209,8 +216,7 @@ $(function() {
 			function(event) {
 
 			event.stopPropagation();
-
-			// TODO: закрывать fancybox
+			$.fancybox.close();
 		});
 
 
@@ -250,7 +256,11 @@ function fetchGalleryItems() {
 		items.push({
 			type   : "look",
 			avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
-			likes  :  Math.floor(Math.random() * 30) 
+			likes  :  Math.floor(Math.random() * 30),
+			photograph : {
+				name : "Авдотий Переверзиев",
+				avatar : "img/avatars/avd.jpg"
+			}
 		});
 
 		// Переодически разбавляем ленту фотографом
@@ -354,6 +364,16 @@ function fetchGalleryItems() {
 			elements.imagesLoaded(function() {
 				// Добавляем элемент в masonry
 				galleryList.append( elements );	
+
+				$(".fancybox").fancybox({
+					closeBtn : false, 
+					arrows : false,
+					helpers  : {
+				   title : { type : 'inside' },
+				   buttons : {}
+				  }
+				});
+
 				masonry.appended( elements );
 				defer.resolve();
 			});
