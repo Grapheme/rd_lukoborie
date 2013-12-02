@@ -673,8 +673,24 @@ li.gallery-item:hover .image-container {
 
 	-webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 	   -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
-	        box-
-	        shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.fancybox .state {
+	bottom: 60px;
+	height: auto;
+}
+.fancybox .social-button.vkontakte {
+    float: left;
+    margin: 0 1%;
+    width: 46%;
+}
+.fancybox .social-button.facebook {
+    float: left;
+    margin: 0 2%;
+    width: 46%;
+}
+.fancybox .vote-state .likes-container {
+    top: 50%;
 }
 
 .state {
