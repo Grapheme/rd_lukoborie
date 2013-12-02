@@ -101,6 +101,12 @@ input {
 
 /* FONTS */
 
+/*
+.fotorama__stage__frame--video {
+	margin: 0 auto !important;
+    width: 748px !important;
+}*/
+
 .full-hd,.slider-title { font-family: 'DINProBold', sans-serif; }
 
 .content_container {
@@ -121,6 +127,7 @@ body {
 .wrapper {
 	width: 1040px;	
 	margin: 0 auto;
+	margin-top: 40px;
 	background: #fff;
 }
 /* ==========================================================================
@@ -983,6 +990,7 @@ li.gallery-item:hover .image-container {
 .slideshow {
 	position: relative;
     top: -120px;
+    margin-bottom: -150px;
 }
 
 .current-slide,.all-slides {
