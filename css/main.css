@@ -681,6 +681,19 @@ li.gallery-item:hover .image-container {
 	bottom: 60px;
 	height: auto;
 }
+.fancybox .social-button.vkontakte {
+    float: left;
+    margin: 0 1%;
+    width: 46%;
+}
+.fancybox .social-button.facebook {
+    float: left;
+    margin: 0 2%;
+    width: 46%;
+}
+.fancybox .likes-container {
+    top: 50%;
+}
 .state {
 	position: relative;
 	top : 0; left : 0;
