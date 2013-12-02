@@ -98,7 +98,7 @@ $(function() {
 		parent.data("model", model);
 
 		// Обработчик клика на лук
-		parent.on("click", ".normal-state", function() {
+		parent.on("click", ".normal-state", function(event) {
 			event.stopPropagation();
 
 			var fancyboxContent = makeLookModalView(model);
