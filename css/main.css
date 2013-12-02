@@ -711,8 +711,37 @@ li.gallery-item:hover .image-container {
 	width: 100%;
 	height: 100%;
 }
-
-
+.cond-thank-prods {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+.cond-thank-item {
+    display: inline-block;
+    text-transform: none;
+    width: 30%;
+}
+.cond-thank-capt {
+	font: .9em 'PT Sans', sans-serif;
+}
+.cond-thank-item  img {
+    height: 90px;
+    margin: 10px 0;
+    max-width: 90px;
+}
+.cond-thank-name {
+    font: 2em 'dinprobold', sans-serif;
+}
+.cond-thank-desc {
+    font: 1em 'garamondbookcitalic',serif;
+    margin: 10px 0;
+    text-transform: none;
+}
+.cond-thank-item {
+    display: inline-block;
+    text-transform: none;
+    width: 30%;
+}
 /*  -----------------------------------------------------------------------
 	Состояние : обычное 
 */
@@ -790,7 +819,8 @@ li.gallery-item:hover .image-container {
 	float: left; width: 74%;
 }
 .email-state .condition-container .buy-submit {
-	float: left; width: 24%;
+    float: right;
+    width: 50px;
 }
 .cond-head {
 	margin: 0 0 0.6em;
@@ -800,6 +830,16 @@ li.gallery-item:hover .image-container {
 }
 .cond-check-email {
     font: 0.875em/1.2857em 'garamondbookcitalic', serif;
+}
+.fancybox .email-state .cond-check-email {
+    font: 1em 'dinprobold',sans-serif;
+    margin: 5em auto 1em;
+    text-transform: uppercase;
+    width: 250px;
+}
+.fancybox .discount-form {
+	width: 250px;
+	margin: 0 auto;
 }
 .thank-email-state {
 	text-align: center;
