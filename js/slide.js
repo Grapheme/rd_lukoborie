@@ -160,7 +160,7 @@ function changeText(direct) {
 			$('.slide-left-text[data-lid=' + textid + ']').addClass('active-text');
 			getLeftWidth();
 			$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -10},300,function(){
-				$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
+				$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, 100);
 			});
 		});
 	} else {
@@ -168,7 +168,7 @@ function changeText(direct) {
 		$('.slide-left-text[data-lid=' + textid + ']').addClass('active-text');
 		getLeftWidth();
 		$('.slide-left-text[data-lid=' + textid + ']').css('display','inline-block').animate({top: -10},300,function(){
-			$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
+			$('.slide-left-text[data-lid=' + textid + ']').animate({top:0}, 100);
 		});
 	}
 	
@@ -334,7 +334,7 @@ function animateNav() {
 }
 function animateOnLoad() {			
 	/*Анимация происходит при помощи transition*/		
-	var $leftElems = $('.product-description .left_dir').not('.bottom-group');
+	var $leftElems = $('.product-description .left_dir').not('.bottom-group').not('.top-group');
 	var $rightelems = $('.product-description .right_dir');
 	var $fadeElems = $('.product-description .w_fade');	
 	var $columnLeft = $('.product-description .bottom-group');
@@ -342,8 +342,12 @@ function animateOnLoad() {
 	//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
 	timeOutFade($leftElems, 0, 400);
 	timeOutFade($rightelems, 0, 300);
-	timeOutFade($('.bottom_dir'), 0, 400);
 	timeOutFade($columnLeft, 0, 200);
+}
+
+function animateOnLoadTwo() {
+	timeOutFade($('.bottom_dir'), 0, 400);
+	timeOutFade($('.top-group'), 0, 400);
 }
 
 function gx_show() {
@@ -361,11 +365,19 @@ function mega_show() {
 }
 function animStart() {
 	/*Вызываем функцию анимации элементтов*/
-	if(/*$(document).scrollTop() > 500 && $(document).scrollTop() < 1700 && $scrollanim*/ isScrolled('.product-description') && $scrollanim) {
+	if(isScrolled('.product-description') && $scrollanim) {
 		gx_show();
+		animateOnLoadTwo();
+		$scrollanim = false;
+	}
+}
+
+function animStart2() {
+	/*Вызываем функцию анимации элементтов*/
+	if(isScrolled('.bottom-group') && $scrollanim2) {
 		mega_show();
 		animateOnLoad();
-		$scrollanim = false;
+		$scrollanim2 = false;
 	}
 }
 
@@ -375,7 +387,7 @@ function isScrolled(elem)
     var $bottomp = $topp + $(elem).height();
     var $windowh = $(window).height();
     var $amountw = $windowh*0.2;
-    if($(document).scrollTop() > $topp-$(elem).height()+$amountw && $(document).scrollTop() < $bottomp ) {
+    if($(document).scrollTop() > $topp-$windowh+$amountw && $(document).scrollTop() < $bottomp ) {
     	return true;
     } else {
     	return false;
@@ -384,11 +396,14 @@ function isScrolled(elem)
 
 
 var $scrollanim = true;
+var $scrollanim2 = true;
 
 $(document).scroll(function(){
 	animStart();
+	animStart2();
 });
 
 $(function(){
 	animStart();
+	animStart2();
 });
