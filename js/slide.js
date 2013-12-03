@@ -69,8 +69,6 @@ $('.slide-left-text').each(function(){
  */
 
 $(function(){
-	/*Вызываем функцию анимации элементтов*/
-	setTimeout( function() { animateOnLoad(); }, 1000);
 	
 	$.each($classes, function(key, value) {
 		if(value == 'video') {
@@ -331,10 +329,39 @@ function animateOnLoad() {
 	//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
 	timeOutFade($leftElems, 0, 400);
 	timeOutFade($rightelems, 0, 300);
+	timeOutFade($('.bottom_dir'), 0, 400);
 }
 
 function gx_show() {
-	$('.anim-from-bottom').animate({top: -10},$left_anim_speed,function(){
-		$('.anim-from-bottom').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
+	$('.anim-left-black-line').animate({width: $('.anim-from-bottom').width()}, 300, function(){
+		$('.anim-from-bottom').animate({top: -10},300,function(){
+			$('.anim-from-bottom').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 150);
+		});
 	});
 }
+
+function mega_show() {
+	$('.right-black-line').animate({width:$('.pxl-size-span').width()}, 500, function(){
+		$('.mega-anim').animate({top:0}, 500);
+	});
+}
+
+function animStart() {
+	/*Вызываем функцию анимации элементтов*/
+	if($(document).scrollTop() > 500 && $(document).scrollTop() < 1700 && $scrollanim) {
+		gx_show();
+		mega_show();
+		animateOnLoad();
+		$scrollanim = false;
+	}
+}
+
+var $scrollanim = true;
+
+$(document).scroll(function(){
+	animStart();
+});
+
+$(function(){
+	animStart();
+});

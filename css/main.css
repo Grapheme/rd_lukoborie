@@ -376,7 +376,6 @@ body {
     margin: 0 1.5%;
 }
 .product-model {
-	border-bottom: 16px solid #000;
 	position: relative;
 	left: -15px;
 }
@@ -414,14 +413,13 @@ body {
 	text-transform: uppercase;
 }
 .product-desc-column.pxl-size {
-	text-align: center;
+	text-align: left;
 }
 .pxl-size-span {
 	display: block;
 	width: 80%;
 	margin: 0 auto 15px;
 	padding: 10px 0;
-    border-top: 16px solid #000;  
     color: #000; 
 }
 .product-desc-column.scheme img {
@@ -1186,6 +1184,21 @@ li.gallery-item:hover .image-container {
 	margin-left: 40px;
 }
 
+.right-black-line {
+	display: inline-block;
+	height: 16px;
+	width: 0px;
+	background: #000;
+	margin-left: 22px;
+	display: block;
+}
+
+.anim-left-black-line {
+	height: 16px;
+	width: 0px;
+	background: #000;
+}
+
 .slide-texts {
 	height: 170px;
 	margin-left: 28px;
@@ -1223,10 +1236,10 @@ li.gallery-item:hover .image-container {
 }
 .top_dir {
 	-webkit-transform: translate3d(0px, 500px, 0px); 
-	-ms-transform: translate(0px, 500px,); 
-	transform: translate(0px, 500px,);
-	-moz-transform: translate(0px, 500px,);
-	-o-transform: translate(0px, 500px,);
+	-ms-transform: translate(0px, 500px); 
+	transform: translate(0px, 500px);
+	-moz-transform: translate(0px, 500px);
+	-o-transform: translate(0px, 500px);
 }
 .right_dir {
 	-webkit-transform: translate3d(1000px, 0px, 0px); 
@@ -1252,10 +1265,23 @@ li.gallery-item:hover .image-container {
 
 .anim-from-bottom {
 	position: relative;
-	top: 200px;
+	top: 130px;
 }
 
-.product-model {
+.product-model-cont {
+	margin-top: -25px;
+    overflow: hidden;
+    padding-top: 25px;
+    width: 260px;
+}
+
+.mega-anim {
+	position: relative;
+	top: -350px;
+	text-align: center;
+}
+
+.product-desc-column.pxl-size {
 	overflow: hidden;
 }
 
