@@ -359,12 +359,25 @@ function mega_show() {
 }
 function animStart() {
 	/*Вызываем функцию анимации элементтов*/
-	if($(document).scrollTop() > 500 && $(document).scrollTop() < 1700 && $scrollanim) {
+	if(/*$(document).scrollTop() > 500 && $(document).scrollTop() < 1700 && $scrollanim*/ isScrolled('.product-description') && $scrollanim) {
 		gx_show();
 		mega_show();
 		animateOnLoad();
 		$scrollanim = false;
 	}
+}
+
+function isScrolled(elem)
+{
+    var $topp = $(elem).position().top;
+    var $bottomp = $topp + $(elem).height();
+    var $windowh = $(window).height();
+    var $amountw = $windowh*0.2;
+    if($(document).scrollTop() > $topp-$(elem).height()+$amountw && $(document).scrollTop() < $bottomp ) {
+    	return true;
+    } else {
+    	return false;
+    }
 }
 
 
