@@ -376,7 +376,6 @@ body {
     margin: 0 1.5%;
 }
 .product-model {
-	border-bottom: 16px solid #000;
 	position: relative;
 	left: -15px;
 }
@@ -414,14 +413,13 @@ body {
 	text-transform: uppercase;
 }
 .product-desc-column.pxl-size {
-	text-align: center;
+	text-align: left;
 }
 .pxl-size-span {
 	display: block;
 	width: 80%;
 	margin: 0 auto 15px;
 	padding: 10px 0;
-    border-top: 16px solid #000;  
     color: #000; 
 }
 .product-desc-column.scheme img {
@@ -693,24 +691,30 @@ li.gallery-item:hover .image-container {
 	bottom: 0;
 	height: auto;
 }
+.fancybox-inner .state.normal-state,
 .fancybox-inner .state.vote-state,
 .fancybox-inner .state.thank-email-state, 
 .fancybox-inner .state.thank-vote-state,  
 .fancybox-inner .state.email-state {
 	position: absolute;	
 }
-.fancybox .social-button.vkontakte {
-    float: left;
-    margin: 0 1%;
-    width: 46%;
+
+.fancybox .normal-state .social-buttons-container {
+    bottom: 18px;
+    padding: 0;
+    position: absolute;
+    right: 12px;
+    width: 230px;
 }
-.fancybox .social-button.facebook {
+.social-button.vkontakte {
     float: left;
-    margin: 0 2%;
-    width: 46%;
+    margin: 0 15px 0 0;
+    width: 96px;
 }
-.fancybox .vote-state .likes-container {
-    top: 50%;
+.social-button.facebook {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 96px;
 }
 
 .state {
@@ -859,10 +863,9 @@ li.gallery-item:hover .image-container {
 .thank-email-state {
 	text-align: center;
 }
-
 .vote-state .likes-container {
 	position: absolute;
-	top: 100px; left : 0;
+	top: 122px; left : 0;
 	width: 100%;
 	height: 100%;
 
@@ -871,26 +874,42 @@ li.gallery-item:hover .image-container {
 	color : white;
 	text-align: center;
 }
-
-.vote-state .social-buttons-container {
+.fancybox .likes-container {
+	position: absolute;
+    font: 2em 'DINProBold', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+    bottom: 18px;
+    height: 45px;
+    left: 10px;
+    top: auto;
+    width: auto;
+}
+.fancybox .likes-thumb,
+.vote-state .likes-thumb{
+    background: url("../img/big_idle.png") no-repeat scroll 0 12px;
+    height: 100%;
+    width: 50px;
+}
+.vote-state .social-buttons-container,
+.fancybox .social-buttons-container {
 	position: absolute;
 	width: 100%;
-	bottom: 18px;
+	bottom: 10px;
 	padding: 0;
 }
-.vote-state  .social-button {
+.vote-state  .social-button,
+.fancybox .social-button {
 	color : #fff;
 	cursor: pointer;    
     font: .9em/2.9em 'DINProBold', sans-serif;
 	text-transform: uppercase;
 	padding: 0;
-	margin: 5px 18px 0;
+	margin: 5px 1px 0 15px;
 }
-.social-button.facebook {
-    background: #52679E;
-}
-.social-button.vkontakte {
-    background: #617FA1;
+.social-button {
+	overflow: hidden;
 }
 .fb-logo, .vk-logo {
     float: left;
@@ -1165,6 +1184,21 @@ li.gallery-item:hover .image-container {
 	margin-left: 40px;
 }
 
+.right-black-line {
+	display: inline-block;
+	height: 16px;
+	width: 0px;
+	background: #000;
+	margin-left: 22px;
+	display: block;
+}
+
+.anim-left-black-line {
+	height: 16px;
+	width: 0px;
+	background: #000;
+}
+
 .slide-texts {
 	height: 170px;
 	margin-left: 28px;
@@ -1202,10 +1236,10 @@ li.gallery-item:hover .image-container {
 }
 .top_dir {
 	-webkit-transform: translate3d(0px, 500px, 0px); 
-	-ms-transform: translate(0px, 500px,); 
-	transform: translate(0px, 500px,);
-	-moz-transform: translate(0px, 500px,);
-	-o-transform: translate(0px, 500px,);
+	-ms-transform: translate(0px, 500px); 
+	transform: translate(0px, 500px);
+	-moz-transform: translate(0px, 500px);
+	-o-transform: translate(0px, 500px);
 }
 .right_dir {
 	-webkit-transform: translate3d(1000px, 0px, 0px); 
@@ -1231,10 +1265,23 @@ li.gallery-item:hover .image-container {
 
 .anim-from-bottom {
 	position: relative;
-	top: 200px;
+	top: 130px;
 }
 
-.product-model {
+.product-model-cont {
+	margin-top: -25px;
+    overflow: hidden;
+    padding-top: 25px;
+    width: 260px;
+}
+
+.mega-anim {
+	position: relative;
+	top: -350px;
+	text-align: center;
+}
+
+.product-desc-column.pxl-size {
 	overflow: hidden;
 }
 
