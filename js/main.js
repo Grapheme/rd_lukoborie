@@ -184,24 +184,9 @@ $(function() {
 
 		parent.data("model", model);
 
-		parent.on("click", ".normal-state .likes-thumb", 
+		parent.on("click", ".normal-state .social-button", 
 			function(event) {
 
-			event.stopPropagation();
-			changeState(parent, "vote-state");
-		});
-		
-		parent.on("click", ".email-state .ok-button",  
-		function(event) {
-			event.stopPropagation();
-
-			changeState(parent, "thank-email-state");
-		});
-		
-		// Обработчик клика на одну из социальных кнопок
-		parent.on("click", ".vote-state .social-button", 
-			function(event) {
-			
 			event.stopPropagation();
 			var model = parent.data("model");
 
@@ -210,8 +195,15 @@ $(function() {
 			parent.find(".likes-count").text(model.likes + 1);
 			parent.find(".likes-container").text(model.likes + 1);
 
-			changeState(parent, "email-state");			
+			changeState(parent, "email-state");	
 		});
+		
+		parent.on("click", ".email-state .ok-button",  
+		function(event) {
+			event.stopPropagation();
+
+			changeState(parent, "thank-email-state");
+		});		
 
 		// Обработчик на нажатие крестика
 		parent.on("click", ".state-cross",  
