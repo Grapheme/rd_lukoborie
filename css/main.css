@@ -427,6 +427,11 @@ body {
 	margin: 0 0 1em;
 }
 /*------------------------------------Filters--------------------------------- */
+.data-active {
+	background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    cursor: auto;
+}
 .f-date {	
 	width: 25%;	
 }
@@ -440,7 +445,7 @@ body {
 	display: none;
     float: right;
     font-size: 0.7em;
-    line-height: 2em;
+    line-height: 1.5em;
     margin: 0 0 0 0.7em;
 }
 .filter-container:after {
@@ -540,6 +545,9 @@ body {
 }
 .chop-place:hover .chop-arrow {
 	opacity: 1;
+}
+.chop-arrow img {
+	margin-top: -3px;
 }
 .chop-arrow {
 	display: inline-block;
