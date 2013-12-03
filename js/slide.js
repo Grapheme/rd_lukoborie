@@ -20,6 +20,7 @@ var $text_top_speed = 250; // Speed of text getting top
 var $left_anim_speed= 250; // Speed of left text animation
 
 var $text_to_top	= 142; 	// px
+var $nav			= 0;
 
 /*
  * each
@@ -64,6 +65,11 @@ $('.slide-left-text').each(function(){
 	$left_text++;
 });
 
+$('.slider-nav a').each(function(){
+	$(this).attr('data-link',$nav);
+	$nav++;
+});
+
 /*
  * Document ready
  */
@@ -98,6 +104,7 @@ var fotorama = $fotoramaDiv.data('fotorama');
  */
 
 $('.slider-nav a').click(function(){
+	navToSlider(this);
 	goToCategory(this);
 	return false;
 });
@@ -121,7 +128,7 @@ $('.slider-to-left').click(function() {
  * Functions
  */
 
-function toRight() {
+function toRight(isfotorama) {
 	if (!sliderOn() && !textBlockOn()) {
 		textDown();
 		changeText('right');
@@ -131,10 +138,12 @@ function toRight() {
 			textToTop('right');
 		},$text_top_speed);
 	}
-	fotorama.show('>');
+	if(typeof(fotorama) != "undefined" && fotorama !== null) {
+		fotorama.show('>');
+	}
 }
 
-function toLeft() {
+function toLeft(isfotorama) {
 	if (!sliderOn() && !textBlockOn()) {
 		addSlideBlock('left');
 		textSlide('left');
@@ -143,7 +152,21 @@ function toLeft() {
 			textToTop('left');
 		}, $tblock_speed);
 	}
-	fotorama.show('<');
+	if(typeof(fotorama) != "undefined" && fotorama !== null) {
+		fotorama.show('<');
+	}
+}
+
+function navToSlider(link) {
+	var to = $(link).attr('data-link');
+	var active = $('a.active').attr('data-link');
+	if(to<active)
+	{
+		toLeft(true);
+	} else 
+	if (to>active) {
+		toRight(true);
+	}
 }
 
 function changeText(direct) {
