@@ -146,13 +146,20 @@ body {
 	-o-transition: all .5s ease;
 	-ms-transition: all .5s ease;
 }
+.filter-container {
+	transition: all .1s ease;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+}
 
 /* ==========================================================================
    Header styles
    ========================================================================== */
   
 .main-header {
-	padding: 46px 40px 73px 38px;
+	padding: 61px 40px 73px 38px;
 	border-bottom: 2px solid #E4E4E4;
 }
 
@@ -547,7 +554,7 @@ body {
 	.filter-container {
 		position: relative;
 		height: 55px;
-		padding: 18px 0 20px 28px;
+		padding: 18px 0 28px 28px;
 		border: 1px solid #e3e3e3;
 		cursor: pointer;
 		font-size: 13px;
@@ -646,7 +653,7 @@ body {
 }
 
 .gallery-body {
-	margin: 43px 0 0;
+	margin: 37px 0 0;
 }
 
 li.gallery-item {
@@ -750,8 +757,8 @@ li.gallery-item:hover .image-container {
 }
 .normal-state .likes {
 	position: absolute;
-    bottom: 18px;
-    left: 40%;    
+    bottom: 13px;
+    left: 38%;    
     font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
 }
@@ -904,9 +911,10 @@ li.gallery-item:hover .image-container {
 .likes-thumb {
 	display: inline-block;
 	width: 25px;
-    height: 20px;
-    background: url("../img/main_sprite.png") no-repeat scroll -11px -125px rgba(0, 0, 0, 0);
-    cursor: pointer;
+	height: 26px;
+	background: url("../img/main_sprite.png") no-repeat scroll -12px -124px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	vertical-align: top;
 }
 .gallery-item img {
 	width: 100%;

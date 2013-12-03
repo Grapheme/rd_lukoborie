@@ -398,9 +398,14 @@ function fetchGalleryItems() {
     					});
 					},
 					helpers  : {
-				   title : { type : 'inside' },
-				   buttons : {}
-				  }
+					   title : { type : 'inside' },
+					   buttons : {},
+					   overlay : {
+					      css : {
+					      	 'background' : 'transparent' 				
+					      }		
+					   }					   
+					}					
 				});
 
 				masonry.appended( elements );
