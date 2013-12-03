@@ -1,7 +1,7 @@
 $(function() {
 	
 	/*Вызываем функцию анимации элементтов*/
-	animateOnLoad();
+	setTimeout( animateOnLoad(), 0);
 	
 	// ----------------------------------------------------------------------------
 	// Настройки
@@ -152,14 +152,7 @@ $(function() {
 			parent.find(".likes-count").text(model.likes + 1);
 			parent.find(".likes-container").text(model.likes + 1);
 
-
-			setTimeout(function() {
-				changeState(parent, "thank-vote-state");	
-
-				setTimeout(function() {	
-					changeState(parent, "email-state");
-				}, 2000);
-			}, 1000);
+            changeState(parent, "email-state");			
 		});
 
 		// Обработчик на нажатие кнопки при указании email
@@ -217,14 +210,7 @@ $(function() {
 			parent.find(".likes-count").text(model.likes + 1);
 			parent.find(".likes-container").text(model.likes + 1);
 
-
-			setTimeout(function() {
-				changeState(parent, "thank-vote-state");
-
-				setTimeout(function() {	
-					changeState(parent, "email-state");
-				}, 2000);
-			}, 1000);
+			changeState(parent, "email-state");			
 		});
 
 		// Обработчик на нажатие крестика
@@ -429,31 +415,26 @@ function fetchGalleryItems() {
 // ----------------------------------------------------------------------------
 // Функция анимации элементов
 // ----------------------------------------------------------------------------	
-	function animateOnLoad() {		
-		/*Анимация происходит при помощи transition*/
-		var $elems = $('.top_dir, .right_dir, .bottom_dir, .left_dir ');
-		var $fadeElems = $('.w_fade');
-		/*Обнуляем свойство translate и opacity*/						
-		$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-		
+	function timeOutFade($elems, $fadeElems, timer, step) {
 		if($elems[0]) {
-			/*$fadeElems.css({ 'opacity': '1' });
-				scrollParent.find('.left_func').each( function(){
+			$fadeElems.css({ 'opacity': '1' });
+			$elems.each( function(){
 				var that = $(this);
 				setTimeout( function(){
 					that.css({ 'opacity': '1', '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
 				}, timer);	
-				timer += 200;
-			});
-			timer = 100;
-			scrollParent.find('.right_func').each( function(){			
-				var rightThat = $(this);
-				setTimeout( function(){
-					rightThat.css({ 'opacity': '1', '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-				}, timer);	
-				timer += 200;
-			});*/
+				timer += step;
+			});			
 		}
-		
+	}
+	function animateOnLoad() {			
+		/*Анимация происходит при помощи transition*/
+		var $elems = $('.top_dir, .right_dir, .bottom_dir, .left_dir ');
+		var $leftElems = $('.left_dir');
+		var $rightelems = $('.right_dir');
+		var $fadeElems = $('.w_fade');						
+		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+		timeOutFade($leftElems, $fadeElems, 400, 300);
+		timeOutFade($rightelems, $fadeElems, 200, 200);
 	}
 });
