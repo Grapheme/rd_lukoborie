@@ -161,7 +161,7 @@ body {
    ========================================================================== */
   
 .main-header {
-	padding: 61px 40px 73px 38px;
+	padding: 61px 40px 32px 38px;
 	border-bottom: 2px solid #E4E4E4;
 }
 
@@ -281,26 +281,63 @@ body {
    ========================================================================== */
 
 .gallery {
-	padding: 25px 40px 40px;
+	padding: 28px 40px 40px;
 }
 .sect-head {
 	text-align: center;
 }
 .sect-desc {
-	font: .875em/1.5714em 'garamondbookcitalic', serif;
+	font: .875em/1.6em 'garamondbookcitalic', serif;
+}
+.sect-form-cont {
+	margin: 20px auto 36px;
+	text-align: center;
+}
+.sect-form-header {
+	display: inline-block;
+	font: 700 0.8em 'PT Sans',sans-serif;
+}
+.sect-form {
+	display: inline-block;
+	margin: 0 0 0 9px;	
+	border-bottom: 1px solid #e5e5e5;
+	color: #222;
+}
+.sect-form ::-webkit-input-placeholder {
+   color: #222;
+}
+
+.sect-form :-moz-placeholder {
+   color: #222; 
+}
+
+.sect-form ::-moz-placeholder {
+   color: #222;  
+}
+
+.sect-form :-ms-input-placeholder {  
+   color: #222;  
+}
+.sect-form .line-input {
+	font-size: .85em;
+	outline: none;
+}
+.sect-form .line-submit {
+	background: none;
 }
 .social-widgets {
-	display: inline-block;
+	display: block;
 	zoom: 1;
-	width: 334px;
+	width: 341px;
 	height: 25px;
-	margin: 15px 0 23px;
+	margin: 27px auto 23px;
+	text-align: center;
 }
 .social-item {
+	display: inline-block;
 	overflow: hidden;
-	float: left;
 	width: 31%;
-	margin: 0 1%;
+	margin: 0 1% 0 1%;
 	height: 100%;
 }
 /*---------------------------------Product page------------------------------- */
