@@ -459,6 +459,8 @@ body {
 	margin: 0 auto 15px;
 	padding: 10px 0;
     color: #222222; 
+	letter-spacing: -20px;
+	margin-left: 5px;
 }
 .product-desc-column.scheme img {
 	display: block;
