@@ -323,13 +323,15 @@ function textBlockOn() {
 
 function animateOnLoad() {			
 	/*Анимация происходит при помощи transition*/		
-	var $leftElems = $('.left_dir');
+	var $leftElems = $('.left_dir').not('.bottom-group');
 	var $rightelems = $('.right_dir');
-	var $fadeElems = $('.w_fade');						
+	var $fadeElems = $('.w_fade');	
+	var $columnLeft = $('.left_dir.bottom-group');					
 	//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
 	timeOutFade($leftElems, 0, 400);
 	timeOutFade($rightelems, 0, 300);
 	timeOutFade($('.bottom_dir'), 0, 400);
+	timeOutFade($columnLeft, 0, 200);
 }
 
 function gx_show() {
