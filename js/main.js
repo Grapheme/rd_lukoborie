@@ -1,7 +1,7 @@
 $(function() {
 	
 	/*Вызываем функцию анимации элементтов*/
-	setTimeout( animateOnLoad(), 0);
+	setTimeout( function() { animateOnLoad(); }, 1000);
 	
 	// ----------------------------------------------------------------------------
 	// Настройки
@@ -433,7 +433,7 @@ function fetchGalleryItems() {
 		var $rightelems = $('.right_dir');
 		var $fadeElems = $('.w_fade');						
 		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-		timeOutFade($leftElems, $fadeElems, 0, 300);
-		timeOutFade($rightelems, $fadeElems, 0, 200);
+		timeOutFade($leftElems, $fadeElems, 0, 400);
+		timeOutFade($rightelems, $fadeElems, 0, 300);
 	}
 });
