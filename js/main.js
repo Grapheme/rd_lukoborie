@@ -1,12 +1,12 @@
 $(function() {
 	
-	/*Вызываем функцию анимации элементтов*/
+	// Вызываем функцию анимации элементов
 	setTimeout( animateOnLoad, 1000);
 	function animateOnLoad() {			
 		/* Анимация происходит при помощи transition */		
 		var $leftElems = $('.left_dir');
 		var $rightelems = $('.right_dir');					
-		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+		
 		timeOutFade($leftElems, 0, 400);
 		timeOutFade($rightelems, 0, 300);
 	}
@@ -116,7 +116,6 @@ $(function() {
 	
 	// Меняет состояние элемента лука
 	function changeState(parent, state) {
-
 		// Показываем заданное состояние, скрываем остальные
 		parent.find(".state." + state).fadeIn( options.changeStateDuration );
 		parent.find(".state:not(." + state + ")").hide();
@@ -189,14 +188,29 @@ $(function() {
 	function makeLookModalView( model ) {
 
 		var parent = $("<div>")
-			.addClass("gallery-item")
+			.addClass("gallery-item fancybox")
 			.html( fancyboxTemplate(model) );
 
 		parent.data("model", model);
 
-		parent.on("click", ".normal-state .social-button", 
+		parent.on("click", ".normal-state .likes-thumb", 
 			function(event) {
 
+			event.stopPropagation();
+			changeState(parent, "vote-state");
+		});
+		
+		parent.on("click", ".email-state .ok-button",  
+		function(event) {
+			event.stopPropagation();
+
+			changeState(parent, "thank-email-state");
+		});
+		
+		// Обработчик клика на одну из социальных кнопок
+		parent.on("click", ".vote-state .social-button", 
+			function(event) {
+			
 			event.stopPropagation();
 			var model = parent.data("model");
 
@@ -205,15 +219,8 @@ $(function() {
 			parent.find(".likes-count").text(model.likes + 1);
 			parent.find(".likes-container").text(model.likes + 1);
 
-			changeState(parent, "email-state");	
+			changeState(parent, "email-state");			
 		});
-		
-		parent.on("click", ".email-state .ok-button",  
-		function(event) {
-			event.stopPropagation();
-
-			changeState(parent, "thank-email-state");
-		});		
 
 		// Обработчик на нажатие крестика
 		parent.on("click", ".state-cross",  
@@ -425,55 +432,24 @@ function fetchGalleryItems() {
 
 	// ----------------------------------------------------------------------------
 	// Роутинг на стороне клиента
+	// Используем роутер из библитеки Backbone
 	// ----------------------------------------------------------------------------
-	window.Look = Backbone.Model.extend({
-		initialize : function() {
-			// Генерируем произвольную картинку
-			var num = randomRange(1, 19);
-			var numStr = (num < 10) ? "0" + num.toString() : num.toString();
-
-			this.attributes = {
-				id     : randomRange(1, 10000).toString(),
-				type   : "look",
-				avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
-				likes  :  Math.floor(Math.random() * 30),
-				photograph : {
-					name : "Авдотий Переверзиев",
-					avatar : "img/avatars/avd.jpg"
-				}
-			};	
-		}
-	});
-
-	window.LookCollection = Backbone.Collection.extend({
-		model : Look
-	});
-
-	window.LookGalleryView = Backbone.View.extend({
-		template : Handlebars.compile( $("#gallery-item-template").html() )
-	});
-
-	window.LookModalView = Backbone.View.extend({
-		template : Handlebars.compile( $("#fancybox-template").html() ),
-
-		titleTemplate : Handlebars.compile( $("#fancybox-title-template").html() ),
-
-		initialize : function() {
-
+	window.Router = Backbone.Router.extend({
+		routes: {
+			":id" : "showModal"
 		},
 
-		render : function() {
-			var content = this.template( this.model.attributes );
-			var title = this.titleTemplate( {
+		showModal : function(id) {
+			var model = generateRandomItem();
+			var view = makeLookModalView( model );
+
+			var title = fancyboxTitleTemplate( {
 				current : 1, 
 				total : 1,
-				model : this.model.attributes
+				model : model
 			});
 
-			this.$el.html( content );
-			this.$el.addClass("gallery-item");
-
-			$.fancybox.open( this.$el, {
+			$.fancybox.open( view, {
 				minWidth : 450,
 				padding: [40, 20, 15, 20],
 				closeBtn : true, 
@@ -485,26 +461,7 @@ function fetchGalleryItems() {
 				   overlay : { css : { 'background' : 'transparent' } }
 				}					
 			});
-		}
-	});
 
-	// ----------------------------------------------------------------------------
-	// Роутинг на стороне клиента
-	// ----------------------------------------------------------------------------
-	window.Router = Backbone.Router.extend({
-		routes: {
-			":id" : "showModal"
-		},
-
-		showModal : function(id) {
-			var look = new Look;
-			var lookView = new LookModalView({
-				model : look
-			});
-
-			lookView.render();
-
-		
 		}
 	});
 
