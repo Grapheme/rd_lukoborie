@@ -406,7 +406,7 @@ body {
 }
 .product-desc,
 .product-desc-column {
-	font: .9375em/1.7333 "PT Sans", sans-serif;
+	font: .9375em/26px "PT Sans", sans-serif;
 }
 .product-desc-column.scheme,
 .product-desc-column.pxl-size {	
@@ -774,10 +774,11 @@ li.gallery-item:hover .image-container {
 
 .state-cross {
 	position: absolute;
-	top : 10px;
+	top : 7px;
 	right: 10px;
 	cursor: pointer;
 	font-weight: 700;
+	font-size: 20px;
 }
 .fancybox-close.state-cross {
 	right: 3px;
@@ -830,7 +831,7 @@ li.gallery-item:hover .image-container {
 	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
-	float: left; width: 74%;
+	float: left; width: 70%;
 }
 .email-state .condition-container .buy-submit {
     float: right;
