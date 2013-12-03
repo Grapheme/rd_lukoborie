@@ -1,7 +1,16 @@
 $(function() {
 	
 	/*Вызываем функцию анимации элементтов*/
-	setTimeout( function() { animateOnLoad(); }, 1000);
+	setTimeout( animateOnLoad, 1000);
+	function animateOnLoad() {			
+		/* Анимация происходит при помощи transition */		
+		var $leftElems = $('.left_dir');
+		var $rightelems = $('.right_dir');					
+		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+		timeOutFade($leftElems, 0, 400);
+		timeOutFade($rightelems, 0, 300);
+	}
+
 	
 	// ----------------------------------------------------------------------------
 	// Настройки
@@ -130,7 +139,8 @@ $(function() {
 		// Обработчик клика на лук
 		parent.on("click", ".normal-state", function(event) {
 			event.stopPropagation();
-			parent.find(".fancybox").click();
+
+			router.navigate( model.id, { trigger : true });
 		});
 
 
@@ -218,7 +228,8 @@ $(function() {
 			function(event) {
 
 			event.stopPropagation();
-			$.fancybox.close();
+
+			//router.navigate("");
 		});
 
 
@@ -236,34 +247,39 @@ $(function() {
 		return parent;
 	}
 
+
 // ----------------------------------------------------------------------------
 // Функция имитирует подргузку данных с лицами с сервера
 // ----------------------------------------------------------------------------
-function fetchGalleryItems() {
 
-	function randomRange(a, b) {
-		return Math.floor((Math.random() * (b-a))) + a;
+function randomRange(a, b) {
+	return Math.floor((Math.random() * (b-a))) + a;
+}
+function generateRandomItem() {
+	// Генерируем произвольную картинку
+	var num = randomRange(1, 19);
+	var numStr = (num < 10) ? "0" + num.toString() : num.toString();
+
+	return 	{
+		id     : randomRange(1, 10000).toString(),
+		type   : "look",
+		avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
+		likes  :  Math.floor(Math.random() * 30),
+		photograph : {
+			name : "Авдотий Переверзиев",
+			avatar : "img/avatars/avd.jpg"
+		}
 	}
-
+}
+function fetchGalleryItems() {
 	var itemsCount = 40;
 	var items = [];
 
 	var defer = new $.Deferred();
 
 	for(var i = 0; i < itemsCount; ++i) {
-		// Генерируем произвольную картинку
-		var num = randomRange(1, 19);
-		var numStr = (num < 10) ? "0" + num.toString() : num.toString();
 	
-		items.push({
-			type   : "look",
-			avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
-			likes  :  Math.floor(Math.random() * 30),
-			photograph : {
-				name : "Авдотий Переверзиев",
-				avatar : "img/avatars/avd.jpg"
-			}
-		});
+		items.push( generateRandomItem() );
 
 		// Переодически разбавляем ленту фотографом
 		if(i % 7 === 0) {	
@@ -306,7 +322,7 @@ function fetchGalleryItems() {
 	galleryList[0], {
 		minDuration 	: 0.1,
 		maxDuration 	: 0.6,
-		viewportFactor 	: 0.3,
+		viewportFactor 	: 0.2,
 		itemSelector 	: "li"
 	});	
 
@@ -412,12 +428,42 @@ function fetchGalleryItems() {
 
 		return defer.promise();
 	};
-	function animateOnLoad() {			
-		/*Анимация происходит при помощи transition*/		
-		var $leftElems = $('.left_dir');
-		var $rightelems = $('.right_dir');					
-		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-		timeOutFade($leftElems, 0, 400);
-		timeOutFade($rightelems, 0, 300);
-	}
+	
+
+
+	// ----------------------------------------------------------------------------
+	// Роутинг на стороне клиента
+	// ----------------------------------------------------------------------------
+	var Router = Backbone.Router.extend({
+		routes: {
+			":id" : "showModal",
+			"/"   : "index"
+		},
+
+		showModal : function(id) {
+			var model = generateRandomItem();
+			var view = makeLookModalView( model );
+			var title = fancyboxTitleTemplate({
+				current : 1,
+				total : 1,
+				model : model
+			});
+
+			$.fancybox.open( view, {
+				minWidth : 450,
+				padding: [40, 20, 15, 20],
+				closeBtn : true, 
+				arrows : false,
+				title : title,
+				helpers  : {
+				   title : { type : 'inside' },
+				   buttons : {},
+				   overlay : { css : { 'background' : 'transparent' } }
+				}					
+			});
+		}
+	});
+
+	window.router = new Router;
+	Backbone.history.start();
 });
