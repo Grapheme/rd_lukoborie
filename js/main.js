@@ -1,7 +1,7 @@
 $(function() {
 	
 	// Вызываем функцию анимации элементов
-	setTimeout( animateOnLoad, 1000);
+	animateOnLoad();
 	function animateOnLoad() {			
 		/* Анимация происходит при помощи transition */		
 		var $leftElems = $('.left_dir');

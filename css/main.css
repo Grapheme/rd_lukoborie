@@ -1263,6 +1263,21 @@ li.gallery-item:hover .image-container {
 	-o-transform: translate(-500px, 0px);
 }
 
+.main-header.right_dir {
+	-webkit-transform: translate3d(50px, 0px, 0px); 
+	-ms-transform: translate(50px, 0px); 
+	transform: translate(50px, 0px);
+	-moz-transform: translate(50px, 0px);
+	-o-transform: translate(50px, 0px);
+}
+.main-header.left_dir {
+	-webkit-transform: translate3d(50px, 0px, 0px); 
+	-ms-transform: translate(50px, 0px); 
+	transform: translate(50px, 0px);
+	-moz-transform: translate(50px, 0px);
+	-o-transform: translate(50px, 0px);
+}
+
 .anim-from-bottom {
 	position: relative;
 	top: 130px;
