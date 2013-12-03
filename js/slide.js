@@ -124,11 +124,11 @@ $('.slider-to-left').click(function() {
 function toRight() {
 	if (!sliderOn() && !textBlockOn()) {
 		textDown();
+		changeText('right');
 		setTimeout(function(){
 			addSlideBlock('right');
 			textSlide('right');
 			textToTop('right');
-			changeText('right');
 		},$text_top_speed);
 	}
 	fotorama.show('>');
@@ -148,10 +148,10 @@ function toLeft() {
 
 function changeText(direct) {
 	if(direct == 'right') {
-		this.textid = $($text_block+":eq(1)").attr('data-text-id');
+		this.textid = $($text_block+":eq(2)").attr('data-text-id');
 	}
 	if(direct == 'left') {
-		this.textid = $($text_block+":eq(1)").attr('data-text-id');
+		this.textid = $($text_block+":eq(0)").attr('data-text-id');
 	}
 	if($('.active-text')[0])
 	{
