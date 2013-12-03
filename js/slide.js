@@ -329,6 +329,12 @@ function animateOnLoad() {
 	var $rightelems = $('.right_dir');
 	var $fadeElems = $('.w_fade');						
 	//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-	timeOutFade($leftElems, $fadeElems, 0, 400);
-	timeOutFade($rightelems, $fadeElems, 0, 300);
+	timeOutFade($leftElems, 0, 400);
+	timeOutFade($rightelems, 0, 300);
+}
+
+function gx_show() {
+	$('.anim-from-bottom').animate({top: -10},$left_anim_speed,function(){
+		$('.anim-from-bottom').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 100);
+	});
 }
