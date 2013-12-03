@@ -129,10 +129,6 @@ $(function() {
 		var parent = $("<li>").addClass("gallery-item");
 		parent.html( itemTemplate( model ));
 
-		parent.find(".fancybox").html(
-			makeLookModalView(model)[0]
-		);
-
 		parent.data("model", model);
 
 		// Обработчик клика на лук
@@ -155,11 +151,6 @@ $(function() {
 		parent.on("click", ".vote-state .social-button",  
 		function(event) {
 			event.stopPropagation();
-
-			// Увеличиваем количество лайков
-			// TODO: анимация перехода
-			parent.find(".likes-count").text(model.likes + 1);
-			parent.find(".likes-container").text(model.likes + 1);
 
             changeState(parent, "email-state");			
 		});
@@ -193,11 +184,11 @@ $(function() {
 
 		parent.data("model", model);
 
-		parent.on("click", ".normal-state .likes-thumb", 
+		parent.on("click", ".normal-state .social-button", 
 			function(event) {
 
 			event.stopPropagation();
-			changeState(parent, "vote-state");
+			changeState(parent, "email-state");
 		});
 		
 		parent.on("click", ".email-state .ok-button",  
@@ -208,7 +199,7 @@ $(function() {
 		});
 		
 		// Обработчик клика на одну из социальных кнопок
-		parent.on("click", ".vote-state .social-button", 
+		/*parent.on("click", ".vote-state .social-button", 
 			function(event) {
 			
 			event.stopPropagation();
@@ -220,7 +211,7 @@ $(function() {
 			parent.find(".likes-container").text(model.likes + 1);
 
 			changeState(parent, "email-state");			
-		});
+		});*/
 
 		// Обработчик на нажатие крестика
 		parent.on("click", ".state-cross",  
@@ -393,33 +384,6 @@ function fetchGalleryItems() {
 			elements.imagesLoaded(function() {
 				// Добавляем элемент в masonry
 				galleryList.append( elements );	
-
-				$(".fancybox").fancybox({
-					minWidth : 450,
-					padding: [40, 20, 15, 20],
-					closeBtn : true, 
-					arrows : false,
-					afterLoad : function() {
-						
-						var model = 
-							this.content.find(".gallery-item").data("model");
-
-    					this.title = fancyboxTitleTemplate({
-							current : this.index + 1,
-							total : this.group.length,
-							model : model
-    					});
-					},
-					helpers  : {
-					   title : { type : 'inside' },
-					   buttons : {},
-					   overlay : {
-					      css : {
-					      	 'background' : 'transparent' 				
-					      }		
-					   }					   
-					}					
-				});
 
 				masonry.appended( elements );
 				defer.resolve();
