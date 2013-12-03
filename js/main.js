@@ -321,7 +321,7 @@ function fetchGalleryItems() {
 	galleryList[0], {
 		minDuration 	: 0.1,
 		maxDuration 	: 0.6,
-		viewportFactor 	: 0.2,
+		viewportFactor 	: 0,
 		itemSelector 	: "li"
 	});	
 
@@ -345,6 +345,7 @@ function fetchGalleryItems() {
 
 	$(window).scroll(scrollHandler);
 	scrollHandler();
+	infinite._scrollPage();
 
 	// Некрасивый быстрофикс :(
 	$("body").on("click", ".slider-to-left", 
