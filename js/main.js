@@ -434,22 +434,54 @@ function fetchGalleryItems() {
 	// ----------------------------------------------------------------------------
 	// Роутинг на стороне клиента
 	// ----------------------------------------------------------------------------
-	var Router = Backbone.Router.extend({
-		routes: {
-			":id" : "showModal",
-			"/"   : "index"
+	window.Look = Backbone.Model.extend({
+		initialize : function() {
+			// Генерируем произвольную картинку
+			var num = randomRange(1, 19);
+			var numStr = (num < 10) ? "0" + num.toString() : num.toString();
+
+			this.attributes = {
+				id     : randomRange(1, 10000).toString(),
+				type   : "look",
+				avatar : "img/gallery_example/Gallery_" + numStr + ".jpg",
+				likes  :  Math.floor(Math.random() * 30),
+				photograph : {
+					name : "Авдотий Переверзиев",
+					avatar : "img/avatars/avd.jpg"
+				}
+			};	
+		}
+	});
+
+	window.LookCollection = Backbone.Collection.extend({
+		model : Look
+	});
+
+	window.LookGalleryView = Backbone.View.extend({
+		template : Handlebars.compile( $("#gallery-item-template").html() )
+	});
+
+	window.LookModalView = Backbone.View.extend({
+		template : Handlebars.compile( $("#fancybox-template").html() ),
+
+		titleTemplate : Handlebars.compile( $("#fancybox-title-template").html() ),
+
+		initialize : function() {
+
 		},
 
-		showModal : function(id) {
-			var model = generateRandomItem();
-			var view = makeLookModalView( model );
-			var title = fancyboxTitleTemplate({
-				current : 1,
+		render : function() {
+			var content = this.template( this.model.attributes );
+			var title = this.titleTemplate( {
+				current : 1, 
 				total : 1,
-				model : model
+				model : this.model.attributes
 			});
 
-			$.fancybox.open( view, {
+			this.$el.html( content );
+			this.$el.addClass("gallery-item");
+
+			$.fancybox.open( this.$el, {
 				minWidth : 450,
 				padding: [40, 20, 15, 20],
 				closeBtn : true, 
@@ -461,6 +493,26 @@ function fetchGalleryItems() {
 				   overlay : { css : { 'background' : 'transparent' } }
 				}					
 			});
+		}
+	});
+
+	// ----------------------------------------------------------------------------
+	// Роутинг на стороне клиента
+	// ----------------------------------------------------------------------------
+	window.Router = Backbone.Router.extend({
+		routes: {
+			":id" : "showModal"
+		},
+
+		showModal : function(id) {
+			var look = new Look;
+			var lookView = new LookModalView({
+				model : look
+			});
+
+			lookView.render();
+
+		
 		}
 	});
 
