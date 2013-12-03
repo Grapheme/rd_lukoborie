@@ -90,6 +90,22 @@ $(function(){
 	getImagesCount();
 	setNewBlocks();
 	getLeftWidth();
+	
+	/*-------------------------------------------------
+	 * Form events
+	 --------------------------------------------------*/
+	
+	$('#prodDiscount .buy-submit').click( function() {
+		//TODO: дописать submit
+		$(this).parent().hide();
+		$('.buy-form-capt').text('Спасибо за подписку').css({'white-space':'nowrap'});
+	});
+	$('#prodDiscount').submit( function() {
+		$(this).hide();
+		$('.buy-form-capt').text('Спасибо за подписку').css({'white-space':'nowrap'});		
+		return false;
+	});
+	
 });
 
 /*
