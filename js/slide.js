@@ -70,6 +70,8 @@ $('.slide-left-text').each(function(){
 
 $(function(){
 	
+	animateNav();
+	
 	$.each($classes, function(key, value) {
 		if(value == 'video') {
 			$video_min = key-1;
@@ -321,12 +323,20 @@ function textBlockOn() {
 	}
 }
 
+function animateNav() {
+	var $leftElems = $('.main-header .left_dir');
+	var $rightElems = $('.main-header .right_dir');
+	
+	timeOutFade($leftElems, 0, 400);
+	timeOutFade($rightElems, 0, 300);
+}
 function animateOnLoad() {			
 	/*Анимация происходит при помощи transition*/		
-	var $leftElems = $('.left_dir').not('.bottom-group');
-	var $rightelems = $('.right_dir');
-	var $fadeElems = $('.w_fade');	
-	var $columnLeft = $('.left_dir.bottom-group');					
+	var $leftElems = $('.product-description .left_dir').not('.bottom-group');
+	var $rightelems = $('.product-description .right_dir');
+	var $fadeElems = $('.product-description .w_fade');	
+	var $columnLeft = $('.product-description .bottom-group');
+						
 	//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
 	timeOutFade($leftElems, 0, 400);
 	timeOutFade($rightelems, 0, 300);
@@ -347,7 +357,6 @@ function mega_show() {
 		$('.mega-anim').animate({top:0}, 500);
 	});
 }
-
 function animStart() {
 	/*Вызываем функцию анимации элементтов*/
 	if($(document).scrollTop() > 500 && $(document).scrollTop() < 1700 && $scrollanim) {
@@ -357,6 +366,7 @@ function animStart() {
 		$scrollanim = false;
 	}
 }
+
 
 var $scrollanim = true;
 
