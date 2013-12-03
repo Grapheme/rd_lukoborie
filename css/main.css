@@ -997,10 +997,10 @@ li.gallery-item:hover .image-container {
 
 
 .full-hd {
-	font-size: 124px;
+	font-size: 174px;
 	text-transform: uppercase;
-	letter-spacing: -11px;
-	margin-left: -8px;
+	letter-spacing: -18px;
+	margin-left: -13px;
 }
 
 .slider-wrap {
@@ -1010,15 +1010,16 @@ li.gallery-item:hover .image-container {
 .slider-container {
 	background-color: #ededed;
 	overflow: hidden;
-	margin-top: -56px;
+	margin-top: -78px;
 }
 
 .slider-title {
 	text-transform: uppercase;
-	font-size: 21px;
-	width: 440px;
-	margin-top: 40px;
-	margin-bottom: 20px;
+	font-size: 27px;
+	width: 600px;
+	margin-top: 55px;
+	line-height: 38px;
+	margin-bottom: 8px;
 }
 
 .slider-under-block {
@@ -1047,19 +1048,21 @@ li.gallery-item:hover .image-container {
 	text-align: center;
 }
 
-.slider-arrow {
+.slideshow .slider-arrow {
+	font-family: 'DINProMedium';
 	position: absolute;
+	font-size: 14px;
 	left: 50%;
 	text-align: center;
-	margin-left: -82.5px;
-	width: 165px;
+	margin-left: -75px;
+	width: 150px;
 	margin-top: -11px;
 }
 
 .slideshow {
 	position: relative;
-    top: -120px;
-    margin-bottom: -150px;
+	top: -155px;
+	margin-bottom: -150px;
 }
 
 .current-slide,.all-slides {
@@ -1124,7 +1127,7 @@ li.gallery-item:hover .image-container {
 .slider-nav a {
 	font-family: 'DINProMedium';
 	font-size: 14px;
-	margin: 0 10px;
+	margin: 0 8px;
 	text-transform: uppercase;
 	color: #000;
 	border-bottom: 1px dotted;
@@ -1139,7 +1142,7 @@ li.gallery-item:hover .image-container {
 	
 .slide-left-text {
 	font-family: 'DINProBold', sans-serif;
-	font-size: 116px;
+	font-size: 145px;
 	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
@@ -1155,10 +1158,10 @@ li.gallery-item:hover .image-container {
 }
 
 .slide-texts {
-	height: 140px;
-    margin-left: 40px;
-    margin-top: -86px;
-    overflow: hidden;
+	height: 170px;
+	margin-left: 28px;
+	margin-top: -108px;
+	overflow: hidden;
 }
 
 .slider-text-title {

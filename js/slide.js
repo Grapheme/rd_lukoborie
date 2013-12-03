@@ -19,7 +19,7 @@ var $tblock_speed 	= 400; // Speed of text blocks animation
 var $text_top_speed = 250; // Speed of text getting top
 var $left_anim_speed= 250; // Speed of left text animation
 
-var $text_to_top	= 133; 	// px
+var $text_to_top	= 142; 	// px
 
 /*
  * each
