@@ -384,7 +384,8 @@ function fetchGalleryItems() {
 
 				$(".fancybox").fancybox({
 					minWidth : 450,
-					closeBtn : false, 
+					padding: [40, 20, 15, 20],
+					closeBtn : true, 
 					arrows : false,
 					afterLoad : function() {
 						

@@ -778,7 +778,13 @@ li.gallery-item:hover .image-container {
 	cursor: pointer;
 	font-weight: 700;
 }
-
+.fancybox-close.state-cross {
+	right: 3px;
+	background: none;
+	color: #454545;
+	text-decoration: none;
+	font-size: 24px;	
+}
 /* Состояние: все, кроме обычного! */
 .state.vote-state, 
 .state.thank-email-state, 
