@@ -1,5 +1,8 @@
-
 $(function() {
+	
+	/*Вызываем функцию анимации элементтов*/
+	animateOnLoad();
+	
 	// ----------------------------------------------------------------------------
 	// Настройки
 	// ----------------------------------------------------------------------------
@@ -34,7 +37,7 @@ $(function() {
 	var $fDateFilter = $('.f-date .date-table');
 	var $fSalonFilter = $('.f-salon .shop-list');
 	
-	function hideVisibleFilter() {
+	function hideVisibleFilter() {		
 		if( $('.active-filter')[0] ) { $('.active-filter').removeClass('active-filter').slideToggle(100); };
 	};	
 	
@@ -42,15 +45,22 @@ $(function() {
 		hideVisibleFilter();
 	});
 	$('.f-date').click( function( event ){
-		event.stopPropagation();
-		hideVisibleFilter();
-		$(this).find('.date-table').addClass('active-filter').slideToggle(100);
+		event.stopPropagation();		
+		if ($(this).find('.date-table').hasClass('active-filter')) {
+			$(this).find('.date-table').addClass('active-filter').slideToggle(100).removeClass('active-filter');
+		} else {
+			hideVisibleFilter();
+			$(this).find('.date-table').addClass('active-filter').slideToggle(100);
+		}		
 	});
-
 	$('.f-salon').click( function( event ){
 		event.stopPropagation();
-		hideVisibleFilter();
-		$(this).find('.chop-list').addClass('active-filter').slideToggle(100);
+		if ($(this).find('.chop-list').hasClass('active-filter')) {
+			$(this).find('.chop-list').addClass('active-filter').slideToggle(100).removeClass('active-filter');
+		} else {
+			hideVisibleFilter();
+			$(this).find('.chop-list').addClass('active-filter').slideToggle(100);
+		}
 	});
 
 	$('.chop-place').click( function(){
@@ -416,4 +426,34 @@ function fetchGalleryItems() {
 
 		return defer.promise();
 	};
+// ----------------------------------------------------------------------------
+// Функция анимации элементов
+// ----------------------------------------------------------------------------	
+	function animateOnLoad() {		
+		/*Анимация происходит при помощи transition*/
+		var $elems = $('.top_dir, .right_dir, .bottom_dir, .left_dir ');
+		var $fadeElems = $('.w_fade');
+		/*Обнуляем свойство translate и opacity*/						
+		$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+		
+		if($elems[0]) {
+			/*$fadeElems.css({ 'opacity': '1' });
+				scrollParent.find('.left_func').each( function(){
+				var that = $(this);
+				setTimeout( function(){
+					that.css({ 'opacity': '1', '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+				}, timer);	
+				timer += 200;
+			});
+			timer = 100;
+			scrollParent.find('.right_func').each( function(){			
+				var rightThat = $(this);
+				setTimeout( function(){
+					rightThat.css({ 'opacity': '1', '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+				}, timer);	
+				timer += 200;
+			});*/
+		}
+		
+	}
 });
