@@ -21,6 +21,7 @@ textarea {
 html {
     font-size: 1em;
     line-height: 1.4;
+    color: #222222;
 }
 
 /*
@@ -177,7 +178,7 @@ body {
 	font: 1.125em 'DINProBold', sans-serif;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #000;
+	color: #222222;
 }
 .nav-item.active a {
 	text-decoration: line-through;
@@ -389,7 +390,7 @@ body {
 	left: -15px;
 	width: 219px;
 	padding: 0 0 27px;    
-    color: #000;
+    color: #222222;
 }
 .product-desc {
     float: left;
@@ -420,7 +421,7 @@ body {
 	width: 80%;
 	margin: 0 auto 15px;
 	padding: 10px 0;
-    color: #000; 
+    color: #222222; 
 }
 .product-desc-column.scheme img {
 	display: block;
@@ -428,7 +429,7 @@ body {
 }
 /*------------------------------------Filters--------------------------------- */
 .data-active {
-	background: none repeat scroll 0 0 #000000;
+	background: none repeat scroll 0 0 #222222;
     color: #FFFFFF;
     cursor: auto;
 }
@@ -510,7 +511,7 @@ body {
 	font-weight: 700;
 }
 .date-trigger:hover {
-	background: #000;
+	background: #222222;
 	color: #fff;
 	cursor: pointer;
 } 
@@ -541,7 +542,7 @@ body {
     cursor: pointer;
 }	
 .chop-place:hover {
-	color: #000;
+	color: #222222;
 }
 .chop-place:hover .chop-arrow {
 	opacity: 1;
@@ -554,7 +555,7 @@ body {
 	height: 30px;
 	padding: 0 5px;
 	opacity: 0;
-    color: #000;    
+    color: #222222;    
     font: 22px/1em 'PT Sans',sans-serif;
 }
 
@@ -599,7 +600,7 @@ body {
 	}
 	.week-1-list td:hover,
 	.week-2-list td:hover {
-		background: #000;
+		background: #222222S;
 		color: #fff;
 		cursor: pointer;
 	} 
@@ -1166,7 +1167,7 @@ li.gallery-item:hover .image-container {
 	font-size: 14px;
 	margin: 0 8px;
 	text-transform: uppercase;
-	color: #000;
+	color: #222222;
 	border-bottom: 1px dotted;
 	text-decoration: none;
 	outline: 0 none;
@@ -1190,7 +1191,7 @@ li.gallery-item:hover .image-container {
 	display: inline-block;
 	height: 16px;
 	width: 0px;
-	background: #000;
+	background: #222222;
 	margin-left: 40px;
 }
 
@@ -1198,7 +1199,7 @@ li.gallery-item:hover .image-container {
 	display: inline-block;
 	height: 16px;
 	width: 0px;
-	background: #000;
+	background: #222222;
 	margin-left: 22px;
 	display: block;
 }
@@ -1206,7 +1207,7 @@ li.gallery-item:hover .image-container {
 .anim-left-black-line {
 	height: 16px;
 	width: 0px;
-	background: #000;
+	background: #222222;
 }
 
 .slide-texts {
