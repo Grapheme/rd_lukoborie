@@ -2,9 +2,8 @@
 // Функция анимации элементов
 // ----------------------------------------------------------------------------
 	
-function timeOutFade($elems, $fadeElems, timer, step) {
-	if($elems[0]) {
-		$fadeElems.css({ 'opacity': '1' });
+function timeOutFade($elems, timer, step) {
+	if($elems[0]) {		
 		$elems.each( function(){
 			var that = $(this);
 			setTimeout( function(){

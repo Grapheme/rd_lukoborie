@@ -415,10 +415,9 @@ function fetchGalleryItems() {
 	function animateOnLoad() {			
 		/*Анимация происходит при помощи transition*/		
 		var $leftElems = $('.left_dir');
-		var $rightelems = $('.right_dir');
-		var $fadeElems = $('.w_fade');						
+		var $rightelems = $('.right_dir');					
 		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
-		timeOutFade($leftElems, $fadeElems, 0, 400);
-		timeOutFade($rightelems, $fadeElems, 0, 300);
+		timeOutFade($leftElems, 0, 400);
+		timeOutFade($rightelems, 0, 300);
 	}
 });

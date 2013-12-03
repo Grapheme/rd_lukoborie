@@ -1208,11 +1208,11 @@ li.gallery-item:hover .image-container {
 	-o-transform: translate(0px, 1000px,);
 }
 .right_dir {
-	-webkit-transform: translate3d(200px, 0px, 0px); 
-	-ms-transform: translate(200px, 0px); 
-	transform: translate(200px, 0px);
-	-moz-transform: translate(200px, 0px);
-	-o-transform: translate(200px, 0px);
+	-webkit-transform: translate3d(1000px, 0px, 0px); 
+	-ms-transform: translate(1000px, 0px); 
+	transform: translate(1000px, 0px);
+	-moz-transform: translate(1000px, 0px);
+	-o-transform: translate(1000px, 0px);
 }
 .bottom_dir {
 	-webkit-transform: translate3d(0px, -1000px, 0px); 
@@ -1222,11 +1222,11 @@ li.gallery-item:hover .image-container {
 	-o-transform: translate(0px, -1000px);
 }
 .left_dir {
-	-webkit-transform: translate3d(-200px, 0px, 0px); 
-	-ms-transform: translate(-200px, 0px); 
-	transform: translate(-200px, 0px);
-	-moz-transform: translate(-200px, 0px);
-	-o-transform: translate(-200px, 0px);
+	-webkit-transform: translate3d(-1000px, 0px, 0px); 
+	-ms-transform: translate(-1000px, 0px); 
+	transform: translate(-1000px, 0px);
+	-moz-transform: translate(-1000px, 0px);
+	-o-transform: translate(-1000px, 0px);
 }
 
 /* ==========================================================================
