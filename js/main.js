@@ -108,6 +108,7 @@ $(function() {
 		var parentBlock = $('.f-date');
 		var defaultSelectedValue = 'Любая';
 		var selectedValue = parentBlock.find('.chosen-value');
+		$('.data-active').removeClass('data-active');
 		selectedValue.text(defaultSelectedValue);
 		$(this).hide();
 	});
