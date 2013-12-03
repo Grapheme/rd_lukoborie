@@ -405,7 +405,7 @@ body {
 }
 .product-desc,
 .product-desc-column {
-	font: .9375em/1.7333 "PT Sans", sans-serif;
+	font: .9375em/26px "PT Sans", sans-serif;
 }
 .product-desc-column.scheme,
 .product-desc-column.pxl-size {	
