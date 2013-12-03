@@ -412,4 +412,13 @@ function fetchGalleryItems() {
 
 		return defer.promise();
 	};
+	function animateOnLoad() {			
+		/*Анимация происходит при помощи transition*/		
+		var $leftElems = $('.left_dir');
+		var $rightelems = $('.right_dir');
+		var $fadeElems = $('.w_fade');						
+		//$elems.css({ '-moz-transform': 'translate(0px, 0px)', '-o-transform': 'translate(0px, 0px)', '-webkit-transform': 'translate3d(0px, 0px, 0px)', '-ms-transform': 'translate(0px, 0px)', 'transform': 'translate(0px, 0px)'}); 
+		timeOutFade($leftElems, $fadeElems, 0, 400);
+		timeOutFade($rightelems, $fadeElems, 0, 300);
+	}
 });
