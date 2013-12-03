@@ -31,13 +31,26 @@ $(function() {
 	// ----------------------------------------------------------------------------
 	// Интерфейсная часть : фильтры
 	// ----------------------------------------------------------------------------
-
-	$('.f-date').click( function(){
-		$(this).find('.date-table').slideToggle(100);
+	var $fDateFilter = $('.f-date .date-table');
+	var $fSalonFilter = $('.f-salon .shop-list');
+	
+	function hideVisibleFilter() {
+		if( $('.active-filter')[0] ) { $('.active-filter').removeClass('active-filter').slideToggle(100); };
+	};	
+	
+	$('body').click( function(){
+		hideVisibleFilter();
+	});
+	$('.f-date').click( function( event ){
+		event.stopPropagation();
+		hideVisibleFilter();
+		$(this).find('.date-table').addClass('active-filter').slideToggle(100);
 	});
 
-	$('.f-salon').click( function(){
-		$(this).find('.chop-list').slideToggle(100);
+	$('.f-salon').click( function( event ){
+		event.stopPropagation();
+		hideVisibleFilter();
+		$(this).find('.chop-list').addClass('active-filter').slideToggle(100);
 	});
 
 	$('.chop-place').click( function(){
