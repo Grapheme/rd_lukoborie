@@ -132,26 +132,38 @@ $(function() {
 		parent.data("model", model);
 
 		// Обработчик клика на лук
-		parent.on("click", ".normal-state", function(event) {
+		parent.on("click", ".vote-state", function(event) {
 			event.stopPropagation();
 
 			router.navigate( model.id, { trigger : true });
 		});
 
+	var triggered = false;
 
 		// Обработчик клика на кнопку "лайк"
-		parent.on("click", ".normal-state .likes-thumb",  
+		parent.on("mouseenter", ".normal-state",  
 		function(event) {
 			event.stopPropagation();
-
+			
+			if(!triggered)
 			changeState(parent, "vote-state");
+		});
+		parent.on("mouseleave", "",  
+		function(event) {
+			
+			event.stopPropagation();
+			
+			if(!triggered)
+			changeState(parent, "normal-state");
 		});
 
 		// Обработчик клика на одну из социальных кнопок
 		parent.on("click", ".vote-state .social-button",  
 		function(event) {
+			triggered = true;
+			
 			event.stopPropagation();
-
+			
             changeState(parent, "email-state");			
 		});
 
@@ -166,7 +178,7 @@ $(function() {
 		// Обработчик на нажатие крестика
 		parent.on("click", ".state-cross",  function(event) {
 			event.stopPropagation();
-
+			triggered = false;
 			changeState(parent, "normal-state");
 		});
 		return parent;

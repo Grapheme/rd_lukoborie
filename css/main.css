@@ -803,7 +803,9 @@ li.gallery-item:hover .image-container {
 	background-color: rgba(0,0,0,0.5);
 	z-index : 4;
 }
-
+.state.vote-state {
+	cursor: pointer;
+}
 
 .fancybox-inner {
 	min-width: 400px;
