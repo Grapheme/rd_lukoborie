@@ -86,6 +86,8 @@ $(function() {
 		var parentBlock = $('.f-date');
 		var resetCross = parentBlock.find('.cross');
 		var selectedValue = parentBlock.find('.chosen-value');
+		$('.data-active').removeClass('data-active');
+		$(this).addClass('data-active');
 		
 		var placeName = $(this).text() + ' декабря';
 		selectedValue.text(placeName);
