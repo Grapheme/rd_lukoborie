@@ -33,11 +33,11 @@ $(function() {
 	// ----------------------------------------------------------------------------
 
 	$('.f-date').click( function(){
-		$(this).find('.date-table').slideToggle(400);
+		$(this).find('.date-table').slideToggle(100);
 	});
 
 	$('.f-salon').click( function(){
-		$(this).find('.chop-list').slideToggle(400);
+		$(this).find('.chop-list').slideToggle(100);
 	});
 
 	$('.chop-place').click( function(){
