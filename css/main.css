@@ -290,6 +290,7 @@ body {
 	font: .875em/1.6em 'garamondbookcitalic', serif;
 }
 .sect-form-cont {
+	height: 24px;
 	margin: 20px auto 36px;
 	text-align: center;
 }
@@ -586,9 +587,15 @@ body {
     cursor: pointer;
 }	
 .chop-place:hover {
-	color: #222222;
+	color: #222;
 }
 .chop-place:hover .chop-arrow {
+	opacity: 1;
+}
+.chop-place.active-salon {
+	color: #222;
+}
+.chop-place.active-salon .chop-arrow {
 	opacity: 1;
 }
 .chop-arrow img {
@@ -845,7 +852,7 @@ li.gallery-item:hover .image-container {
 	color : white;
 	top: 0; left : 0;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(52,52,52,0.95);
 	z-index : 4;
 }
 .state.vote-state {

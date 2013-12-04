@@ -75,11 +75,13 @@ $(function() {
 	$('.chop-place').click( function(){
 		var parentBlock = $('.f-salon');
 		var resetCross = parentBlock.find('.cross');
-		var selectedValue = parentBlock.find('.chosen-value');
-		
+		var selectedValue = parentBlock.find('.chosen-value');		
 		var placeName = $(this).find('.chop-name').text();
+		if($('.active-salon')[0]) $('.active-salon').removeClass('active-salon');
+		
 		selectedValue.text(placeName);
 		resetCross.show();
+		$(this).addClass('active-salon');
 	});
 
 	$('.date-trigger').click( function(){
@@ -99,6 +101,7 @@ $(function() {
 		var parentBlock = $('.f-salon');
 		var defaultSelectedValue = 'Все салоны';
 		var selectedValue = parentBlock.find('.chosen-value');
+		$('.active-salon').removeClass('active-salon');
 		selectedValue.text(defaultSelectedValue);
 		$(this).hide();
 	});
