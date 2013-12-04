@@ -900,7 +900,10 @@ li.gallery-item:hover .image-container {
 	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
-	float: left; width: 87%;
+	float: left; width: 80%;
+}
+.fancybox .email-state .condition-container .buy-input {
+	width: 87%;
 }
 .email-state .condition-container .buy-submit {
     float: right;
