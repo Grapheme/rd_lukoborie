@@ -188,6 +188,7 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	overflow-y: visible;
 }
 
 .fancybox-lock .fancybox-overlay {
