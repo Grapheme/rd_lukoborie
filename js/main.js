@@ -150,6 +150,10 @@ $(function() {
 			$(this).parent().parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
 			$(this).parent().hide();
 	});
+	$(document).on('submit', '.discount-form', function(e) {
+			$(this).parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
+			$(this).hide();
+	});
 	// ----------------------------------------------------------------------------
 	// Интерфейсная часть : элементы галереи
 	// ----------------------------------------------------------------------------
