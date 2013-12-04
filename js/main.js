@@ -479,7 +479,8 @@ function fetchGalleryItems() {
 				model : model
 			});
 
-			$.fancybox.open( view, {
+			$.fancybox.open( view, 
+			{
 				afterClose : function() {
 					router.navigate("!");
 				},
