@@ -1153,6 +1153,22 @@ li.gallery-item:hover .image-container {
 	outline: 0 none;
 }
 
+.fancy-to-left {
+	background: url('../img/slider/arrow-left.png') no-repeat;
+	height: 47px;
+	width: 34px;
+	float: left;
+	margin-right: 14px;
+}
+
+.fancy-to-right {
+	background: url('../img/slider/arrow-right.png') no-repeat right top;
+	height: 47px;
+	width: 34px;
+	float: right;
+	margin-left: 14px;
+}
+
 
 .slider-to-left:active 	{ outline: none; }
 .slider-to-right:active { outline: none; }
