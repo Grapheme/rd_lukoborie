@@ -911,7 +911,7 @@ li.gallery-item:hover .image-container {
 }
 .cond-head {
 	margin: 0 0 0.6em;
-	font: 1.125em/1.2em 'DINProBold',sans-serif;
+	font: 1.125em/1.2em 'DINProMedium',sans-serif;
 	text-transform: uppercase;
 	color: #fff;
 }
