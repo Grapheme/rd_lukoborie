@@ -341,8 +341,12 @@ function fetchGalleryItems() {
 	};
 
 	$(window).scroll(scrollHandler);
-	loadItems();
-	infinite._scrollPage();
+
+	// Первую пачку из галереи подгружаем насильно
+	loadItems()
+	.done(function() {
+		galleryList.find("li").addClass("animate");
+	});
 
 	// Некрасивый быстрофикс :(
 	$("body").on("click", ".fancy-to-left", 
