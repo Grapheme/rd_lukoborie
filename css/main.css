@@ -856,9 +856,15 @@ li.gallery-item:hover .image-container {
 	color : white;
 	top: 0; left : 0;
 	display: none;
-	background-color: rgba(52,52,52,0.95);
+	background-color: rgba(0,0,0,0.5);
 	z-index : 4;
 }
+
+.fancybox .state.thank-email-state, 
+.fancybox .state.email-state {
+	background-color: rgba(34,34,34,0.95);
+} 
+
 .state.vote-state {
 	position: absolute;
 	cursor: pointer;
@@ -906,6 +912,7 @@ li.gallery-item:hover .image-container {
 	text-transform: uppercase;
 	color: #fff;
 }
+.fancybox .cond-head { font: 1.725em/1.2em 'DINProBold',sans-serif; }
 .cond-check-email {
     font: 0.875em/1.2857em 'garamondbookcitalic', serif;
 }

@@ -428,6 +428,7 @@ function fetchGalleryItems() {
 					router.navigate("!")
 				},
 				minWidth : 450,
+				minHeight : 599,
 				padding: [40, 20, 15, 20],
 				closeBtn : true, 
 				arrows : false,
