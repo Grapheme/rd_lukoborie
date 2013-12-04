@@ -141,7 +141,8 @@ body {
 .date-trigger,
 .chop-place,
 .chop-arrow,
-.buy-links a {
+.buy-links a,
+.cross img {
    	transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -290,12 +291,13 @@ body {
 	font: .875em/1.6em 'garamondbookcitalic', serif;
 }
 .sect-form-cont {
+	height: 24px;
 	margin: 20px auto 36px;
 	text-align: center;
 }
 .sect-form-header {
 	display: inline-block;
-	font: 700 0.8em 'PT Sans',sans-serif;
+	font: 700 0.9em 'PT Sans',sans-serif;
 }
 .sect-form {
 	display: inline-block;
@@ -321,9 +323,11 @@ body {
 .sect-form .line-input {
 	font-size: .85em;
 	outline: none;
+	line-height: 2em;
 }
 .sect-form .line-submit {
 	background: none;
+	padding-right: 0;
 }
 .social-widgets {
 	display: block;
@@ -488,6 +492,12 @@ body {
     line-height: 1.5em;
     margin: 0 0 0 0.7em;
 }
+.cross img {
+	margin-bottom: 3px;
+}
+.cross img:hover {
+	opacity: .5;
+}
 .filter-container:after {
 	content: '•';	
 	position: absolute;
@@ -581,9 +591,15 @@ body {
     cursor: pointer;
 }	
 .chop-place:hover {
-	color: #222222;
+	color: #222;
 }
 .chop-place:hover .chop-arrow {
+	opacity: 1;
+}
+.chop-place.active-salon {
+	color: #222;
+}
+.chop-place.active-salon .chop-arrow {
 	opacity: 1;
 }
 .chop-arrow img {
@@ -664,7 +680,7 @@ body {
 }
 .fancybox-photograph {
     float: right;
-    min-width: 260px;
+    min-width: 250px;
 }
 .fb-photograph-ava {
 	width: 50px;
@@ -748,10 +764,10 @@ li.gallery-item:hover .image-container {
 }
 
 .fancybox .normal-state .social-buttons-container {
-    bottom: 18px;
+    bottom: 13px;
     padding: 0;
     position: absolute;
-    right: 12px;
+    right: 15px;
     width: 230px;
 }
 .social-button.vkontakte {
@@ -816,14 +832,6 @@ li.gallery-item:hover .image-container {
     color: #fff;    
 }
 
-.normal-state .likes-thumb:hover {
-	-webkit-transform: scale(1.1);
-       -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-         -o-transform: scale(1.1);
-            transform: scale(1.1);      
-}
-
 .state-cross {
 	position: absolute;
 	top : 7px;
@@ -851,7 +859,14 @@ li.gallery-item:hover .image-container {
 	background-color: rgba(0,0,0,0.5);
 	z-index : 4;
 }
+
+.fancybox .state.thank-email-state, 
+.fancybox .state.email-state {
+	background-color: rgba(34,34,34,0.95);
+} 
+
 .state.vote-state {
+	position: absolute;
 	cursor: pointer;
 }
 
@@ -885,11 +900,14 @@ li.gallery-item:hover .image-container {
 	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
-	float: left; width: 70%;
+	float: left; width: 80%;
+}
+.fancybox .email-state .condition-container .buy-input {
+	width: 87%;
 }
 .email-state .condition-container .buy-submit {
     float: right;
-    width: 50px;
+    width: 24px;
 }
 .cond-head {
 	margin: 0 0 0.6em;
@@ -897,6 +915,7 @@ li.gallery-item:hover .image-container {
 	text-transform: uppercase;
 	color: #fff;
 }
+.fancybox .cond-head { font: 1.725em/1.2em 'DINProBold',sans-serif; }
 .cond-check-email {
     font: 0.875em/1.2857em 'garamondbookcitalic', serif;
 }
@@ -915,13 +934,15 @@ li.gallery-item:hover .image-container {
 }
 .vote-state .likes-container {
 	position: absolute;
-	top: 122px; left : 0;
+	top: 0; 
+	margin-top: 122px;
+	left : 0;
 	width: 100%;
-	height: 100%;
+	height: auto;
 
     font: 2em 'DINProBold', sans-serif;
 	text-transform: uppercase;
-	color : white;
+	color : #fff;
 	text-align: center;
 }
 .fancybox .likes-container {
@@ -930,17 +951,17 @@ li.gallery-item:hover .image-container {
 	text-transform: uppercase;
 	color: #fff;
 	text-align: center;
-    bottom: 18px;
+    bottom: 9px;
     height: 45px;
-    left: 10px;
+    left: 19px;
     top: auto;
     width: auto;
 }
 .fancybox .likes-thumb,
 .vote-state .likes-thumb{
     background: url("../img/big_idle.png") no-repeat scroll 0 12px;
-    height: 100%;
-    width: 50px;
+    height: 50px;
+    width: 23px;
 }
 .vote-state .social-buttons-container,
 .fancybox .social-buttons-container {
@@ -1151,6 +1172,22 @@ li.gallery-item:hover .image-container {
 	height: 24px;
 	width: 47px;
 	outline: 0 none;
+}
+
+.fancy-to-left {
+	background: url('../img/slider/arrow-left.png') no-repeat;
+	height: 47px;
+	width: 34px;
+	float: left;
+	margin-right: 14px;
+}
+
+.fancy-to-right {
+	background: url('../img/slider/arrow-right.png') no-repeat right top;
+	height: 47px;
+	width: 34px;
+	float: right;
+	margin-left: 14px;
 }
 
 

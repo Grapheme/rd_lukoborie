@@ -75,11 +75,13 @@ $(function() {
 	$('.chop-place').click( function(){
 		var parentBlock = $('.f-salon');
 		var resetCross = parentBlock.find('.cross');
-		var selectedValue = parentBlock.find('.chosen-value');
-		
+		var selectedValue = parentBlock.find('.chosen-value');		
 		var placeName = $(this).find('.chop-name').text();
+		if($('.active-salon')[0]) $('.active-salon').removeClass('active-salon');
+		
 		selectedValue.text(placeName);
 		resetCross.show();
+		$(this).addClass('active-salon');
 	});
 
 	$('.date-trigger').click( function(){
@@ -99,6 +101,7 @@ $(function() {
 		var parentBlock = $('.f-salon');
 		var defaultSelectedValue = 'Все салоны';
 		var selectedValue = parentBlock.find('.chosen-value');
+		$('.active-salon').removeClass('active-salon');
 		selectedValue.text(defaultSelectedValue);
 		$(this).hide();
 	});
@@ -346,13 +349,13 @@ function fetchGalleryItems() {
 	});
 
 	// Некрасивый быстрофикс :(
-	$("body").on("click", ".slider-to-left", 
+	$("body").on("click", ".fancy-to-left", 
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.prev();
     });
 
-    $("body").on("click", ".slider-to-right", 
+    $("body").on("click", ".fancy-to-right", 
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.next();
@@ -429,6 +432,7 @@ function fetchGalleryItems() {
 					router.navigate("!")
 				},
 				minWidth : 450,
+				minHeight : 599,
 				padding: [40, 20, 15, 20],
 				closeBtn : true, 
 				arrows : false,
