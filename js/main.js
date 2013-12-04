@@ -338,7 +338,7 @@ function fetchGalleryItems() {
 	};
 
 	$(window).scroll(scrollHandler);
-	scrollHandler();
+	loadItems();
 	infinite._scrollPage();
 
 	// Некрасивый быстрофикс :(
@@ -409,7 +409,7 @@ function fetchGalleryItems() {
 		},
 
 		index : function() {},
-		
+
 		showModal : function(id) {
 			var model = generateRandomItem();
 			var view = makeLookModalView( model );
