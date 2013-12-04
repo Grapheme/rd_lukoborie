@@ -47,7 +47,12 @@ $(function() {
 	var $fSalonFilter = $('.f-salon .shop-list');
 	
 	function hideVisibleFilter() {		
-		if( $('.active-filter')[0] ) { $('.active-filter').removeClass('active-filter').slideToggle(100); };
+		if( $('.active-filter')[0] ) 
+		{
+			$('.active-filter').removeClass('active-filter').slideToggle(100);
+			$('.f-date').find('.filter-container').removeClass('filter-gray');
+			$('.f-salon').find('.filter-container').removeClass('filter-gray');
+		};
 	};	
 	
 	$('body').click( function(){
@@ -56,8 +61,10 @@ $(function() {
 	$('.f-date').click( function( event ){
 		event.stopPropagation();		
 		if ($(this).find('.date-table').hasClass('active-filter')) {
+			$(this).find('.filter-container').removeClass('filter-gray');
 			$(this).find('.date-table').addClass('active-filter').slideToggle(100).removeClass('active-filter');
 		} else {
+			$(this).find('.filter-container').addClass('filter-gray');
 			hideVisibleFilter();
 			$(this).find('.date-table').addClass('active-filter').slideToggle(100);
 		}		
@@ -66,7 +73,9 @@ $(function() {
 		event.stopPropagation();
 		if ($(this).find('.chop-list').hasClass('active-filter')) {
 			$(this).find('.chop-list').addClass('active-filter').slideToggle(100).removeClass('active-filter');
+			$(this).find('.filter-container').removeClass('filter-gray');
 		} else {
+			$(this).find('.filter-container').addClass('filter-gray');
 			hideVisibleFilter();
 			$(this).find('.chop-list').addClass('active-filter').slideToggle(100);
 		}

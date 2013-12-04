@@ -511,6 +511,9 @@ body {
 	line-height: 1px;
 	cursor: default;
 }
+.filter-container.filter-gray:after {
+	color: #E3E3E3;
+}
 .f-date:hover .filter-container,
 .f-salon:hover .filter-container {
 	-moz-box-shadow: 0px 0px 3px 3px rgba(150, 150, 150, 0.2);
