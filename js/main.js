@@ -345,13 +345,13 @@ function fetchGalleryItems() {
 	infinite._scrollPage();
 
 	// Некрасивый быстрофикс :(
-	$("body").on("click", ".slider-to-left", 
+	$("body").on("click", ".fancy-to-left", 
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.prev();
     });
 
-    $("body").on("click", ".slider-to-right", 
+    $("body").on("click", ".fancy-to-right", 
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.next();
