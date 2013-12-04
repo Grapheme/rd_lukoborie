@@ -162,7 +162,7 @@ body {
    ========================================================================== */
   
 .main-header {
-	padding: 61px 40px 32px 38px;
+	padding: 67px 40px 32px 38px;
 	border-bottom: 2px solid #E4E4E4;
 }
 
@@ -200,7 +200,7 @@ body {
 	height: 100%;
 }
 .outer-links .panasonic {
-	background: url(../img/main_sprite.png) no-repeat -291px -36px;
+	background: url(../img/main_sprite.png) no-repeat -291px -35px;
 }
 .outer-links .chop-chop {
 	background: url(../img/main_sprite.png) no-repeat -291px 2px;
@@ -214,8 +214,10 @@ body {
 	width: 290px;
 	height: 94px;
 	margin: 0 auto;
-	background: url(../img/main_sprite.png) no-repeat 0 14px;
+	background: url(../img/main_sprite.png) no-repeat 0 0;
 	text-indent: -9999px;
+	position: relative;
+	top: -24px;
 }
 /* ==========================================================================
    Footer styles
@@ -305,6 +307,7 @@ body {
 	border-bottom: 1px solid #e5e5e5;
 	color: #222;
 }
+.gallery .sect-form { height: 21px; }
 .sect-form ::-webkit-input-placeholder {
    color: #222;
 }
@@ -323,7 +326,7 @@ body {
 .sect-form .line-input {
 	font-size: .85em;
 	outline: none;
-	line-height: 2em;
+	padding-top: 3px;
 }
 .sect-form .line-submit {
 	background: none;
@@ -334,7 +337,7 @@ body {
 	zoom: 1;
 	width: 341px;
 	height: 25px;
-	margin: 27px auto 23px;
+	margin: -8px auto 23px;
 	text-align: center;
 }
 .social-item {
@@ -507,6 +510,9 @@ body {
 	font-size: 2em;
 	line-height: 1px;
 	cursor: default;
+}
+.filter-container.filter-gray:after {
+	color: #E3E3E3;
 }
 .f-date:hover .filter-container,
 .f-salon:hover .filter-container {
@@ -808,11 +814,13 @@ li.gallery-item:hover .image-container {
 .cond-thank-name {
     font: 2em 'dinprobold', sans-serif;
 }
+.fancybox .cond-thank-name { font: 2em 'DINProMedium', sans-serif; }
 .cond-thank-desc {
     font: 1em 'garamondbookcitalic',serif;
     margin: 10px 0;
     text-transform: none;
 }
+.fancybox .cond-thank-desc { font: 1em/1.4em 'garamondcitalic',serif; } 
 .cond-thank-item {
     display: inline-block;
     text-transform: none;
@@ -911,16 +919,16 @@ li.gallery-item:hover .image-container {
 }
 .cond-head {
 	margin: 0 0 0.6em;
-	font: 1.125em/1.2em 'DINProBold',sans-serif;
+	font: 1.125em/1.2em 'DINProMedium',sans-serif;
 	text-transform: uppercase;
 	color: #fff;
 }
 .fancybox .cond-head { font: 1.725em/1.2em 'DINProBold',sans-serif; }
 .cond-check-email {
-    font: 0.875em/1.2857em 'garamondbookcitalic', serif;
+    font: 0.875em/1.2857em 'garamondcitalic', serif;
 }
 .fancybox .email-state .cond-check-email {
-    font: 1em 'dinprobold',sans-serif;
+    font: 1em 'DINProMedium',sans-serif;
     margin: 5em auto 1em;
     text-transform: uppercase;
     width: 250px;
@@ -1079,9 +1087,10 @@ li.gallery-item:hover .image-container {
     margin: .5em 0;
 }
 .discount-form {
-	margin: 1em 1.9em;
+	margin: 0 1.9em 1em;
     border-bottom: 1px solid #444;    
 }
+.fancybox .discount-form { margin-top: 1em; }
 .line-input {
     background: transparent;
     border: none;
@@ -1092,6 +1101,7 @@ li.gallery-item:hover .image-container {
     border: none;
     font: 1em 'DINProBold', sans-serif;
 }
+.gallery .line-submit { font-size: 0.85em; }
 
 
 .full-hd {

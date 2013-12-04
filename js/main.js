@@ -50,29 +50,43 @@ $(function() {
 	var $fSalonFilter = $('.f-salon .shop-list');
 	
 	function hideVisibleFilter() {		
-		if( $('.active-filter')[0] ) { $('.active-filter').removeClass('active-filter').slideToggle(100); };
-	};	
+		if( $('.active-filter')[0] ) 
+		{
+			$('.active-filter').removeClass('active-filter').slideToggle(100);
+		};
+	};
+	
+	$(document).click(function(){
+		$('.f-date').find('.filter-container').removeClass('filter-gray');
+		$('.f-salon').find('.filter-container').removeClass('filter-gray');
+	});	
 	
 	$('body').click( function(){
 		hideVisibleFilter();
 	});
 	$('.f-date').click( function( event ){
+		$(this).find('.filter-container').addClass('filter-gray');
 		event.stopPropagation();		
 		if ($(this).find('.date-table').hasClass('active-filter')) {
+			$(this).find('.filter-container').removeClass('filter-gray');
 			$(this).find('.date-table').addClass('active-filter').slideToggle(100).removeClass('active-filter');
 		} else {
 			hideVisibleFilter();
 			$(this).find('.date-table').addClass('active-filter').slideToggle(100);
-		}		
+		}
+		$('.f-salon').find('.filter-container').removeClass('filter-gray');		
 	});
 	$('.f-salon').click( function( event ){
+		$(this).find('.filter-container').addClass('filter-gray');
 		event.stopPropagation();
 		if ($(this).find('.chop-list').hasClass('active-filter')) {
 			$(this).find('.chop-list').addClass('active-filter').slideToggle(100).removeClass('active-filter');
+			$(this).find('.filter-container').removeClass('filter-gray');
 		} else {
 			hideVisibleFilter();
 			$(this).find('.chop-list').addClass('active-filter').slideToggle(100);
 		}
+		$('.f-date').find('.filter-container').removeClass('filter-gray');
 	});
 
 	$('.chop-place').click( function(){
