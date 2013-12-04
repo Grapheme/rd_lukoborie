@@ -814,11 +814,13 @@ li.gallery-item:hover .image-container {
 .cond-thank-name {
     font: 2em 'dinprobold', sans-serif;
 }
+.fancybox .cond-thank-name { font: 2em 'DINProMedium', sans-serif; }
 .cond-thank-desc {
     font: 1em 'garamondbookcitalic',serif;
     margin: 10px 0;
     text-transform: none;
 }
+.fancybox .cond-thank-desc { font: 1em/1.4em 'garamondcitalic',serif; } 
 .cond-thank-item {
     display: inline-block;
     text-transform: none;
@@ -926,7 +928,7 @@ li.gallery-item:hover .image-container {
     font: 0.875em/1.2857em 'garamondcitalic', serif;
 }
 .fancybox .email-state .cond-check-email {
-    font: 1em 'dinprobold',sans-serif;
+    font: 1em 'DINProMedium',sans-serif;
     margin: 5em auto 1em;
     text-transform: uppercase;
     width: 250px;
