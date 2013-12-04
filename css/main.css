@@ -141,7 +141,8 @@ body {
 .date-trigger,
 .chop-place,
 .chop-arrow,
-.buy-links a {
+.buy-links a,
+.cross img {
    	transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -493,6 +494,9 @@ body {
 }
 .cross img {
 	margin-bottom: 3px;
+}
+.cross img:hover {
+	opacity: .5;
 }
 .filter-container:after {
 	content: '•';	
