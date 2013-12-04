@@ -961,7 +961,7 @@ li.gallery-item:hover .image-container {
 .vote-state .likes-thumb{
     background: url("../img/big_idle.png") no-repeat scroll 0 12px;
     height: 50px;
-    width: 50px;
+    width: 23px;
 }
 .vote-state .social-buttons-container,
 .fancybox .social-buttons-container {
