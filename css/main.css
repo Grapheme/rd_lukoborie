@@ -900,11 +900,11 @@ li.gallery-item:hover .image-container {
 	border-bottom: 2px solid #fff;
 }
 .email-state .condition-container .buy-input {
-	float: left; width: 70%;
+	float: left; width: 87%;
 }
 .email-state .condition-container .buy-submit {
     float: right;
-    width: 50px;
+    width: 24px;
 }
 .cond-head {
 	margin: 0 0 0.6em;
