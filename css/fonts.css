@@ -38,3 +38,15 @@
          url('../fonts/dinpro-medium/dinpro-medium.ttf') format('truetype'),
          url('../fonts/dinpro-medium/dinpro-medium.svg#DINProMedium') format('svg');
 }
+
+@font-face {
+    font-family: 'garamondcitalic';
+    src: url('../fonts/garamond/garamondc-italic-webfont.eot');
+    src: url('../fonts/garamond/garamondc-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/garamond/garamondc-italic-webfont.woff') format('woff'),
+         url('../fonts/garamond/garamondc-italic-webfont.ttf') format('truetype'),
+         url('../fonts/garamond/garamondc-italic-webfont.svg#garamondcitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

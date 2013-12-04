@@ -917,7 +917,7 @@ li.gallery-item:hover .image-container {
 }
 .fancybox .cond-head { font: 1.725em/1.2em 'DINProBold',sans-serif; }
 .cond-check-email {
-    font: 0.875em/1.2857em 'garamondbookcitalic', serif;
+    font: 0.875em/1.2857em 'garamondcitalic', serif;
 }
 .fancybox .email-state .cond-check-email {
     font: 1em 'dinprobold',sans-serif;
@@ -1079,9 +1079,10 @@ li.gallery-item:hover .image-container {
     margin: .5em 0;
 }
 .discount-form {
-	margin: 1em 1.9em;
+	margin: 0 1.9em 1em;
     border-bottom: 1px solid #444;    
 }
+.fancybox .discount-form { margin-top: 1em; }
 .line-input {
     background: transparent;
     border: none;
