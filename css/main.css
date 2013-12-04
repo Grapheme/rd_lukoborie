@@ -850,7 +850,7 @@ li.gallery-item:hover .image-container {
 	color : white;
 	top: 0; left : 0;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(52,52,52,0.95);
 	z-index : 4;
 }
 .state.vote-state {
