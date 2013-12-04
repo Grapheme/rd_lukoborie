@@ -307,6 +307,7 @@ body {
 	border-bottom: 1px solid #e5e5e5;
 	color: #222;
 }
+.gallery .sect-form { height: 21px; }
 .sect-form ::-webkit-input-placeholder {
    color: #222;
 }
@@ -325,7 +326,7 @@ body {
 .sect-form .line-input {
 	font-size: .85em;
 	outline: none;
-	line-height: 2em;
+	padding-top: 3px;
 }
 .sect-form .line-submit {
 	background: none;
@@ -1095,6 +1096,7 @@ li.gallery-item:hover .image-container {
     border: none;
     font: 1em 'DINProBold', sans-serif;
 }
+.gallery .line-submit { font-size: 0.85em; }
 
 
 .full-hd {
