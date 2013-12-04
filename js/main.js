@@ -147,12 +147,16 @@ $(function() {
 		return false;
 	});
 	$(document).on('click', '.camera .line-submit', function(e) {
-			$(this).parent().parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
-			$(this).parent().hide();
+		var prevHeight = $(this).parent().parent().height();
+		$(this).parent().parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
+		$(this).parent().hide();
+		$(this).parent().parent().height(prevHeight);
 	});
 	$(document).on('submit', '.discount-form', function(e) {
-			$(this).parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
-			$(this).hide();
+		var prevHeight = $(this).parent().height();
+		$(this).parent().find('.dc-form-capt').text('Проверь e-mail и покупай Lumix GX7 со скидкой');
+		$(this).hide();
+		$(this).parent().height(prevHeight);
 	});
 	// ----------------------------------------------------------------------------
 	// Интерфейсная часть : элементы галереи
