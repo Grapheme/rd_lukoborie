@@ -1,0 +1,5 @@
+.anim-from-bottom { top: -9px; font-size: 134px; letter-spacing: -5px; line-height: 1em; }
+.mega-anim { top: -9px; }
+.filter-container:after {
+	font-size: 1em;
+}
