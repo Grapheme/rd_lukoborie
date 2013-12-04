@@ -36,6 +36,9 @@ $(function() {
 	var itemTemplate = Handlebars.compile( 
 		$("#gallery-item-template").html() );
 
+	var cameraTemplate = Handlebars.compile( 
+		$("#gallery-camera-template").html() );
+
 	var photographTemplate = Handlebars.compile( 
 		$("#gallery-photograph-template").html() );
 	
@@ -244,6 +247,17 @@ $(function() {
 	}
 
 
+	// ----------------------------------------------------------------------------
+	// Отображение камеры в галереи
+	// ----------------------------------------------------------------------------
+	function makeCameraGalleryView(model) {
+		var parent = $("<li>").addClass("gallery-item");
+		parent.html( cameraTemplate( model ));
+
+		return parent;
+	}
+
+
 // ----------------------------------------------------------------------------
 // Функция имитирует подргузку данных с лицами с сервера
 // ----------------------------------------------------------------------------
@@ -281,6 +295,15 @@ function fetchGalleryItems() {
 		if(i % 7 === 0) {	
 			items.push({
 				type : "photograph",
+				name :  "Авдотий Переверзиев",
+				desc : "Lumix GX7 -\n потрясающий \n фотоаппарат.\n А этот конкурс \n стал для меня \n венцом \nкарьеры.",
+				avatar : "img/avatars/avd.jpg",
+			});
+		}
+
+		if( i % 13 === 0) {
+			items.push({
+				type : "camera",
 				name :  "Авдотий Переверзиев",
 				desc : "Lumix GX7 -\n потрясающий \n фотоаппарат.\n А этот конкурс \n стал для меня \n венцом \nкарьеры.",
 				avatar : "img/avatars/avd.jpg",
@@ -386,7 +409,10 @@ function fetchGalleryItems() {
 					elems.push( makePhotographGalleryView(model)[0] );
 				}
 
-				// TODO: фотоаппарат?!
+				// Элемент галереи Камера
+				if(model.type === "camera" ) {
+					elems.push( makeCameraGalleryView(model) [0]); 
+				}
 			}
 
 			var elements = $( elems );
