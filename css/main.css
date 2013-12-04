@@ -490,6 +490,9 @@ body {
     line-height: 1.5em;
     margin: 0 0 0 0.7em;
 }
+.cross img {
+	margin-bottom: 3px;
+}
 .filter-container:after {
 	content: '•';	
 	position: absolute;
@@ -816,14 +819,6 @@ li.gallery-item:hover .image-container {
     left: 38%;    
     font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
-}
-
-.normal-state .likes-thumb:hover {
-	-webkit-transform: scale(1.1);
-       -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-         -o-transform: scale(1.1);
-            transform: scale(1.1);      
 }
 
 .state-cross {
