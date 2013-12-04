@@ -1106,7 +1106,7 @@ li.gallery-item:hover .image-container {
     border: none;
     font: 1em 'DINProBold', sans-serif;
 }
-.gallery .line-submit { font-size: 0.85em; }
+.gallery .line-submit { font-size: 0.85em; background: none; }
 
 
 .full-hd {
