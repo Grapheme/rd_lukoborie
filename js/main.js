@@ -154,7 +154,7 @@ $(function() {
 			router.navigate( model.id, { trigger : true });
 		});
 
-	var triggered = false;
+		var triggered = false;
 
 		// Обработчик клика на кнопку "лайк"
 		parent.on("mouseenter", ".normal-state",  
@@ -225,31 +225,6 @@ $(function() {
 
 			changeState(parent, "thank-email-state");
 		});
-		
-		// Обработчик клика на одну из социальных кнопок
-		/*parent.on("click", ".vote-state .social-button", 
-			function(event) {
-			
-			event.stopPropagation();
-			var model = parent.data("model");
-
-			// Увеличиваем количество лайков
-			// TODO: анимация перехода
-			parent.find(".likes-count").text(model.likes + 1);
-			parent.find(".likes-container").text(model.likes + 1);
-
-			changeState(parent, "email-state");			
-		});*/
-
-		// Обработчик на нажатие крестика
-		parent.on("click", ".state-cross",  
-			function(event) {
-
-			event.stopPropagation();
-
-			//router.navigate("");
-		});
-
 
 		return parent;
 	}
@@ -429,9 +404,12 @@ function fetchGalleryItems() {
 	// ----------------------------------------------------------------------------
 	window.Router = Backbone.Router.extend({
 		routes: {
+			"!" : "index",
 			":id" : "showModal"
 		},
 
+		index : function() {},
+		
 		showModal : function(id) {
 			var model = generateRandomItem();
 			var view = makeLookModalView( model );
@@ -443,6 +421,9 @@ function fetchGalleryItems() {
 			});
 
 			$.fancybox.open( view, {
+				afterClose : function() {
+					router.navigate("!")
+				},
 				minWidth : 450,
 				padding: [40, 20, 15, 20],
 				closeBtn : true, 
