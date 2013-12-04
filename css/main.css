@@ -295,7 +295,7 @@ body {
 }
 .sect-form-header {
 	display: inline-block;
-	font: 700 0.8em 'PT Sans',sans-serif;
+	font: 700 0.9em 'PT Sans',sans-serif;
 }
 .sect-form {
 	display: inline-block;
@@ -321,9 +321,11 @@ body {
 .sect-form .line-input {
 	font-size: .85em;
 	outline: none;
+	line-height: 2em;
 }
 .sect-form .line-submit {
 	background: none;
+	padding-right: 0;
 }
 .social-widgets {
 	display: block;
