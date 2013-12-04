@@ -19,11 +19,16 @@
     </head>
     <body>
     	 <!--[if lte IE 8]>
-            <style>
-            	.anim-from-bottom { top: -9px; font-size: 134px; letter-spacing: -5px; line-height: 1em; }
-            	.mega-anim { top: -9px; }
-            </style>
+            <link rel="stylesheet" href="css/ie8.css">
+            <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
         <![endif]-->
+        <!--[if lte IE 9]>
+        	<style>
+        		.mega-anim {
+    top: 0px;
+}
+        	</style>
+        	<![endif]-->
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
