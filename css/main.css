@@ -290,6 +290,7 @@ body {
 	font: .875em/1.6em 'garamondbookcitalic', serif;
 }
 .sect-form-cont {
+	height: 24px;
 	margin: 20px auto 36px;
 	text-align: center;
 }
