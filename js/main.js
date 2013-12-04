@@ -469,7 +469,7 @@ function fetchGalleryItems() {
 
 			$.fancybox.open( view, {
 				afterClose : function() {
-					router.navigate("!")
+					router.navigate("!");
 				},
 				minWidth : 450,
 				minHeight : 599,
@@ -480,7 +480,10 @@ function fetchGalleryItems() {
 				helpers  : {
 				   title : { type : 'inside' },
 				   buttons : {},
-				   overlay : { css : { 'background' : 'transparent' } }
+				   overlay : { 
+				   	  css : { 'background' : 'transparent' },
+				   	  locked : false 
+				   }
 				}					
 			});
 
