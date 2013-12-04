@@ -1,6 +1,6 @@
 
 .infinite-scroll li {
-	opacity: 0;
+	opacity: 1;
 }
 
 .infinite-scroll li.shown,
