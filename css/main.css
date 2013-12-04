@@ -142,7 +142,8 @@ body {
 .chop-place,
 .chop-arrow,
 .buy-links a,
-.cross img {
+.cross img,
+.mega-anim {
    	transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
