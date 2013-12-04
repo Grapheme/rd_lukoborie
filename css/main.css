@@ -290,6 +290,7 @@ body {
 	font: .875em/1.6em 'garamondbookcitalic', serif;
 }
 .sect-form-cont {
+	height: 24px;
 	margin: 20px auto 36px;
 	text-align: center;
 }
@@ -489,6 +490,9 @@ body {
     font-size: 0.7em;
     line-height: 1.5em;
     margin: 0 0 0 0.7em;
+}
+.cross img {
+	margin-bottom: 3px;
 }
 .filter-container:after {
 	content: '•';	
@@ -822,14 +826,6 @@ li.gallery-item:hover .image-container {
     left: 38%;    
     font: 1.25em 'DINProBold', sans-serif;
     color: #fff;    
-}
-
-.normal-state .likes-thumb:hover {
-	-webkit-transform: scale(1.1);
-       -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-         -o-transform: scale(1.1);
-            transform: scale(1.1);      
 }
 
 .state-cross {
