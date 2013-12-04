@@ -1,0 +1,21 @@
+.state.vote-state, 
+.state.thank-email-state, 
+.state.thank-vote-state,  
+.state.email-state {
+	background-image: url(../img/fancybox/fancybox_overlay.png);
+}
+.chop-place:hover .chop-arrow,
+.chop-place.active-salon .chop-arrow{
+	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.chop-arrow {
+     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.vote-state .likes-container,
+.fancybox .likes-container {
+	line-height: 1.4em;
+}
+.ph-caption {
+	font-size: 1em;
+	font-weight: 700;
+}

@@ -870,8 +870,7 @@ li.gallery-item:hover .image-container {
 	color : white;
 	top: 0; left : 0;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000); 
+	background-color: rgba(0,0,0,0.5); 
 	z-index : 4;
 }
 
