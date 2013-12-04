@@ -1091,6 +1091,9 @@ li.gallery-item:hover .image-container {
 .dc-form-capt {
     margin: .5em 0;
 }
+.camera .dc-form-capt {
+    margin: 0.5em 2em;
+}
 .discount-form {
 	margin: 0 1.9em 1em;
     border-bottom: 1px solid #444;    
