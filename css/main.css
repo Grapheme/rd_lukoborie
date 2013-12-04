@@ -871,6 +871,7 @@ li.gallery-item:hover .image-container {
 	top: 0; left : 0;
 	display: none;
 	background-color: rgba(0,0,0,0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#2000000,endColorstr=#2000000); 
 	z-index : 4;
 }
 
