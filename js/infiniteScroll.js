@@ -123,7 +123,10 @@
 			this.itemsCount = this.items.length;
 
 			var self = this;
-			this.items.forEach( function( el, i ) {
+
+			// Foreach isnt supported by IE8
+			for(var i = 0; i < this.items.length; ++i) {
+				var el = this.items[i];
 				var $el = $(el);
 
 				if( ! $el.hasClass( "shown" ) && ! $el.hasClass( "animate" ) && inViewport( el, self.options.viewportFactor ) ) {
@@ -145,7 +148,7 @@
 						$el.addClass( "animate" );
 					}, 25 );
 				}
-			});
+			}
 			this.didScroll = false;
 		},
 		_resizeHandler : function() {

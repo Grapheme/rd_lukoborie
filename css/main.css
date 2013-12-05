@@ -142,7 +142,8 @@ body {
 .chop-place,
 .chop-arrow,
 .buy-links a,
-.cross img {
+.cross img,
+.mega-anim {
    	transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -869,7 +870,7 @@ li.gallery-item:hover .image-container {
 	color : white;
 	top: 0; left : 0;
 	display: none;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.5); 
 	z-index : 4;
 }
 
@@ -1090,6 +1091,9 @@ li.gallery-item:hover .image-container {
 }
 .dc-form-capt {
     margin: .5em 0;
+}
+.camera .dc-form-capt {
+    margin: 0.5em 2em;
 }
 .discount-form {
 	margin: 0 1.9em 1em;
@@ -1403,6 +1407,7 @@ li.gallery-item:hover .image-container {
 	overflow: hidden;
 }
 
+<<<<<<< HEAD
 
 /*
  * RULES
@@ -1410,6 +1415,19 @@ li.gallery-item:hover .image-container {
 
 .rules {
 	position: absolute;
+}
+
+.buy-btn {
+	display: block;
+	background: #161616;
+	color: #fff;
+	font: 15px 'DinProBold', sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 176px;
+	height: 38px;
+	line-height: 38px;
+	margin: 1em auto;
 }
 
 /* ==========================================================================

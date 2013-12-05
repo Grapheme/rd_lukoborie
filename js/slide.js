@@ -399,7 +399,7 @@ function gx_show() {
 
 function mega_show() {
 	$('.right-black-line').animate({width:$('.pxl-size-span').width()}, 500, function(){
-		$('.mega-anim').animate({top:0}, 500);
+		$('.mega-anim').css({ 'top': 0 });
 	});
 }
 function animStart() {
