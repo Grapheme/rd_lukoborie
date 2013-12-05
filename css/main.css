@@ -1414,9 +1414,59 @@ li.gallery-item:hover .image-container {
 
 .rules {
 	position: absolute;
+	background: rgba(226, 226, 226, 0.9);
+	width: 1040px;
+	z-index: 11;
+	display: none;
 }
 
+.rules-block {
+	width: 50%;
+	float: left;
+	padding-top: 20px;
+}
 
+.rules-title {
+	font: 16px 'DinProBold', sans-serif;
+	text-transform: uppercase;
+}
+
+.rule-number {
+	font: 62px 'DINProBlack', sans-serif;
+	margin-left: 40px;
+}
+
+.rule-text {
+	font: 18px 'DinProBold', sans-serif;
+	text-transform: uppercase;
+	margin-left: 20px;
+    margin-top: 30px;
+}
+
+.rules-inter {
+	font: 15px 'PT Sans', sans-serif;
+	width: 400px;
+	height: 100px;
+}
+
+.one-rule {
+	overflow: hidden;
+}
+
+.one-rule div {
+	float: left;
+}
+
+.rules-close {
+	font: 14px 'PT Sans', sans-serif;
+	text-align: center;
+	cursor: pointer;
+	margin: 15px 0;
+}
+
+/*
+ * 
+ */
 
 .buy-btn {
 	display: block;

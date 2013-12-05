@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/jquery.fancybox.css">
         <link rel="stylesheet" href="css/main.css">        
         <link rel="stylesheet" href="css/infiniteScroll.css">
+        <link rel="stylesheet" href="css/jquery.custom-scrollbar.css">
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="css/ie8.css">	
 		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
@@ -35,7 +36,7 @@
 	        			<li class="nav-item active left_dir"><a href="javascript:void(0)">Лукбук</a></li>
 	        			<li class="nav-item left_dir"><a href="javascript:void(0)">Эксперт</a></li>
 	        			<li class="nav-item left_dir"><a href="javascript:void(0)">Lumix GX7</a></li>
-	        			<li class="nav-item left_dir"><a href="javascript:void(0)">Правила</a></li>
+	        			<li class="nav-item left_dir rules-link"><a href="javascript:void(0)">Правила</a></li>
 	        		</ul>
 	        	</nav>	        	
 	        	<ul class="outer-links">
@@ -53,7 +54,57 @@
 	        		</li><li class="social-item vk"><img src="img/vk_widget.jpg"></li>
 	        	</ul>
 	        </header>
-	        <div class="rules">123</div>	        
+	        <div class="rules">
+				<div class="rules-block">
+					<div class="one-rule">
+						<div class="rule-number">
+							1
+						</div>
+						<div class="rule-text">
+							Посмотри лукбук
+						</div>
+					</div>
+					<div class="one-rule">
+						<div class="rule-number">
+							2
+						</div>
+						<div class="rule-text">
+							выберите самый стильный портрет
+						</div>
+					</div>
+					<div class="one-rule">
+						<div class="rule-number">
+							3
+						</div>
+						<div class="rule-text">
+							Проголосуй за него
+						</div>
+					</div>
+					<div class="one-rule">
+						<div class="rule-number">
+							4
+						</div>
+						<div class="rule-text">
+							Укажите свою почту
+						</div>
+					</div>
+					<div class="one-rule">
+						<div class="rule-number">
+							5
+						</div>
+						<div class="rule-text">
+							Жди призов
+						</div>
+					</div>
+				</div>
+				<div class="rules-block">
+					<p class="rules-title">Юридическая часть</p>
+					<div class="rules-inter">
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="rules-close">Закрыть</div>
+			</div>	        
 	  	 	
 	  	 	<!-- section gallery -->
 	        <section class="gallery">
@@ -355,6 +406,8 @@
         <script src="js/vendor/backbone.min.js"></script>
 
         <script src="js/infiniteScroll.js"></script>
+        
+        <script src="js/vendor/jquery.custom-scrollbar.min.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/fade.js"></script>
