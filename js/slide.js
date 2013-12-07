@@ -392,7 +392,7 @@ function animateOnLoadTwo() {
 function gx_show() {
 	$('.anim-left-black-line').animate({width: $('.anim-from-bottom').width()}, 300, function(){
 		$('.anim-from-bottom').animate({top: -10},300,function(){
-			$('.anim-from-bottom').animate({top:0}, {duration: $left_anim_speed, easing: 'easeOutBounce'}, 150);
+			$('.anim-from-bottom').animate({top:0}, 150);
 		});
 	});
 }

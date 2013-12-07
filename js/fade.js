@@ -22,6 +22,7 @@ $('.rules-close').click(function(){
 	$('.rules').slideToggle('fast');
 });
 
-/*$(function(){
-	$('.rules-inter').customScrollbar();
-});*/
+$(function()
+{
+	$('.scroll-simple').scrollbar();
+});
