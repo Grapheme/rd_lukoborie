@@ -50,3 +50,12 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'DINProBlack';
+    src: url('../fonts/dinpro-black/dinpro-black.eot');
+    src: url('../fonts/dinpro-black/dinpro-black.eot') format('embedded-opentype'),
+         url('../fonts/dinpro-black/dinpro-black.woff') format('woff'),
+         url('../fonts/dinpro-black/dinpro-black.ttf') format('truetype'),
+         url('../fonts/dinpro-black/dinpro-black.svg#DINProBlack') format('svg');
+}

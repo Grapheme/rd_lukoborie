@@ -13,3 +13,16 @@ function timeOutFade($elems, timer, step) {
 		});			
 	}
 }
+
+$('.rules-link').click(function(){
+	$('.rules').slideToggle('fast');
+});
+
+$('.rules-close').click(function(){
+	$('.rules').slideToggle('fast');
+});
+
+$(function()
+{
+	$('.scroll-simple').scrollbar();
+});
