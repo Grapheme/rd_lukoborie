@@ -139,11 +139,11 @@ $(function() {
 	$('.sect-form .line-submit').click( function() {
 		//TODO: дописать submit
 		$(this).parent().hide();
-		$('.sect-form-header').text('Спасибо за подписку');
+		$('.sect-form-header').text('Проверь электронную почту и покупай Lumix GX7 со скидкой');
 	});
 	$('#sect-form').submit( function() {
 		$(this).hide();
-		$('.sect-form-header').text('Спасибо за подписку');		
+		$('.sect-form-header').text('Проверь электронную почту и покупай Lumix GX7 со скидкой');		
 		return false;
 	});
 	$(document).on('click', '.camera .line-submit', function(e) {

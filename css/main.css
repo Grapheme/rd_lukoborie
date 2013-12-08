@@ -411,9 +411,10 @@ body {
     text-transform: uppercase; 
 }
 .buy-form-capt {
+	font: 14px/26px 'DINProBold',sans-serif; 
 	width: 132px;
 	margin: 0 0 1em;
-	line-height: 1.87em;
+	text-transform: uppercase;
 }
 .buy-input,
 .buy-submit {
