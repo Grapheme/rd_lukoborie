@@ -164,6 +164,9 @@ body {
   
 .main-header {
 	padding: 67px 40px 32px 38px;
+}
+
+.main-header-index {
 	border-bottom: 2px solid #E4E4E4;
 }
 
@@ -387,17 +390,37 @@ body {
 }
 .buy-links a {
 	float: left;
-	clear: left;
-	height: 22px;
-	margin: 0 0 3px;
-    border-bottom: 1px solid #FFF;    
+	padding-right: 5px;
+	height: 35px;
+    border: 2px solid #FFF;    
     color: #FFFFFF;    
-    font: 0.875em/1.8571em 'DINProBold',sans-serif;    
+    font: 14px/35px 'DINProBold', sans-serif;    
     text-decoration: none;
     text-transform: uppercase;
 }
+.where2buy {
+	background-image: url('../img/product_button_where.png');
+	background-repeat: no-repeat;
+	background-position: 9px 7px;
+	padding-left: 30px;
+}
+.buy-from-panasonic {
+	background-image: url('../img/product_button_cart.png');
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: 8px 10px;
+	margin-left: 15px;
+}
+.where2buy:hover {
+	background-image: url('../img/product_button_where_hover.png');
+}
+.buy-from-panasonic:hover {
+	background-image: url('../img/product_button_cart_hover.png');
+}
 .buy-links a:hover {
-	border-color: transparent;
+	border-color: #fff;
+	background-color: #fff;
+	color: #000;
 }
 .buy-form {
 	position: absolute;
