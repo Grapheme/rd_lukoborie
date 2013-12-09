@@ -66,7 +66,7 @@ function fadeItAfter(el, time) {
 }
 
 function fadeitOf(el, of) {
-	if(isScrolled(of)) {
+	if(isExScrolled(of)) {
 		$(el).css('opacity', 1);
 	}
 }
@@ -86,6 +86,17 @@ function isScrolled(elem)
     var $windowh = $(window).height();
     var $amountw = $windowh*0.2;
     if($(document).scrollTop() > $topp-$windowh+$amountw && $(document).scrollTop() < $bottomp ) {
+    	return true;
+    } else {
+    	return false;
+    }
+}
+
+function isExScrolled(elem) {
+	var $topp = $(elem).position().top;
+    var $bottomp = $topp + $(elem).height();
+    var $windowh = $(window).height();
+    if($(document).scrollTop() > $topp-$windowh && $(document).scrollTop() < $bottomp ) {
     	return true;
     } else {
     	return false;
