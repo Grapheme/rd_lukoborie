@@ -390,7 +390,7 @@ body {
 }
 .buy-links a {
 	float: left;
-	padding-right: 5px;
+	padding-right:10px;
 	height: 35px;
     border: 2px solid #FFF;    
     color: #FFFFFF;    
@@ -1401,6 +1401,15 @@ li.gallery-item:hover .image-container {
 }
 .w_fade {
 	opacity: 0;
+}
+
+.exp-anim-1,.exp-anim-2,.exp-anim-3,.exp-anim-4,.exp-anim-5,.exp-anim-6,.exp-anim-7,.exp-anim-8,.exp-anim-9,.exp-anim-10 {
+	opacity: 0;
+	transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
+	-moz-transition: opacity 1s ease;
+	-o-transition: opacity 1s ease;
+	-ms-transition: opacity 1s ease;
 }
 .top_dir {
 	-webkit-transform: translate3d(0px, 500px, 0px); 
