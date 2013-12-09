@@ -404,6 +404,9 @@ body {
 	background-position: 9px 7px;
 	padding-left: 30px;
 }
+.where2buy:hover {
+	background-image: url('../img/product_button_where_hover.png');
+}
 .buy-from-panasonic {
 	background-image: url('../img/product_button_cart.png');
 	padding-left: 40px;
@@ -411,11 +414,15 @@ body {
 	background-position: 8px 10px;
 	margin-left: 15px;
 }
-.where2buy:hover {
-	background-image: url('../img/product_button_where_hover.png');
-}
 .buy-from-panasonic:hover {
 	background-image: url('../img/product_button_cart_hover.png');
+}
+.buy-links a {
+	-webkit-transition: all .1s ease;
+	   -moz-transition: all .1s ease;
+		-ms-transition: all .1s ease;
+	     -o-transition: all .1s ease;
+    		transition: all .1s ease;	
 }
 .buy-links a:hover {
 	border-color: #fff;
