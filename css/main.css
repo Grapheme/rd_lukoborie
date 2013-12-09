@@ -164,6 +164,9 @@ body {
   
 .main-header {
 	padding: 67px 40px 32px 38px;
+}
+
+.main-header-index {
 	border-bottom: 2px solid #E4E4E4;
 }
 
