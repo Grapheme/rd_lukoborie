@@ -470,7 +470,7 @@ function fetchGalleryItems() {
 				   buttons : {},
 				   overlay : { 
 				   	  css : { 'background' : 'transparent' },
-      				locked: false
+      				locked: true
 				   }
 				}				
 			});
@@ -481,3 +481,4 @@ function fetchGalleryItems() {
 	window.router = new Router;
 	Backbone.history.start();
 });
+
