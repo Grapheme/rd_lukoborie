@@ -1282,12 +1282,16 @@ li.gallery-item:hover .image-container {
 	background: url('../img/expert/arrow-left.png') no-repeat;
 	width: 32px;
 	margin-right: 5px;
+	position: relative;
+	z-index: 99;
 }
 
 .slider-to-right.white-arrow {
 	background: url('../img/expert/arrow-right.png') no-repeat;
 	width: 32px;
 	margin-left: 5px;
+	position: relative;
+	z-index: 99;
 }
 
 .fotorama {
