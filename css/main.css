@@ -1575,6 +1575,8 @@ li.gallery-item:hover .image-container {
 .expert {
 	margin: 0 40px;
 	background: url('../img/expert/Background_sevidov.jpg') no-repeat;
+	background-size: cover;
+	background-position: center center;
 	padding-top: 137px;
 	padding-bottom: 135px;
 }
