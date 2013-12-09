@@ -469,7 +469,8 @@ function fetchGalleryItems() {
 				   title : { type : 'inside' },
 				   buttons : {},
 				   overlay : { 
-				   	  css : { 'background' : 'transparent' }
+				   	  css : { 'background' : 'transparent' },
+      				locked: false
 				   }
 				}				
 			});
