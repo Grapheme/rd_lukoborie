@@ -15,6 +15,7 @@ $('.sect-form .line-submit').click( function() {
 		$(this).parent().parent().height(prevHeight);
 	});
 	$(document).on('submit', '.discount-form', function(e) {
+		e.preventDefault();
 		var prevHeight = $(this).parent().height();
 		$(this).parent().find('.dc-form-capt').html('Проверьте e-mail и покупай Lumix GX7 со скидкой <a href="http://panasoniceplaza.ru/products/digital_av/digital_still_camera/lumix/DMC-GX7K/" class="buy-btn">Купить</a>');
 		$(this).hide();

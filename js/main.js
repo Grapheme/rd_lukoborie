@@ -472,7 +472,7 @@ function fetchGalleryItems() {
 				   	  css : { 'background' : 'transparent' },
       				locked: false
 				   }
-				}					
+				}				
 			});
 
 		}
