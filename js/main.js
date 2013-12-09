@@ -377,12 +377,14 @@ function fetchGalleryItems() {
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.prev();
+    		return false;
     });
 
     $("body").on("click", ".fancy-to-right", 
     	function(event) {
     		event.stopPropagation();
     		$.fancybox.next();
+    		return false;
     });
 
 // ----------------------------------------------------------------------------
@@ -474,7 +476,6 @@ function fetchGalleryItems() {
 				   }
 				}				
 			});
-
 		}
 	});
 
