@@ -471,7 +471,7 @@ function fetchGalleryItems() {
 				   overlay : { 
 				   	  css : { 'background' : 'transparent' }
 				   }
-				}					
+				}				
 			});
 
 		}
