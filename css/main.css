@@ -1506,6 +1506,7 @@ li.gallery-item:hover .image-container {
 
 .rules-inter {
 	font: 15px/26px 'PT Sans', sans-serif;
+	height: 370px;
 }
 
 .one-rule {
@@ -1552,8 +1553,8 @@ li.gallery-item:hover .image-container {
 
 .expert {
 	margin: 0 40px;
-	background: url('../img/expert/back.png') no-repeat;
-	padding-top: 135px;
+	background: url('../img/expert/Background_sevidov.jpg') no-repeat;
+	padding-top: 137px;
 	padding-bottom: 135px;
 }
 
@@ -1573,6 +1574,7 @@ li.gallery-item:hover .image-container {
 	color: #fff;
 	text-transform: uppercase;
 	line-height: 97px;
+	margin-top: 6px;
 }
 
 .expert-big-desc {
@@ -1580,7 +1582,7 @@ li.gallery-item:hover .image-container {
 	text-transform: uppercase;
 	margin-left: 40px;
 	color: #fff;
-	margin-top: 20px;
+	margin-top: 40px;
 	width: 300px;
 }
 
@@ -1601,7 +1603,7 @@ li.gallery-item:hover .image-container {
 }
 
 .expert-three {
-	margin-top: 50px;
+	margin-top: 95px;
 }
 
 .expert-text-block {
@@ -1610,7 +1612,7 @@ li.gallery-item:hover .image-container {
 }
 
 .expert-text-in {
-	margin: 15px 10px 15px 20px;
+	margin: 15px 20px 15px 20px;
 	color: #fff;
 	font: 15px/26px 'PT Sans', sans-serif;
 }
