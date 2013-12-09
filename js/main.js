@@ -473,7 +473,6 @@ function fetchGalleryItems() {
 				   }
 				}				
 			});
-
 		}
 	});
 
