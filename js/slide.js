@@ -98,11 +98,11 @@ $(function(){
 	$('#prodDiscount .buy-submit').click( function() {
 		//TODO: дописать submit
 		$(this).parent().hide();
-		$('.buy-form-capt').text('Спасибо за подписку').css({'white-space':'nowrap'});
+		$('.buy-form-capt').html('Проверь электронную почту <br/>и покупай Lumix GX7 со скидкой').css({'white-space':'nowrap'});
 	});
 	$('#prodDiscount').submit( function() {
 		$(this).hide();
-		$('.buy-form-capt').text('Спасибо за подписку').css({'white-space':'nowrap'});		
+		$('.buy-form-capt').html('Проверь электронную почту <br/>и покупай Lumix GX7 со скидкой').css({'white-space':'nowrap'});		
 		return false;
 	});
 	
