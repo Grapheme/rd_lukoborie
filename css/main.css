@@ -1500,6 +1500,11 @@ li.gallery-item:hover .image-container {
 	width: 1040px;
 	z-index: 11;
 	display: none;
+	border-top: 2px solid #E4E4E4;
+}
+
+.rules.index {
+	border: 0 none;
 }
 
 .rules-block {
@@ -1527,7 +1532,7 @@ li.gallery-item:hover .image-container {
 
 .rules-inter {
 	font: 15px/26px 'PT Sans', sans-serif;
-	height: 370px;
+	height: 345px;
 }
 
 .one-rule {
@@ -1647,6 +1652,7 @@ li.gallery-item:hover .image-container {
 
 .footer-form {
 	margin-top: 50px;
+	height: 20px;
 }
 
 .expert-slideshow {

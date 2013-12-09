@@ -16,10 +16,18 @@ function timeOutFade($elems, timer, step) {
 
 $('.rules-link').click(function(){
 	$('.rules').slideToggle('fast');
+	return false;
 });
 
 $('.rules-close').click(function(){
 	$('.rules').slideToggle('fast');
+	return false;
+});
+
+$('.rules-link-bottom').click(function(){
+	$('.rules').slideDown('fast');
+	$("html, body").animate({scrollTop: $('.rules').position().top});
+	return false;
 });
 
 $(function()
