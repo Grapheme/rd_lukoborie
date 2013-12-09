@@ -50,9 +50,6 @@ $(document).scroll(function(){
 	}
 });
 
-$(function(){
-});
-
 var animload = false;
 
 function fadeit(el) {
