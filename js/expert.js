@@ -93,7 +93,7 @@ function isExScrolled(elem) {
 	var $topp = $(elem).position().top;
     var $bottomp = $topp + $(elem).height();
     var $windowh = $(window).height();
-    if($(document).scrollTop() > $topp-$windowh && $(document).scrollTop() < $bottomp ) {
+    if($(document).scrollTop() > $bottomp-$windowh && $(document).scrollTop() < $bottomp ) {
     	return true;
     } else {
     	return false;

@@ -1601,7 +1601,7 @@ li.gallery-item:hover .image-container {
 }
 
 .expert-big-desc {
-	font: 18px 'DINProMedium', sans-serif;
+	font: 18px/27px 'DINProMedium', sans-serif;
 	text-transform: uppercase;
 	margin-left: 40px;
 	color: #fff;
