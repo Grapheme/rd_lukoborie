@@ -1496,7 +1496,8 @@ li.gallery-item:hover .image-container {
 
 .rules {
 	position: absolute;
-	background: #fff;
+	background: #fff; /* ie */
+	background: rgba(255,255,255,0.95);
 	width: 1040px;
 	z-index: 11;
 	display: none;
