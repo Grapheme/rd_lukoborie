@@ -78,7 +78,7 @@
 						<div class="rule-text">Жди призов</div>
 					</div>
 				</div>
-				<div class="rules-block">
+				<div class="rules-block rules-second">
 					<p class="rules-title">Юридическая часть</p>
 					<div class="content scroll-simple scroll-simple_outer rules-inter">
 						<p>
@@ -107,7 +107,7 @@
 				<div class="clearfix"> </div>
 				<div class="rules-close"><img src="img/rules-close.png">Закрыть</div>
 			</div>
-			<article class="expert">
+			<article class="expert" style="visibility: visible;">
 				<section>
 					<div class="expert-right-block">
 						<div class="expert-top">
@@ -267,6 +267,12 @@
         <script src="js/expert.js"></script>
         <script src="js/fade.js"></script>
         <script src="js/forms.js"></script>
-
+		<script>
+			$(function(){
+				$('.expert').ready(function(){
+					$('.expert').css('visibility','visible');
+				});
+			});
+		</script>	
     </body>
 </html>

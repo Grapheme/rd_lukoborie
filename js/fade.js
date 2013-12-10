@@ -14,20 +14,31 @@ function timeOutFade($elems, timer, step) {
 	}
 }
 
-$('.rules-link').click(function(){
+$('.rules-link').click(function(event){
+	event.stopPropagation();
 	$('.rules').slideToggle('fast');
 	return false;
 });
 
-$('.rules-close').click(function(){
+$('.rules-close').click(function(event){
+	event.stopPropagation();
 	$('.rules').slideToggle('fast');
 	return false;
 });
 
-$('.rules-link-bottom').click(function(){
+$('.rules-link-bottom').click(function(event){
+	event.stopPropagation();
 	$('.rules').slideDown('fast');
 	$("html, body").animate({scrollTop: $('.rules').position().top});
 	return false;
+});
+
+$('.rules').click(function(event){
+	event.stopPropagation();
+});
+
+$('html').click(function() {
+	$('.rules').slideUp('fast');
 });
 
 $(function()

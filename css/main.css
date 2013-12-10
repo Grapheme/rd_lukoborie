@@ -1511,7 +1511,11 @@ li.gallery-item:hover .image-container {
 .rules-block {
 	width: 50%;
 	float: left;
-	padding-top: 20px;
+	padding-top: 25px;
+}
+
+.rules-second {
+	margin-top: 17px;
 }
 
 .rules-title {
@@ -1520,7 +1524,7 @@ li.gallery-item:hover .image-container {
 }
 
 .rule-number {
-	font: 62px 'DINProBlack', sans-serif;
+	font: 45px 'DINProBlack', sans-serif;
 	margin-left: 40px;
 }
 
@@ -1528,16 +1532,17 @@ li.gallery-item:hover .image-container {
 	font: 18px 'DinProBold', sans-serif;
 	text-transform: uppercase;
 	margin-left: 20px;
-    margin-top: 30px;
+    margin-top: 19px;
 }
 
 .rules-inter {
 	font: 15px/26px 'PT Sans', sans-serif;
-	height: 345px;
+	height: 267px;
 }
 
 .one-rule {
 	overflow: hidden;
+	height: 66px;
 }
 
 .one-rule div {
@@ -1581,7 +1586,7 @@ li.gallery-item:hover .image-container {
 .expert {
 	margin: 0 40px;
 	background: url('../img/expert/Background_sevidov.jpg') no-repeat;
-	background-size: cover;
+	background-size: 980px auto;
 	background-position: left top;
 	padding-top: 137px;
 	padding-bottom: 135px;
