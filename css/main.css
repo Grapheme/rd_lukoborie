@@ -172,8 +172,8 @@ body {
 	height: 16px;
 	background: url('../img/lumixg.png');
 	position: absolute;
-	right: 10px;
-    top: 35px;
+	right: 20px;
+    top: 36px;
     display: block
 }
 
@@ -181,8 +181,7 @@ body {
 	width: 214px;
 	height: 55px;
 	background: url('../img/sochi-white.png');
-	margin: 0 auto;
-	margin-top: 100px;
+	margin: 100px auto 0;
 	display: block;
 }
 
@@ -191,7 +190,7 @@ body {
 	height: 55px;
 	background: url('../img/sochi-black.png');
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 120px;
 	display: block;
 	margin-bottom: 80px;
 }
@@ -201,8 +200,8 @@ body {
 	height: 16px;
 	background: url('../img/lumix-white.png');
 	position: absolute;
-	right: 61px;
-    top: 40px;
+	right: 59px;
+    top: 39px;
     display: block
 }
 
@@ -1635,7 +1634,7 @@ li.gallery-item:hover .image-container {
 	margin: 0 40px;
 	background: url('../img/expert/Background_sevidov.jpg') no-repeat;
 	background-size: 1013px auto;
-	background-position: -28px top;
+	background-position: left top;
 	padding-top: 137px;
 	padding-bottom: 65px;
 	position: relative;
