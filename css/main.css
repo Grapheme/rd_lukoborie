@@ -163,6 +163,54 @@ body {
    Header styles
    ========================================================================== */
   
+/*
+ * Sochi
+ */
+
+.lumix-black {
+	width: 97px;
+	height: 16px;
+	background: url('../img/lumixg.png');
+	position: absolute;
+	right: 10px;
+    top: 35px;
+    display: block
+}
+
+.sochi-white {
+	width: 214px;
+	height: 55px;
+	background: url('../img/sochi-white.png');
+	margin: 0 auto;
+	margin-top: 100px;
+	display: block;
+}
+
+.sochi-black {
+	width: 214px;
+	height: 55px;
+	background: url('../img/sochi-black.png');
+	margin: 0 auto;
+	margin-top: 100px;
+	display: block;
+	margin-bottom: 80px;
+}
+
+.lumix-white {
+	width: 97px;
+	height: 16px;
+	background: url('../img/lumix-white.png');
+	position: absolute;
+	right: 61px;
+    top: 40px;
+    display: block
+}
+
+
+/*
+ * Main
+ */
+  
 .main-header {
 	padding: 67px 40px 32px 38px;
 }
@@ -1586,10 +1634,11 @@ li.gallery-item:hover .image-container {
 .expert {
 	margin: 0 40px;
 	background: url('../img/expert/Background_sevidov.jpg') no-repeat;
-	background-size: 980px auto;
-	background-position: left top;
+	background-size: 1013px auto;
+	background-position: -28px top;
 	padding-top: 137px;
-	padding-bottom: 135px;
+	padding-bottom: 65px;
+	position: relative;
 }
 
 .expert-top {
