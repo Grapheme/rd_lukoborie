@@ -82,7 +82,7 @@ function isScrolled(elem)
     var $bottomp = $topp + $(elem).height();
     var $windowh = $(window).height();
     var $amountw = $windowh*0.2;
-    if($(document).scrollTop() > $topp-$amountw && $(document).scrollTop() < $bottomp ) {
+    if($(document).scrollTop() > $topp-$amountw-100 && $(document).scrollTop() < $bottomp ) {
     	return true;
     } else {
     	return false;
