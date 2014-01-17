@@ -959,6 +959,7 @@ li.gallery-item:hover .image-container {
 	font-size: 20px;
 }
 .fancybox-close.state-cross {
+	top: 6px;
 	right: 3px;
 	background: none;
 	color: #454545;

@@ -111,7 +111,8 @@
 }
 .boss-quote {
   position: relative;
-  margin: 0 76px;
+  width: 960px;
+  margin: 0 40px;
   padding: 35px 0 28px;
   text-align: center;
 }
@@ -120,7 +121,7 @@
   border-bottom: 1px solid #ccc;
 }
 .boss-quote.bottom-quote {
-  padding: 39px 0 50px;
+  padding: 30px 0 28px;
   border-top: 1px solid #ccc;
 }
 .boss-quote.top-quote:after {
@@ -129,10 +130,10 @@
   bottom: -1px;
   left: 50%;
   z-index: 1;
-  width: 17px;
-  height: 18px;
+  width: 15px;
+  height: 13px;
   margin: 0 0 0 -4px;	
-  background: url(../img/main_sprite.png) -319px -144px no-repeat; /* Делаем уголки картинками для кроссбраузерности */
+  background: url(../img/main_sprite.png) -319px -147px no-repeat; /* Делаем уголки картинками для кроссбраузерности */
 }
 .boss-quote.bottom-quote:after {
   content: "";
@@ -140,10 +141,10 @@
   top: -1px;
   left: 50%;
   z-index: 1;
-  width: 17px;
-  height: 18px;
-  margin: 0 0 0 -22px;	
-  background: url(../img/main_sprite.png) -321px -127px no-repeat;
+  width: 13px;
+  height: 12px;
+  margin: 0 0 0 -17px;	
+  background: url(../img/main_sprite.png) -324px -130px no-repeat;
 }
 .boss-quote > img {
   margin: 0 .85em;
@@ -165,20 +166,79 @@
   margin: 5px 0 0;
   font: 0.875em/1.4857em 'garamondbookcitalic',serif;
 }
+.boss-quote.bottom-quote .boss-quote-body {
+  text-align: left;
+}
 .winners-list {
   width: 960px;
   margin: 0 auto;
 }
 .winners-item {
   float: left;
+  width: 320px;
+}
+.winner-block .fancybox,
+.finalists-item .fancybox {
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.winner-block {
+	position: relative;
+	height: 428px;
+}
+.winner-block .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, .5);
+  
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+}
+.winner-block:hover .hover {
+  opacity: 1;
+}
+.winner-block .hover {
+  color: #FFFFFF;
+  font: 2em 'DINProBold',sans-serif;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 100%;
+}
+.winner-block > img {
+  width: 100%;
+  height: 100%;
+}
+.winner-block .hover .likes-thumb {
+  background: url("http://lamcdn.net/specials.lookatme.ru/lumix/assets/big_idle-abd2229f57eee3652975f792394bd65d.png") no-repeat scroll 0 12px rgba(0, 0, 0, 0);
+  height: 50px;
+  width: 23px;
+}
+.winner-block .hover .like-container {
+	left: 0;
+	width: 100%;
+	margin-top: 188px;
 }
 .winner-top-quote,
 .winner-bottom-quote {
-  height: 96px;
+  height: 202px;
   padding: 21px 0 26px;
-  text-align: center;
-  text-transform: uppercase;
-  font: 1.125em/1.35em 'DINProBold', sans-serif;
+  text-align: left;
+  font: 14px/20px 'PT Sans', sans-serif;
 }
 .winner-bottom-quote {
   padding: 25px 0 24px;
@@ -186,14 +246,14 @@
 /*------------------------------Finalists section----------------------------- */
 
 .finalists {
-  padding: 103px 0 0;
+  padding: 108px 0 0;
 }
 .finalists header {
   padding-bottom: 34px;
 }
 .finalists header h2 {
   float: left;
-  margin: 0 0 0 74px;
+  margin: 0 0 0 52px;
   font: 50px/55px 'DINProBold', sans-serif;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -232,9 +292,9 @@
   margin: 0 auto;
 }
 .finalists-item {
+  position: relative;
   float: left;
   width: 137px;
-  height: 185px;
 }
 .finalists-item img {
   width: 100%;
@@ -260,13 +320,13 @@
 }
 .prizes-content {
   display: inline-block;
-  padding: 29px 0 130px;
+  padding: 29px 0 121px;
   text-transform: uppercase;
   font: 1.125em/1.5556em 'DINProBold', sans-serif;
 }
 /*----------------------------Vote-winners section--------------------------- */
 .vote-winners {
-  padding: 0 0 69px;
+  padding: 0 0 67px;
   background: #ededed;
 }
 .vote-winners h2 {
@@ -280,7 +340,7 @@
 }
 .vote-winners-list {
   width: 960px;
-  margin: 26px auto 0;
+  margin: 50px auto 0;
 }
 .vote-winners-item {
   float: left;
@@ -288,8 +348,10 @@
   text-align: center;
 }
 .voter-email {
+  position: relative;
+  display: inline-block;
   margin: 0 0 10px;
-  font: .875em/1.5714em 'DINProBold', sans-serif;
+  font: 1.1em/1.5714em 'DINProBold', sans-serif;
   text-transform: uppercase;
 }
 .voter-name {
@@ -299,7 +361,7 @@
   font: 1.125em/1.3333em 'DINProBold', sans-serif;
   text-transform: uppercase;
 }
-.voter-name:before {
+.voter-email:before {
   content: "";
   position: absolute;
   top: 6px;
@@ -308,7 +370,7 @@
   height: 40px;
   background: url(../img/main_sprite.png) -337px -123px no-repeat;
 }
-.voter-name:after {
+.voter-email:after {
   content: "";
   position: absolute;
   top: 6px;
@@ -320,16 +382,92 @@
 .voter-prize {
   height: 106px;
 }
+.voter-prize.short-img {
+	margin: 9px 0 0;
+	height: 97px;
+}
 .prize-caption {
   margin: 22px 0 0;
   font: 0.875em/1.2857em 'garamondbookcitalic',serif;
 }
+.deleted {
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	width: 17px;
+	height: 20px;
+	margin: 0 2px;
+	background: url(../img/cut.png) no-repeat;
+}
 /*--------------------------------Thanks section------------------------------ */
 
 .thanks-content {
-  padding: 111px 0 99px;
+  padding: 100px 0 108px;
   font: 32px/55px 'DINProBold', sans-serif;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -1px;
+}
+/*--------------------------------hover styles------------------------------ (заменить)*/
+.finalists-item .hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 128px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.2s ease-in-out 0s;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.finalists-item:hover .hover {
+	opacity: 1;
+}
+
+.finalists-item .hover .like-container {
+  color: #FFFFFF;
+  font: 19px/19px 'DINProBold',sans-serif;
+  height: auto;
+  left: 0;
+  margin-top: 81px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 100%;
+}
+
+.finalists-item .likes-thumb {
+  background: url("http://lamcdn.net/specials.lookatme.ru/lumix/assets/main_sprite-67e1a295cf5094162d7e723c5e1d13f3.png") no-repeat scroll -12px -124px rgba(0, 0, 0, 0); /*your address*/
+  cursor: pointer;
+  display: inline-block;
+  height: 26px;
+  margin: -3px 0 0 3px;
+  vertical-align: top;
+  width: 25px;
+}
+
+/* fix */
+.fancybox-close.state-cross {
+  top: 2px;
+}
+.outer-links li {
+	margin: 1em 0 .75em;
+}
+.bottom-outer-links .chop-chop {
+	position: relative;
+	top: -3px;
+	margin: 0 0px 0px 8px;	
+}
+.main-footer {
+	padding: 25px 35px 43px;
+}
+.bottom-outer-links .rd_keds {
+	margin: 0;
+}
+.bottom-outer-links .birdie {
+	margin: 0 .5em 0 .75em;
 }
