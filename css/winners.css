@@ -224,9 +224,10 @@
   height: 100%;
 }
 .winner-block .hover .likes-thumb {
+  position: relative;
   background: url("http://lamcdn.net/specials.lookatme.ru/lumix/assets/big_idle-abd2229f57eee3652975f792394bd65d.png") no-repeat scroll 0 12px rgba(0, 0, 0, 0);
   height: 50px;
-  width: 23px;
+  width: 24px;
 }
 .winner-block .hover .like-container {
 	left: 0;
